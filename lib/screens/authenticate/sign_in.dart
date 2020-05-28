@@ -65,16 +65,22 @@ class _sign_inState extends State<sign_in> {
                     ),
                   ),
                   Positioned(
-                    left: 120,
-                    bottom: -170,
+                    left: 50,
+                    bottom: 100,
                     width: 200,
-                    height: 400,
+                    height: 20,
                     child: Container(
                       child: RaisedButton(
                          child: Text('Login Anon'),
                          onPressed: () async{
                            dynamic result = await _auth.signInAnon();
-                         } ,
+                         if (result ==  null) {
+                           print('error signing in');
+                         } else {
+                           print('signed in');
+                           print(result.uid);
+                         }
+                           } ,
                       ),
                     ),
                   ),

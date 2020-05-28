@@ -1,8 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:whereisevery1/login.dart';
+//import 'package:whereisevery1/login.dart';
 import 'dart:async';
+import 'package:whereisevery1/screens/wrapper.dart';
 
 void main() => runApp(MaterialApp(
   home: Splash()
@@ -24,7 +25,7 @@ class _SplashState extends State<Splash> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder:(context) => Login(),
+          builder:(context) => Wrapper(),
         ),
       );
     },
