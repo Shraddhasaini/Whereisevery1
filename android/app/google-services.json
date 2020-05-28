@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "88877385132",
+    "firebase_url": "https://where-is-everyone-statusneo.firebaseio.com",
+    "project_id": "where-is-everyone-statusneo",
+    "storage_bucket": "where-is-everyone-statusneo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88877385132:android:83430f1425d74dd008e609",
+        "android_client_info": {
+          "package_name": "statusneo.whereisevery1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "88877385132-su6u07mr7t1dus4892e2su0v4bq113k6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-Wa15TRM8MTUPVWIGWF6EZYHCwylcWaI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "88877385132-su6u07mr7t1dus4892e2su0v4bq113k6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
