@@ -10,19 +10,19 @@ Widget build(BuildContext context) {
       child: Column(
         children: <Widget>[
           Container(
-            height: 600,
+            height: 683,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/logingirl.png'),
+                image: AssetImage('assets/textwie.png'),
               ),
             ),
             child: Stack(
               children: <Widget>[
                 Positioned(
-                  right: 40,
-                  bottom: 40,
-                  width: 80,
-                  height: 200,
+                  right: -30,
+                  bottom: -50,
+                  width: 200,
+                  height: 400,
                   child: Container(
                     decoration: BoxDecoration(
                     image: DecorationImage(
@@ -30,6 +30,32 @@ Widget build(BuildContext context) {
                   ),
                 ),
             ),
+                ),
+                Positioned(
+                  left: 120,
+                  bottom: -170,
+                  width: 200,
+                  height: 400,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/logowhite.png'),
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: 0,
+                  top: -100,
+                  width: 400,
+                  height: 600,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/logingirl.png'),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
