@@ -47,17 +47,21 @@ class _SplashState extends State<Splash> {
               ),
               child: Stack(
                 children: <Widget>[
-                  Positioned(
-                    left: 0,
-                    top: 60,
-                    width: 400,
-                    height: 600,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/splash.png'),
-                        ),
-                      ),
+                  Center(
+                    child: TweenAnimationBuilder(
+                      duration: Duration(seconds: 1),
+                      tween: Tween<double>(begin: 0,end: 1),
+                      builder: (_, double size, __){
+                        return Transform.scale(scale: size,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/splash.png'),
+                                ),
+                              ),
+                            ),
+                        );
+                      },
                     ),
                   ),
                 ],
