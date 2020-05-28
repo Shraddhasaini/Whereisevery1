@@ -16,6 +16,23 @@ Widget build(BuildContext context) {
                 image: AssetImage('assets/logingirl.png'),
               ),
             ),
+            child: Stack(
+              children: <Widget>[
+                Positioned(
+                  right: 40,
+                  bottom: 40,
+                  width: 80,
+                  height: 200,
+                  child: Container(
+                    decoration: BoxDecoration(
+                    image: DecorationImage(
+                    image: AssetImage('assets/plantlogin.png'),
+                  ),
+                ),
+            ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
