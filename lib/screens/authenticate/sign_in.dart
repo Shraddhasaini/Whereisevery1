@@ -9,6 +9,11 @@ class sign_in extends StatefulWidget {
 
 class _sign_inState extends State<sign_in> {
   final AuthService _auth = AuthService();
+
+  //text field state
+  String email = '';
+  String password = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,22 +75,24 @@ class _sign_inState extends State<sign_in> {
                   ),
                   Positioned(
                     left: 0,
-                    bottom: 100,
+                    bottom: 40,
                     child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+                      width: 400,
+                      padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 50.0),
                       child: Form(
                         child: Column(
                           children: <Widget>[
                             SizedBox(height:20.0),
                             TextFormField(
                               onChanged: (val){
-
-                              },
+                                setState(() => email = val);
+                              }
                             ),
                             SizedBox(height:20.0),
                             TextFormField(
                               obscureText: true,
                               onChanged: (val){
+                                setState(() => password = val);
                               },
                             ),
                             SizedBox(height:20.0),
@@ -100,7 +107,8 @@ class _sign_inState extends State<sign_in> {
                                 ),
                               ),
                               onPressed: () async {
-
+                                        print(email);
+                                        print(password);
                               },
                             )
                           ],
