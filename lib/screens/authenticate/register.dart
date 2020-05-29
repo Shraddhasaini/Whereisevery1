@@ -39,6 +39,19 @@ class _RegisterState extends State<Register> {
                     child: Stack(
                       children: <Widget>[
                         Positioned(
+                          right: -30,
+                          bottom: -50,
+                          width: 200,
+                          height: 400,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/Symbols.png'),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
                           left: 0,
                           top: -100,
                           width: 400,
@@ -63,7 +76,7 @@ class _RegisterState extends State<Register> {
                                 children: <Widget>[
                                   SizedBox(height:10.0),
                                   TextFormField(
-                                      decoration: textInputDecoration.copyWith(hintText: 'Email'),
+                                      decoration: textInputDecoration.copyWith(hintText: 'Email',hoverColor: Colors.black12),
                                     validator: (val) => val.isEmpty ? 'Enter an email' : null,
                                       onChanged: (val){
                                         setState(() => email = val);
@@ -71,7 +84,7 @@ class _RegisterState extends State<Register> {
                                   ),
                                   SizedBox(height:10.0),
                                   TextFormField(
-                                    decoration: textInputDecoration.copyWith(hintText: 'Password'),
+                                    decoration: textInputDecoration.copyWith(hintText: 'Password',hoverColor: Colors.black12),
                                     validator: (val) => val.length < 6 ? 'Enter a password 6+ chars long' : null,
                                     obscureText: true,
                                     onChanged: (val){
