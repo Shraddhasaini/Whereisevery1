@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:whereisevery1/models/users.dart';
 import 'package:whereisevery1/screens/authenticate/authenticate.dart';
+import 'package:whereisevery1/screens/authenticate/sign_in.dart';
 import 'package:whereisevery1/screens/home/home.dart';
 
 class Wrapper extends StatelessWidget {
@@ -11,6 +12,7 @@ class Wrapper extends StatelessWidget {
     print(user);
     //return either Home or authenticate widget
     if (user == null){
+      print('authentictaedwrapper');
       return Authenticate();
     } else {
       return Home();

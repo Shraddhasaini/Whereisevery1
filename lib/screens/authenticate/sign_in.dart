@@ -13,7 +13,11 @@ class _sign_inState extends State<sign_in> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Container(
+      body: Center(
+        child: SingleChildScrollView( child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
         child: Column(
           children: <Widget>[
             Container(
@@ -65,22 +69,42 @@ class _sign_inState extends State<sign_in> {
                     ),
                   ),
                   Positioned(
-                    left: 50,
+                    left: 0,
                     bottom: 100,
-                    width: 200,
-                    height: 20,
                     child: Container(
-                      child: RaisedButton(
-                         child: Text('Login Anon'),
-                         onPressed: () async{
-                           dynamic result = await _auth.signInAnon();
-                         if (result ==  null) {
-                           print('error signing in');
-                         } else {
-                           print('signed in');
-                           print(result.uid);
-                         }
-                           } ,
+                      padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+                      child: Form(
+                        child: Column(
+                          children: <Widget>[
+                            SizedBox(height:20.0),
+                            TextFormField(
+                              onChanged: (val){
+
+                              },
+                            ),
+                            SizedBox(height:20.0),
+                            TextFormField(
+                              obscureText: true,
+                              onChanged: (val){
+                              },
+                            ),
+                            SizedBox(height:20.0),
+                            RaisedButton(
+                              color: Colors.amberAccent[400],
+                              child: Text(
+                                'Login',
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  color: Colors.white,
+                                  fontStyle: FontStyle.italic,
+                                ),
+                              ),
+                              onPressed: () async {
+
+                              },
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -90,6 +114,10 @@ class _sign_inState extends State<sign_in> {
           ],
         ),
       ),
+    ],
+    ),
+    ),
+    ),
     );
   }
 }
