@@ -39,7 +39,7 @@ class _RegisterState extends State<Register> {
                     child: Stack(
                       children: <Widget>[
                         Positioned(
-                          right: -30,
+                          right: -10,
                           bottom: -50,
                           width: 200,
                           height: 400,
@@ -76,7 +76,7 @@ class _RegisterState extends State<Register> {
                                 children: <Widget>[
                                   SizedBox(height:10.0),
                                   TextFormField(
-                                      decoration: textInputDecoration.copyWith(hintText: 'Email',hoverColor: Colors.black12),
+                                      decoration: textInputDecoration.copyWith(hintText: 'Email'),
                                     validator: (val) => val.isEmpty ? 'Enter an email' : null,
                                       onChanged: (val){
                                         setState(() => email = val);
@@ -84,7 +84,7 @@ class _RegisterState extends State<Register> {
                                   ),
                                   SizedBox(height:10.0),
                                   TextFormField(
-                                    decoration: textInputDecoration.copyWith(hintText: 'Password',hoverColor: Colors.black12),
+                                    decoration: textInputDecoration.copyWith(hintText: 'Password'),
                                     validator: (val) => val.length < 6 ? 'Enter a password 6+ chars long' : null,
                                     obscureText: true,
                                     onChanged: (val){
@@ -118,7 +118,6 @@ class _RegisterState extends State<Register> {
                                   ),
                                   SizedBox(height:2.0),
                                   FlatButton(
-                                    color: Colors.white,
                                     child: Text(
                                       'Already have an account?',
                                       style: TextStyle(
