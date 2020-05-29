@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whereisevery1/services/auth.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -54,10 +55,25 @@ class _HomeState extends State<Home> {
 }
 
 class HomePage extends StatelessWidget {
+  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('Home'),
+    return Scaffold(
+        backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: Text('Where is EveryOne'),
+        backgroundColor: Colors.amberAccent[100],
+        elevation: 0.0,
+        actions: <Widget>[
+          FlatButton.icon(
+              onPressed: () async{
+                await _auth.signOut();
+              },
+              icon: Icon(Icons.person),
+              label: Text('logout'),
+          )
+        ],
+      ),
     );
   }
 }

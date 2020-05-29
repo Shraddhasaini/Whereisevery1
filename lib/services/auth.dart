@@ -28,5 +28,14 @@ class AuthService{
   }
   //signin with email pass
   //register with email passs
+
   //signout
+  Future signOut() async{
+    try{
+      return await _auth.signOut();
+    } catch(e){
+      print(e.toString());
+      return null;
+    }
+  }
 }
