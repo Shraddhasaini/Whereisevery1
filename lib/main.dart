@@ -49,7 +49,7 @@ class _SplashState extends State<Splash> {
                 children: <Widget>[
                   Center(
                     child: TweenAnimationBuilder(
-                      duration: Duration(milliseconds: 600),
+                      duration: Duration(seconds: 2),
                       tween: Tween<double>(begin: 0,end: 1),
                       builder: (_, double size, __){
                         return Transform.scale(scale: size,
