@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whereisevery1/models/status.dart';
 import 'package:provider/provider.dart';
+import 'package:whereisevery1/screens/home/status_tile.dart';
 
 class StatusList extends StatefulWidget {
   @override
@@ -12,12 +13,14 @@ class _StatusListState extends State<StatusList> {
   Widget build(BuildContext context) {
 
     final statuses = Provider.of<List<Status>>(context);
-    statuses.forEach((status) {
-      print(status.name);
-      print(status.location);
-      print(status.status);
-    });
 
-    return Container();
+    return ListView.builder(
+      itemCount: statuses.length,
+        itemBuilder: (context, index){
+
+        return StatusTile(status: statuses[index]);
+        },
+
+    );
   }
 }

@@ -63,6 +63,15 @@ class HomePage extends StatelessWidget {
   final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
+
+    void _showSettingsPanel(){
+      showModalBottomSheet(context: context, builder: (context){
+        return Container(
+          child: Text('bottom Sheet'),
+        );
+      });
+    }
+
     return StreamProvider<List<Status>>.value(
       value: DatabaseService().statuses,
       child: Scaffold(
@@ -73,11 +82,16 @@ class HomePage extends StatelessWidget {
           elevation: 0.0,
           actions: <Widget>[
             FlatButton.icon(
+              icon: Icon(Icons.person),
+              label: Text('logout'),
                 onPressed: () async{
                   await _auth.signOut();
                 },
-                icon: Icon(Icons.person),
-                label: Text('logout'),
+            ),
+            FlatButton.icon(
+              icon: Icon(Icons.settings),
+              label: Text('settings'),
+              onPressed: () => _showSettingsPanel(),
             )
           ],
         ),
