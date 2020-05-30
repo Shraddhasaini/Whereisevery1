@@ -12,7 +12,7 @@ class _StatusListState extends State<StatusList> {
   @override
   Widget build(BuildContext context) {
 
-    final statuses = Provider.of<List<Status>>(context);
+    final statuses = Provider.of<List<Status>>(context) ?? [];
 
     return ListView.builder(
       itemCount: statuses.length,
