@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whereisevery1/models/status.dart';
+import 'package:whereisevery1/screens/home/settings.dart';
 //import 'package:whereisevery1/screens/wrapper.dart';
 import 'package:whereisevery1/services/auth.dart';
 import 'package:provider/provider.dart';
@@ -67,7 +68,8 @@ class HomePage extends StatelessWidget {
     void _showSettingsPanel(){
       showModalBottomSheet(context: context, builder: (context){
         return Container(
-          child: Text('bottom Sheet'),
+          padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 60.0),
+          child: SettingsForm(),
         );
       });
     }
