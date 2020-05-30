@@ -1,6 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:whereisevery1/screens/wrapper.dart';
+import 'package:whereisevery1/models/status.dart';
+//import 'package:whereisevery1/screens/wrapper.dart';
 import 'package:whereisevery1/services/auth.dart';
 import 'package:provider/provider.dart';
 import 'package:whereisevery1/services/database.dart';
@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
   final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<QuerySnapshot>.value(
+    return StreamProvider<List<Status>>.value(
       value: DatabaseService().statuses,
       child: Scaffold(
           backgroundColor: Colors.black,

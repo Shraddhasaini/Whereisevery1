@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:whereisevery1/models/status.dart';
 import 'package:provider/provider.dart';
 
 class StatusList extends StatefulWidget {
@@ -11,11 +11,13 @@ class _StatusListState extends State<StatusList> {
   @override
   Widget build(BuildContext context) {
 
-    final statuses = Provider.of<QuerySnapshot>(context);
-    //print(statuses.documents);
-    for (var doc in statuses.documents) {
-      print(doc.data);
-    }
+    final statuses = Provider.of<List<Status>>(context);
+    statuses.forEach((status) {
+      print(status.name);
+      print(status.location);
+      print(status.status);
+    });
+
     return Container();
   }
 }

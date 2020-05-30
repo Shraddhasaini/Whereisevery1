@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:whereisevery1/models/status.dart';
 
 class DatabaseService {
 
@@ -15,8 +16,21 @@ class DatabaseService {
     });
   }
 
+
+  //status list from snapshot
+  List<Status> _statusListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc){
+      return Status(
+        name: doc.data['name'] ?? '',
+        status: doc.data['status'] ?? 0,
+        location: doc.data['location'] ?? ''
+      );
+    }).toList();
+  }
+
   // get statuses stream
-  Stream<QuerySnapshot> get statuses {
-    return statusCollection.snapshots();
+  Stream<List<Status>> get statuses {
+    return statusCollection.snapshots()
+    .map(_statusListFromSnapshot);
   }
 }
