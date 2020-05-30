@@ -12,7 +12,7 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     Future.delayed(
-      Duration(seconds: 3),
+      Duration(milliseconds: 600),
           (){
         Navigator.push(
           context,
@@ -32,7 +32,7 @@ class _HomeState extends State<Home> {
              children: <Widget>[
            Center(
              child: TweenAnimationBuilder(
-                    duration: Duration(seconds: 2),
+                    duration: Duration(milliseconds: 200),
                    tween: Tween<double>(begin: 0,end: 1),
                   builder: (_, double size, __) {
                    return Transform.scale(scale: size,

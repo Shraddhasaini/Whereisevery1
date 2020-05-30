@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:whereisevery1/services/auth.dart';
 import 'package:whereisevery1/shared/constants.dart';
+import 'package:whereisevery1/shared/loading.dart';
 
 class sign_in extends StatefulWidget {
 
@@ -14,6 +15,7 @@ class sign_in extends StatefulWidget {
 class _sign_inState extends State<sign_in> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
+  bool loading = false;
 
   //text field state
   String email = '';
@@ -21,7 +23,7 @@ class _sign_inState extends State<sign_in> {
   String error = '';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading ? Loading() :  Scaffold(
       backgroundColor: Colors.black,
       body: Center(
         child: SingleChildScrollView( child: Column(
@@ -120,11 +122,15 @@ class _sign_inState extends State<sign_in> {
                               ),
                               onPressed: () async {
                                 if (_formKey.currentState.validate()){
+                                  setState(() => loading = true);
                                   dynamic result = await _auth.signInWithEmailAndPassword(email, password);
                                   if (result == null){
-                                    setState(() => error = 'Could not sign in!');
+                                    setState(() {
+                                      error = 'Could not sign in!';
+                                      loading = false;
+                                    });
+                                    }
                                   }
-                                }
                               },
                             ),
                             SizedBox(height: 2.0),
