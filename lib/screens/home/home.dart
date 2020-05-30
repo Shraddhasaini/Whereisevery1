@@ -1,6 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:whereisevery1/screens/wrapper.dart';
 import 'package:whereisevery1/services/auth.dart';
+import 'package:provider/provider.dart';
+import 'package:whereisevery1/services/database.dart';
+import 'package:whereisevery1/screens/home/statuslist.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -59,21 +63,25 @@ class HomePage extends StatelessWidget {
   final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: Text('Where is EveryOne'),
-        backgroundColor: Colors.amberAccent[100],
-        elevation: 0.0,
-        actions: <Widget>[
-          FlatButton.icon(
-              onPressed: () async{
-                await _auth.signOut();
-              },
-              icon: Icon(Icons.person),
-              label: Text('logout'),
-          )
-        ],
+    return StreamProvider<QuerySnapshot>.value(
+      value: DatabaseService().statuses,
+      child: Scaffold(
+          backgroundColor: Colors.black,
+        appBar: AppBar(
+          title: Text('Where is EveryOne'),
+          backgroundColor: Colors.amberAccent[100],
+          elevation: 0.0,
+          actions: <Widget>[
+            FlatButton.icon(
+                onPressed: () async{
+                  await _auth.signOut();
+                },
+                icon: Icon(Icons.person),
+                label: Text('logout'),
+            )
+          ],
+        ),
+        body: StatusList(),
       ),
     );
   }
