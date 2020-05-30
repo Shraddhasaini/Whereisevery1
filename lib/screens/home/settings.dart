@@ -9,11 +9,11 @@ class SettingsForm extends StatefulWidget {
 class _SettingsFormState extends State<SettingsForm> {
 
   final _formKey = GlobalKey<FormState>();
-  final List<int> status = [0,1,2,3,4];
+  final List<String> status = ['Working From Home','Working Remotely','on Planned Leave','on Sick Leave','out for Business Travel'];
 
   String _currentName;
   String _currentLocation;
-  int _currentStatus;
+  String _currentStatus;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class _SettingsFormState extends State<SettingsForm> {
           SizedBox(height: 20.0),
           DropdownButtonFormField(
             decoration: textInputDecoration,
-            value: _currentStatus ?? 2 ,
+            value: _currentStatus ?? 'Working From Home' ,
             items: status.map((status){
               return DropdownMenuItem(
                 value: status,

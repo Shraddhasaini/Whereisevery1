@@ -8,7 +8,7 @@ class DatabaseService {
   //collection ref
   final CollectionReference statusCollection =  Firestore.instance.collection('statuses');
 
-  Future updateUserData(String location, String name, int status) async {
+  Future updateUserData(String location, String name, String status) async {
     return await statusCollection.document(uid).setData({
       'location': location,
       'name': name,
@@ -22,7 +22,7 @@ class DatabaseService {
     return snapshot.documents.map((doc){
       return Status(
         name: doc.data['name'] ?? '',
-        status: doc.data['status'] ?? 0,
+        status: doc.data['status'] ?? '',
         location: doc.data['location'] ?? ''
       );
     }).toList();
