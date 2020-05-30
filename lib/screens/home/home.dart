@@ -97,7 +97,15 @@ class HomePage extends StatelessWidget {
             )
           ],
         ),
-        body: StatusList(),
+        body: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/image.jpg'),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: StatusList()
+        ),
       ),
     );
   }

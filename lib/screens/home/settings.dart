@@ -73,9 +73,14 @@ class _SettingsFormState extends State<SettingsForm> {
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () async {
-                    print(_currentName);
-                    print(_currentLocation);
-                    print(_currentStatus);
+                    if(_formKey.currentState.validate()) {
+                      await DatabaseService(uid: user.uid).updateUserData(
+                          _currentLocation ?? userData.location,
+                          _currentName ?? userData.name,
+                          _currentStatus ?? userData.status
+                      );
+                      Navigator.pop(context);
+                    }
                   },
                 ),
               ],
