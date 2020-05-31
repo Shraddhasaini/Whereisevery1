@@ -15,11 +15,21 @@ class StatusTile extends StatelessWidget {
         child: ListTile(
           leading: CircleAvatar(
             radius: 25.0,
-            backgroundColor: Colors.blueGrey[400],
+            backgroundColor: Colors.tealAccent[700],
           ),
-          title: Text(status.name),
+          title: Text(status.name,
+          style: TextStyle(
+          color: Colors.teal,
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.bold,
+          ),
+          ),
           isThreeLine: true,
-          subtitle: Text('status is ${status.status} and ${status.name} is currently at ${status.location}'),
+          subtitle: Text('is ${status.status} and ${status.name} is currently at ${status.location}',
+          style: TextStyle(
+            color: Colors.green,
+          ),
+          ),
         ),
       ),
     );

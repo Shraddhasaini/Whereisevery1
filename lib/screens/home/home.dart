@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whereisevery1/models/status.dart';
 import 'package:whereisevery1/screens/home/settings.dart';
@@ -78,7 +79,85 @@ class HomePage extends StatelessWidget {
       value: DatabaseService().statuses,
       child: Scaffold(
           backgroundColor: Colors.black,
-        appBar: AppBar(
+        body: CustomScrollView(
+          slivers: <Widget>[
+            SliverAppBar(
+              backgroundColor: Colors.white,
+              expandedHeight: 200.0,
+              floating: true,
+              pinned: true,
+              flexibleSpace:  FlexibleSpaceBar(
+                title: Text('StatusNeo',
+                  style: TextStyle(
+                    color: Colors.teal,
+                    fontSize: 18.0,
+                    fontFamily: 'Montserrat'
+                  ),
+                ),
+                background: Image.asset('assets/sliverdesk.png',
+                fit: BoxFit.contain,),
+              ),
+              actions: <Widget>[
+                FlatButton.icon(
+                  icon: Icon(Icons.person,
+                  color: Colors.teal,
+                  ),
+                  label: Text('logout',
+                    style:TextStyle(
+                        color: Colors.teal,
+                        fontSize: 15.0,
+                        fontFamily: 'Montserrat'
+                    ),
+                  ),
+                  onPressed: () async{
+                    await _auth.signOut();
+                  },
+                ),
+                FlatButton.icon(
+                  icon: Icon(Icons.settings,
+                  color: Colors.teal,),
+                  label: Text('Settings',
+                    style:TextStyle(
+                        color: Colors.teal,
+                        fontSize: 15.0,
+                        fontFamily: 'Montserrat'
+                    ),
+                  ),
+                  onPressed: () => _showSettingsPanel(),
+                ),
+              ],
+            ),
+            SliverFillRemaining(
+              child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/sliverunsplash.jpg'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: StatusList()
+              ),
+            ),
+          ],
+        ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*appBar: AppBar(
           title: Text('Where is EveryOne'),
           backgroundColor: Colors.amberAccent[100],
           elevation: 0.0,
@@ -105,7 +184,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             child: StatusList()
-        ),
+        ),*/
       ),
     );
   }
