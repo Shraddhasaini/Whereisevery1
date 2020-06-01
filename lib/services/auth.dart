@@ -56,10 +56,9 @@ class AuthService{
     }
   }
 
-  //login with google
+  //Register with google
   Future googleSignIn() async {
     try{
-      print('trying to sign in');
       GoogleSignInAccount googleUser = await _googleSignIn.signIn();
       GoogleSignInAuthentication googleAuth = await googleUser.authentication;
       final AuthCredential credential = GoogleAuthProvider.getCredential(
@@ -69,6 +68,7 @@ class AuthService{
       AuthResult result = await _auth.signInWithCredential(credential);
       FirebaseUser user =  result.user;
       print("signed in " + user.displayName);
+      //create a document for user with ui
       //create a document for user with uid
       await DatabaseService(uid: user.uid).updateUserData('rohtak', _googleSignIn.currentUser.displayName , 'Working From Home');
       return _userFromFirebaseUser(user);
@@ -77,6 +77,27 @@ class AuthService{
       return null;
     }
   }
+
+// login with Google
+   Future googleSignIn1() async {
+     try{
+       print('trying to sign in');
+       GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+       GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+       final AuthCredential credential = GoogleAuthProvider.getCredential(
+           accessToken: googleAuth.accessToken,
+           idToken: googleAuth.idToken
+       );
+       AuthResult result = await _auth.signInWithCredential(credential);
+       FirebaseUser user =  result.user;
+       print("signed in " + user.displayName);
+       //create a document for user with uid
+       return _userFromFirebaseUser(user);
+     } catch(e){
+       print(e.toString());
+       return null;
+     }
+   }
 
   //signout
   Future signOut() async{

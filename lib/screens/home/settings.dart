@@ -87,9 +87,11 @@ class _SettingsFormState extends State<SettingsForm> {
             ),
           );
         } else{
-                return Loading();
+                return Text(
+                  'You are in View-mode. To update your information you need to register your account',
+                  style: TextStyle(fontSize: 18.0),
+                );
         }
-
       }
     );
   }

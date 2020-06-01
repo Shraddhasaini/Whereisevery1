@@ -82,6 +82,31 @@ class _sign_inState extends State<sign_in> {
                     ),
                   ),
                   Positioned(
+                    left: 10,
+                    bottom: 10,
+                    width: 60,
+                    height: 60,
+                    child: RaisedButton(
+                      color: Colors.amberAccent[100],
+                      child: Text(
+                        'G',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          color: Colors.black,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                      onPressed: () async {
+                        dynamic result = await _auth.googleSignIn1();
+                        if (result == null){
+                          setState(() { error = 'please supply a valid email';
+                          loading = false;
+                          });
+                        }
+                      },
+                    ),
+                  ),
+                  Positioned(
                     left: 0,
                     bottom: 0,
                     child: Container(
@@ -143,7 +168,7 @@ class _sign_inState extends State<sign_in> {
                             FlatButton(
                               //color: Colors.black,
                               child: Text(
-                                '       Do not have an account?',
+                                '       Register your account',
                                 style: TextStyle(
                                   fontFamily: 'Montserrat',
                                   color: Colors.amberAccent[400],
