@@ -82,31 +82,6 @@ class _sign_inState extends State<sign_in> {
                     ),
                   ),
                   Positioned(
-                    left: 10,
-                    bottom: 10,
-                    width: 60,
-                    height: 60,
-                    child: RaisedButton(
-                      color: Colors.amberAccent[100],
-                      child: Text(
-                        'G',
-                        style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          color: Colors.black,
-                          fontStyle: FontStyle.italic,
-                        ),
-                      ),
-                      onPressed: () async {
-                        dynamic result = await _auth.googleSignIn1();
-                        if (result == null){
-                          setState(() { error = 'please supply a valid email';
-                          loading = false;
-                          });
-                        }
-                      },
-                    ),
-                  ),
-                  Positioned(
                     left: 0,
                     bottom: 0,
                     child: Container(
@@ -136,28 +111,66 @@ class _sign_inState extends State<sign_in> {
                               },
                             ),
                             SizedBox(height:10.0),
-                            RaisedButton(
-                              color: Colors.amberAccent[400],
-                              child: Text(
-                                'Login',
-                                style: TextStyle(
+                            Container(
+                              child: Row(
+                              children: <Widget>[
+                                RaisedButton(
+                                  color: Colors.amberAccent[400],
+                                  child: Text(
+                                    'Login',
+                                    style: TextStyle(
+                                      fontFamily: 'Montserrat',
+                                      color: Colors.white,
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                                  ),
+                                  onPressed: () async {
+                                    if (_formKey.currentState.validate()){
+                                      setState(() => loading = true);
+                                      dynamic result = await _auth.signInWithEmailAndPassword(email, password);
+                                      if (result == null){
+                                        setState(() {
+                                          error = 'Could not sign in!';
+                                          loading = false;
+                                        });
+                                        }
+                                      }
+                                  },
+                                ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(60, 0, 0, 0),
+                                child: Text('-OR-',style: TextStyle(
                                   fontFamily: 'Montserrat',
-                                  color: Colors.white,
+                                  color: Colors.white30,
                                   fontStyle: FontStyle.italic,
+                                ),),
+                              ),
+                              Positioned(
+                                child: Padding(
+                                  padding: const EdgeInsets.fromLTRB(50, 0, 0, 0),
+                                  child: RaisedButton(
+                                    color: Colors.white12,
+                                    child: Text(
+                                      'Google',
+                                      style: TextStyle(
+                                        fontFamily: 'Montserrat',
+                                        color: Colors.white,
+                                        fontStyle: FontStyle.italic,
+                                      ),
+                                    ),
+                                    onPressed: () async {
+                                      dynamic result = await _auth.googleSignIn();
+                                      if (result == null){
+                                        setState(() { error = 'please supply a valid email';
+                                        loading = false;
+                                        });
+                                      }
+                                    },
+                                  ),
                                 ),
                               ),
-                              onPressed: () async {
-                                if (_formKey.currentState.validate()){
-                                  setState(() => loading = true);
-                                  dynamic result = await _auth.signInWithEmailAndPassword(email, password);
-                                  if (result == null){
-                                    setState(() {
-                                      error = 'Could not sign in!';
-                                      loading = false;
-                                    });
-                                    }
-                                  }
-                              },
+                              ],
+                              ),
                             ),
                             SizedBox(height: 2.0),
                             Text(

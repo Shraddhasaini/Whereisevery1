@@ -21,7 +21,7 @@ class _SplashState extends State<Splash> {
   void initState() {
     super.initState();
     Future.delayed(
-        Duration(seconds: 2),
+        Duration(seconds: 1),
             (){
       Navigator.push(
         context,
@@ -49,11 +49,6 @@ class _SplashState extends State<Splash> {
               child: Stack(
                 children: <Widget>[
                   Center(
-                    child: TweenAnimationBuilder(
-                      duration: Duration(milliseconds: 600),
-                      tween: Tween<double>(begin: 0,end: 1),
-                      builder: (_, double size, __){
-                        return Transform.scale(scale: size,
                             child: Container(
                               decoration: BoxDecoration(
                                 image: DecorationImage(
@@ -61,9 +56,6 @@ class _SplashState extends State<Splash> {
                                 ),
                               ),
                             ),
-                        );
-                      },
-                    ),
                   ),
                 ],
               ),

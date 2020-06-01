@@ -7,6 +7,7 @@ import 'package:whereisevery1/services/auth.dart';
 import 'package:provider/provider.dart';
 import 'package:whereisevery1/services/database.dart';
 import 'package:whereisevery1/screens/home/statuslist.dart';
+import 'package:whereisevery1/shared/myappbar.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -79,7 +80,103 @@ class HomePage extends StatelessWidget {
       value: DatabaseService().statuses,
       child: Scaffold(
           backgroundColor: Colors.black,
-        body: CustomScrollView(
+        body: Center(
+          child: Container(
+            child: Column(
+                children: <Widget>[
+                Container(
+                  height: 683,
+                      child: Stack(
+                        children: <Widget>[
+                          Positioned(
+                            top: -10,
+                            bottom: 500,
+                            left: 0,
+                            right: 0,
+                            child: Container(
+                                color: Colors.amberAccent[400],),
+                          ),
+                          Positioned(
+                            child: Container(child: MyAnimation()),
+                          ),
+                          Positioned(
+                            top: -10,
+                            bottom: 550,
+                            left: 100,
+                            right: 0,
+                            child: Row(
+                              children: <Widget>[
+                                RaisedButton(
+                                  color: Colors.pink,
+                                  child: Text(
+                                    'Logout',
+                                 style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.white,
+                                fontStyle: FontStyle.italic,
+                              ),
+                            ),
+                                  onPressed: () async{
+                                    await _auth.signOut();
+                                  },
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: RaisedButton(
+                                    color: Colors.pink,
+                                    child: Text(
+                                      'Settings',
+                                      style: TextStyle(
+                                        fontFamily: 'Montserrat',
+                                        color: Colors.white,
+                                        fontStyle: FontStyle.italic,
+                                      ),
+                                    ),
+                                    onPressed: () => _showSettingsPanel(),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+         ],
+          ),
+        ),
+            ],
+          ),
+        ),
+      )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*       CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
               backgroundColor: Colors.white,
@@ -140,7 +237,7 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-
+*/
 
 
 

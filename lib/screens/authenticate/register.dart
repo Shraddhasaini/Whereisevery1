@@ -67,31 +67,6 @@ class _RegisterState extends State<Register> {
                           ),
                         ),
                         Positioned(
-                          left: 10,
-                          bottom: 10,
-                          width: 60,
-                          height: 60,
-                          child: RaisedButton(
-                              color: Colors.amberAccent[100],
-                              child: Text(
-                                'G',
-                                style: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  color: Colors.black,
-                                  fontStyle: FontStyle.italic,
-                                ),
-                              ),
-                              onPressed: () async {
-                                  dynamic result = await _auth.googleSignIn();
-                                  if (result == null){
-                                    setState(() { error = 'please supply a valid email';
-                                    loading = false;
-                                    });
-                                  }
-                              },
-                            ),
-                        ),
-                        Positioned(
                           left: 0,
                           bottom: -40,
                           child: Container(
@@ -119,28 +94,70 @@ class _RegisterState extends State<Register> {
                                     },
                                   ),
                                   SizedBox(height:10.0),
-                                  RaisedButton(
-                                    color: Colors.amberAccent[400],
-                                    child: Text(
-                                      'Register',
-                                      style: TextStyle(
-                                        fontFamily: 'Montserrat',
-                                        color: Colors.black,
-                                        fontStyle: FontStyle.italic,
+                                  Container(
+                                    child: Row(
+                                    children: <Widget>[
+                                      Positioned(
+                                        left:0,
+                                      child: RaisedButton(
+                                        color: Colors.amberAccent[400],
+                                        child: Text(
+                                          'Register',
+                                          style: TextStyle(
+                                            fontFamily: 'Montserrat',
+                                            color: Colors.black,
+                                            fontStyle: FontStyle.italic,
+                                          ),
+                                        ),
+                                        onPressed: () async {
+                                          if (_formKey.currentState.validate()){
+                                            setState(() => loading = true);
+                                            dynamic result = await _auth.registerWithEmailAndPassword(email, password);
+                                            if (result == null){
+                                                setState(() { error = 'please supply a valid email';
+                                                loading = false;
+                                                });
+                                            }
+                                          }
+                                        },
                                       ),
-                                    ),
-                                    onPressed: () async {
-                                      if (_formKey.currentState.validate()){
-                                        setState(() => loading = true);
-                                        dynamic result = await _auth.registerWithEmailAndPassword(email, password);
-                                        if (result == null){
-                                            setState(() { error = 'please supply a valid email';
-                                            loading = false;
-                                            });
-                                        }
-                                      }
-                                    },
                                   ),
+                                      Padding(
+                                        padding: const EdgeInsets.fromLTRB(40, 0, 0, 0),
+                                        child: Text('-OR-',style: TextStyle(
+                                          fontFamily: 'Montserrat',
+                                          color: Colors.black26,
+                                          fontStyle: FontStyle.italic,
+                                        ),),
+                                      ),
+                                      Positioned(
+                                          right: 10,
+                                          child: Padding(
+                                            padding: const EdgeInsets.fromLTRB(40, 0, 0, 0),
+                                            child: RaisedButton(
+                                              color: Colors.white30,
+                                              child: Text(
+                                                'Google',
+                                                style: TextStyle(
+                                                  fontFamily: 'Montserrat',
+                                                  color: Colors.black,
+                                                  fontStyle: FontStyle.italic,
+                                                ),
+                                              ),
+                                              onPressed: () async {
+                                                dynamic result = await _auth.googleSignIn();
+                                                if (result == null){
+                                                  setState(() { error = 'please supply a valid email';
+                                                  loading = false;
+                                                  });
+                                                }
+                                              },
+                                            ),
+                                          ),
+                                      ),
+                                    ]
+                                    ),
+                                    ),
                                   SizedBox(height: 2.0),
                                   Text(
                                       error,
