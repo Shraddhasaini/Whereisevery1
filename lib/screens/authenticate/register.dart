@@ -67,6 +67,31 @@ class _RegisterState extends State<Register> {
                           ),
                         ),
                         Positioned(
+                          left: 10,
+                          bottom: 10,
+                          width: 60,
+                          height: 60,
+                          child: RaisedButton(
+                              color: Colors.amberAccent[100],
+                              child: Text(
+                                'G',
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  color: Colors.black,
+                                  fontStyle: FontStyle.italic,
+                                ),
+                              ),
+                              onPressed: () async {
+                                  dynamic result = await _auth.googleSignIn();
+                                  if (result == null){
+                                    setState(() { error = 'please supply a valid email';
+                                    loading = false;
+                                    });
+                                  }
+                              },
+                            ),
+                        ),
+                        Positioned(
                           left: 0,
                           bottom: -40,
                           child: Container(

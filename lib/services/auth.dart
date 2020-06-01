@@ -4,7 +4,7 @@ import 'package:whereisevery1/services/database.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService{
-   final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
+   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // create user obj based on firebase
@@ -59,6 +59,7 @@ class AuthService{
   //login with google
   Future googleSignIn() async {
     try{
+      print('trying to sign in');
       GoogleSignInAccount googleUser = await _googleSignIn.signIn();
       GoogleSignInAuthentication googleAuth = await googleUser.authentication;
       final AuthCredential credential = GoogleAuthProvider.getCredential(

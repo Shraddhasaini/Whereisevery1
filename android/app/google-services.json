@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "88877385132-nto7nqq6ka269m73ld0h6otfdpmksnof.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "statusneo.whereisevery1",
+            "certificate_hash": "2389e6342ff5c40a85e0f5d419654f6114aa4a39"
+          }
+        },
+        {
           "client_id": "88877385132-su6u07mr7t1dus4892e2su0v4bq113k6.apps.googleusercontent.com",
           "client_type": 3
         }
