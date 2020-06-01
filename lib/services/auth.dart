@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:whereisevery1/models/users.dart';
 import 'package:whereisevery1/services/database.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService{
+   final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // create user obj based on firebase
@@ -49,6 +51,27 @@ class AuthService{
       await DatabaseService(uid: user.uid).updateUserData('rohtak', 'new member', 'Working From Home');
       return _userFromFirebaseUser(user);
     }catch(e){
+      print(e.toString());
+      return null;
+    }
+  }
+
+  //login with google
+  Future googleSignIn() async {
+    try{
+      GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+      GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+      final AuthCredential credential = GoogleAuthProvider.getCredential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken
+      );
+      AuthResult result = await _auth.signInWithCredential(credential);
+      FirebaseUser user =  result.user;
+      print("signed in " + user.displayName);
+      //create a document for user with uid
+      await DatabaseService(uid: user.uid).updateUserData('rohtak', _googleSignIn.currentUser.displayName , 'Working From Home');
+      return _userFromFirebaseUser(user);
+    } catch(e){
       print(e.toString());
       return null;
     }
