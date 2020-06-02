@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whereisevery1/models/status.dart';
+import 'package:whereisevery1/screens/authenticate/sign_in.dart';
+import 'package:whereisevery1/screens/home/logoutpop.dart';
 import 'package:whereisevery1/screens/home/settings.dart';
 import 'package:whereisevery1/screens/home/sidedrawer.dart';
 //import 'package:whereisevery1/screens/wrapper.dart';
@@ -78,17 +80,17 @@ class HomePage extends StatelessWidget {
       });
     }
 
-    void _showSideDrawer(){
+    /*void _showLogoutPanel(){
       //showModalBottomSheet(context: context, builder: (context){
        showCupertinoModalPopup(context: context, builder: (context){
         return Container(
           padding: EdgeInsets.fromLTRB(0,0,200,0),
           //padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 20.0),
-          child: CustomDrawer(),
+          child: LogOut(),
         );
       });
     }
-
+*/
     return StreamProvider<List<Status>>.value(
       value: DatabaseService().statuses,
       child: Scaffold(
@@ -203,7 +205,15 @@ class HomePage extends StatelessWidget {
                             left: 10,
                             right: 330,
                             child: FlatButton(
-                              onPressed: () => _showSideDrawer(),
+                              onPressed: () async{
+                                await _auth.signOut();
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder:(context) => sign_in(),
+                                  ),
+                                );
+                              },
                                 child: Image.asset('assets/iconlogo.png'),
                             ),
                           ),

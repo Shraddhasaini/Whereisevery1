@@ -1,13 +1,26 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:whereisevery1/models/status.dart';
+import 'package:whereisevery1/screens/home/settingPage.dart';
 import 'package:whereisevery1/screens/home/settings.dart';
+import 'package:whereisevery1/screens/home/sidedrawer.dart';
+//import 'package:whereisevery1/screens/wrapper.dart';
+import 'package:whereisevery1/services/auth.dart';
+import 'package:provider/provider.dart';
+import 'package:whereisevery1/services/database.dart';
+import 'package:whereisevery1/screens/home/statuslist.dart';
+import 'package:whereisevery1/shared/myappbar.dart';
+import 'package:whereisevery1/shared/username.dart';
 
 class CustomDrawer extends StatelessWidget {
   List<Color> _colors = [Colors.white , Colors.amberAccent[100]];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
+    return StreamProvider<List<Status>>.value(
+      value: DatabaseService().statuses,
+    child: Drawer(
+      child: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: _colors,
@@ -68,13 +81,21 @@ class CustomDrawer extends StatelessWidget {
               child: FlatButton.icon(
                 icon: Icon(Icons.settings),
                 label: Text('settings'),
-                onPressed: () => (),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder:(context) => SettingsFormPage(),
+                    ),
+                  );
+                } ,
               )
               ),
-            ),
+
           ],
         ),
-      ),
+        ),
+    ),
     );
   }
 }
