@@ -5,7 +5,6 @@ class StatusTile extends StatelessWidget {
 
   final Status status;
   StatusTile({this.status});
-
   @override
   Widget build(BuildContext context) {
     return Padding(

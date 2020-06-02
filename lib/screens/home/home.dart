@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:whereisevery1/services/database.dart';
 import 'package:whereisevery1/screens/home/statuslist.dart';
 import 'package:whereisevery1/shared/myappbar.dart';
+import 'package:whereisevery1/shared/username.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -94,48 +95,76 @@ class HomePage extends StatelessWidget {
                             left: 0,
                             right: 0,
                             child: Container(
-                                color: Colors.amberAccent[400],),
+                                color: Colors.amberAccent[100],),
                           ),
                           Positioned(
                             child: Container(child: MyAnimation()),
                           ),
                           Positioned(
-                            top: -10,
-                            bottom: 550,
-                            left: 100,
+                            top: 0,
+                            bottom: 600,
+                            left: 70,
                             right: 0,
-                            child: Row(
-                              children: <Widget>[
-                                RaisedButton(
-                                  color: Colors.pink,
-                                  child: Text(
-                                    'Logout',
-                                 style: TextStyle(
-                                fontFamily: 'Montserrat',
-                                color: Colors.white,
-                                fontStyle: FontStyle.italic,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/Ologowie.png'),
+                                ),
                               ),
                             ),
-                                  onPressed: () async{
-                                    await _auth.signOut();
-                                  },
+                          ),
+                          Positioned(
+                            top: 60,
+                            bottom: 580,
+                            left: 100,
+                            right: 0,
+                            child: FlatButton(
+                                onPressed: () => _showSettingsPanel(),
+                              child: UserName()
+                            ),
+                          ),
+                          Positioned(
+                            top: 400,
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            child: StatusList(),
+                          ),
+                          Positioned(
+                            top: 130,
+                            bottom: 350,
+                            left: 140,
+                            right: 0,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/statuslist.png'),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: RaisedButton(
-                                    color: Colors.pink,
-                                    child: Text(
-                                      'Settings',
-                                      style: TextStyle(
-                                        fontFamily: 'Montserrat',
-                                        color: Colors.white,
-                                        fontStyle: FontStyle.italic,
-                                      ),
-                                    ),
-                                    onPressed: () => _showSettingsPanel(),
-                                  ),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 170,
+                            bottom: 460,
+                            left: 0,
+                            right: 250,
+                            child: Container(
+                              color: Colors.pink,
+                            ),
+                          ),
+                          Positioned(
+                            top: 280,
+                            bottom: 350,
+                            left: 40,
+                            right: 200,
+                            child: Container(
+                              child: Text('Status',
+                                style: TextStyle(fontSize: 40.0,
+                                  fontFamily: 'Montserrat',
+                                  color: Colors.amberAccent[400],
+                                  fontWeight: FontWeight.bold,
                                 ),
-                              ],
+                              ),
                             ),
                           ),
          ],

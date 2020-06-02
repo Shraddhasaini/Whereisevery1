@@ -156,7 +156,7 @@ class _MyAnimationState extends State<MyAnimation>
   void initState() {
     super.initState();
     _controller = AnimationController(
-        duration: Duration(seconds: 3),
+        duration: Duration(seconds: 20),
         vsync: this)..repeat();
 
     animation = Tween<double>(begin: -500, end: 0).animate(_controller);
