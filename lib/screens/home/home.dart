@@ -117,8 +117,8 @@ class HomePage extends StatelessWidget {
                           Positioned(
                             top: 0,
                             bottom: 600,
-                            left: 70,
-                            right: 0,
+                            left: 0,
+                            right: 70,
                             child: Container(
                               decoration: BoxDecoration(
                                 image: DecorationImage(
@@ -130,8 +130,8 @@ class HomePage extends StatelessWidget {
                           Positioned(
                             top: 60,
                             bottom: 580,
-                            left: 100,
-                            right: 0,
+                            left: 0,
+                            right: 200,
                             child: FlatButton(
                                 onPressed: () => _showSettingsPanel(),
                               child: UserName()
@@ -202,19 +202,30 @@ class HomePage extends StatelessWidget {
                           Positioned(
                             top: 10,
                             bottom: 600,
-                            left: 10,
-                            right: 330,
+                            left: 330,
+                            right: 10,
                             child: FlatButton(
                               onPressed: () async{
-                                await _auth.signOut();
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder:(context) => sign_in(),
                                   ),
                                 );
+                                await _auth.signOut();
                               },
                                 child: Image.asset('assets/iconlogo.png'),
+                            ),
+                          ),
+                          Positioned(
+                            top: 66,
+                            bottom: 600,
+                            left: 345,
+                            right: 0,
+                            child: Text('logout',
+                              style: TextStyle(fontSize: 13.0,
+                                fontFamily: 'Montserrat'
+                              ),
                             ),
                           ),
                        ],
