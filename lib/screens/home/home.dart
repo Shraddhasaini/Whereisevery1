@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 import 'package:whereisevery1/services/database.dart';
 import 'package:whereisevery1/screens/home/statuslist.dart';
 import 'package:whereisevery1/shared/myappbar.dart';
+import 'package:whereisevery1/shared/searchbyname.dart';
 import 'package:whereisevery1/shared/username.dart';
 
 class Home extends StatefulWidget {
@@ -162,9 +163,7 @@ class HomePage extends StatelessWidget {
                             bottom: 300,
                             left: 10,
                             right: 10,
-                            child: Container(
-                              color: Colors.pink,
-                            ),
+                            child: SearchByName(),
                           ),
                           Positioned(
                             top: 240,

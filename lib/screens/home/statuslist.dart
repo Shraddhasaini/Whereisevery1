@@ -19,7 +19,6 @@ class _StatusListState extends State<StatusList> {
         itemBuilder: (context, index){
         return StatusTile(status: statuses[index]);
         },
-
     );
   }
 }
