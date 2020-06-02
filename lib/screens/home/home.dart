@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whereisevery1/models/status.dart';
 import 'package:whereisevery1/screens/home/settings.dart';
+import 'package:whereisevery1/screens/home/sidedrawer.dart';
 //import 'package:whereisevery1/screens/wrapper.dart';
 import 'package:whereisevery1/services/auth.dart';
 import 'package:provider/provider.dart';
@@ -77,6 +78,17 @@ class HomePage extends StatelessWidget {
       });
     }
 
+    void _showSideDrawer(){
+      //showModalBottomSheet(context: context, builder: (context){
+       showCupertinoModalPopup(context: context, builder: (context){
+        return Container(
+          padding: EdgeInsets.fromLTRB(0,0,200,0),
+          //padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 20.0),
+          child: CustomDrawer(),
+        );
+      });
+    }
+
     return StreamProvider<List<Status>>.value(
       value: DatabaseService().statuses,
       child: Scaffold(
@@ -144,21 +156,21 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: 170,
-                            bottom: 460,
-                            left: 0,
-                            right: 250,
+                            top: 345,
+                            bottom: 300,
+                            left: 10,
+                            right: 10,
                             child: Container(
                               color: Colors.pink,
                             ),
                           ),
                           Positioned(
-                            top: 280,
-                            bottom: 350,
-                            left: 40,
-                            right: 200,
+                            top: 240,
+                            bottom: 380,
+                            left: 20,
+                            right: 230,
                             child: Container(
-                              child: Text('Status',
+                             child: Text('Status',
                                 style: TextStyle(fontSize: 40.0,
                                   fontFamily: 'Montserrat',
                                   color: Colors.amberAccent[400],
@@ -167,13 +179,41 @@ class HomePage extends StatelessWidget {
                               ),
                             ),
                           ),
-         ],
-          ),
-        ),
-            ],
-          ),
-        ),
-      )
+                          Positioned(
+                            top: 300,
+                            bottom: 345,
+                            left: 10,
+                            right: 100,
+                            child: Container(
+                              color: Colors.yellow,
+                            ),
+                          ),
+                          Positioned(
+                            top: 170,
+                            bottom: 460,
+                            left: 0,
+                            right: 250,
+                            child: Container(
+                              color: Colors.green,
+                            ),
+                          ),
+                          Positioned(
+                            top: 10,
+                            bottom: 600,
+                            left: 10,
+                            right: 330,
+                            child: FlatButton(
+                              onPressed: () => _showSideDrawer(),
+                                child: Image.asset('assets/iconlogo.png'),
+                            ),
+                          ),
+                       ],
+                        ),
+                      ),
+                          ],
+                        ),
+                      ),
+                    ),
 
 
 

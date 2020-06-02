@@ -9,7 +9,7 @@ class UserName extends StatefulWidget {
 }
 
 class _UserNameState extends State<UserName> {
-  String _currentName;
+  //String _currentName;
 
   @override
   Widget build(BuildContext context) {
