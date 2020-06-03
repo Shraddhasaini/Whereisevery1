@@ -97,6 +97,7 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
           backgroundColor: Colors.black,
         body: Center(
+          child: SingleChildScrollView(
           child: Container(
             child: Column(
                 children: <Widget>[
@@ -371,6 +372,7 @@ class HomePage extends StatelessWidget {
             ),
             child: StatusList()
         ),*/
+      ),
       ),
     );
   }

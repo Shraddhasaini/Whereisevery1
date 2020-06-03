@@ -17,7 +17,6 @@ class DatabaseService {
     });
   }
 
-
   //status list from snapshot
   List<Status> _statusListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc){

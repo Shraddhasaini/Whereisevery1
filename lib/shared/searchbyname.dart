@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whereisevery1/screens/authenticate/register.dart';
+import 'package:whereisevery1/screens/home/searchModal.dart';
+import 'package:whereisevery1/screens/home/status_tile.dart';
+import 'package:whereisevery1/screens/home/statuslist.dart';
 import 'package:whereisevery1/shared/constants.dart';
 
 class SearchByName extends StatefulWidget {
@@ -10,30 +13,16 @@ class SearchByName extends StatefulWidget {
 class _SearchByNameState extends State<SearchByName> {
   TextEditingController editingController = TextEditingController();
 
- /* void filterSearchResults(String query) {
-    List<String> dummySearchList = List<String>();
-    dummySearchList.addAll(duplicateItems);
+  void filterSearchResults(String query) {
     if(query.isNotEmpty) {
-      void _showSearchResult(){
-        showModalBottomSheet(context: context, builder: (context){
+        showModalBottomSheet(context: context, builder: (context) {
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 60.0),
-            child: SearchResult(),
+            padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
+            child: SearchModal(name: query),
           );
         });
-      }
-      });
-      setState(() {
-        items.clear();
-        items.addAll(dummyListData);
-      });
-      return;
-    } else {
-      setState(() {
-        items.clear();
-        items.addAll(duplicateItems);
-      });
-    }*/
+    }
+    }
 
     @override
   Widget build(BuildContext context) {
@@ -47,12 +36,7 @@ class _SearchByNameState extends State<SearchByName> {
       //},
       onSubmitted: (value) {
           //checkedit
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder:(context) => Register(),
-          ),
-        );
+        filterSearchResults(value);
     },
       controller: editingController,
         decoration: textInputDecoration.copyWith(
