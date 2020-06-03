@@ -7,7 +7,8 @@ class StatusTile extends StatelessWidget {
   StatusTile({this.status});
   @override
   Widget build(BuildContext context) {
-    if (status.status == 'Working From Home'){
+    switch(status.status) {
+      case 'Working From Home': {
     return Padding(
       padding: EdgeInsets.only(top: 8.0),
       child: Card(
@@ -16,56 +17,195 @@ class StatusTile extends StatelessWidget {
         child: ListTile(
           leading: CircleAvatar(
             radius: 25.0,
-            backgroundImage: AssetImage('assets/iconlogo.png'),
-            //backgroundColor: Colors.tealAccent[700],
+            //backgroundImage: AssetImage('assets/plantstatus.png'),
+            backgroundColor: Colors.white30,
           ),
           title: Text(status.name,
-          style: TextStyle(
-          color: Colors.amberAccent[400],
-            fontFamily: 'Montserrat',
-            fontWeight: FontWeight.bold,
-          ),
+            style: TextStyle(
+              color: Colors.yellowAccent[400],
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.bold,
+            ),
           ),
           isThreeLine: true,
-          subtitle: Text('is ${status.status} and ${status.name} is currently at ${status.location}',
-          style: TextStyle(
-            color: Colors.white,
-          ),
+          subtitle: Text(
+            'is ${status.status} and ${status.name} is currently at ${status
+                .location}',
+            style: TextStyle(
+              color: Colors.yellowAccent[100],
+            ),
           ),
         ),
       ),
     );}
-    else {
-      return Padding(
-        padding: EdgeInsets.only(top: 8.0),
-        child: Card(
-          color: Colors.white10,
-          margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
-          child: ListTile(
-            leading: CircleAvatar(
-              radius: 25.0,
-              //backgroundImage: AssetImage('assets/iconlogo.png'),
-              backgroundColor: Colors.tealAccent[700],
-            ),
-            title: Text(status.name,
-              style: TextStyle(
-                color: Colors.teal,
-                fontFamily: 'Montserrat',
-                fontWeight: FontWeight.bold,
+    break;
+
+      case 'Working in Office': {
+        return Padding(
+          padding: EdgeInsets.only(top: 8.0),
+          child: Card(
+            color: Colors.white10,
+            margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
+            child: ListTile(
+              leading: CircleAvatar(
+                radius: 25.0,
+                //backgroundImage: AssetImage('assets/iconlogo.png'),
+                backgroundColor: Colors.tealAccent[700],
               ),
-            ),
-            isThreeLine: true,
-            subtitle: Text('is ${status.status} and ${status.name} is currently at ${status.location}',
-              style: TextStyle(
-                color: Colors.green,
+              title: Text(status.name,
+                style: TextStyle(
+                  color: Colors.tealAccent[400],
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              isThreeLine: true,
+              subtitle: Text(
+                'is ${status.status} and ${status.name} is currently at ${status
+                    .location}',
+                style: TextStyle(
+                  color: Colors.tealAccent[100],
+                ),
               ),
             ),
           ),
-        ),
-      );
-    }
+        );}
+      break;
+
+      case 'on Planned Leave': {
+        return Padding(
+          padding: EdgeInsets.only(top: 8.0),
+          child: Card(
+            color: Colors.white10,
+            margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
+            child: ListTile(
+              leading: CircleAvatar(
+                radius: 25.0,
+                //backgroundImage: AssetImage('assets/iconlogo.png'),
+                backgroundColor: Colors.pinkAccent,
+              ),
+              title: Text(status.name,
+                style: TextStyle(
+                  color: Colors.pinkAccent[400],
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              isThreeLine: true,
+              subtitle: Text(
+                'is ${status.status} and ${status.name} is currently at ${status
+                    .location}',
+                style: TextStyle(
+                  color: Colors.pinkAccent[100],
+                ),
+              ),
+            ),
+          ),
+        );}
+      break;
+
+
+      case 'on Sick Leave': {
+        return Padding(
+          padding: EdgeInsets.only(top: 8.0),
+          child: Card(
+            color: Colors.white10,
+            margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
+            child: ListTile(
+              leading: CircleAvatar(
+                radius: 25.0,
+                //backgroundImage: AssetImage('assets/iconlogo.png'),
+                backgroundColor: Colors.lightGreenAccent,
+              ),
+              title: Text(status.name,
+                style: TextStyle(
+                  color: Colors.lightGreenAccent[400],
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              isThreeLine: true,
+              subtitle: Text(
+                'is ${status.status} and ${status.name} is currently at ${status
+                    .location}',
+                style: TextStyle(
+                  color: Colors.lightGreenAccent[100],
+                ),
+              ),
+            ),
+          ),
+        );}
+      break;
+
+
+      case 'out for Business Travel': {
+        return Padding(
+          padding: EdgeInsets.only(top: 8.0),
+          child: Card(
+            color: Colors.white10,
+            margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
+            child: ListTile(
+              leading: CircleAvatar(
+                radius: 25.0,
+                //backgroundImage: AssetImage('assets/iconlogo.png'),
+                backgroundColor: Colors.cyan,
+              ),
+              title: Text(status.name,
+                style: TextStyle(
+                  color: Colors.cyanAccent[400],
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              isThreeLine: true,
+              subtitle: Text(
+                'is ${status.status} and ${status.name} is currently at ${status
+                    .location}',
+                style: TextStyle(
+                  color: Colors.cyanAccent[100],
+                ),
+              ),
+            ),
+          ),
+        );}
+      break;
+
+  }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class FilterStatusTile extends StatelessWidget {

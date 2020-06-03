@@ -140,6 +140,20 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           Positioned(
+                            top: 350,
+                            bottom: -50,
+                            left: 160,
+                            right: 0,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/plantstatus.png'),
+                                  fit: BoxFit.fitHeight
+                                ),
+                              ),
+                            ),
+                          ),
+                          Positioned(
                             top: 400,
                             bottom: 0,
                             left: 0,
