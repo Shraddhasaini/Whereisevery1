@@ -14,7 +14,7 @@ class SettingsForm extends StatefulWidget {
 class _SettingsFormState extends State<SettingsForm> {
 
   final _formKey = GlobalKey<FormState>();
-  final List<String> status = ['Working From Home','Working Remotely','on Planned Leave','on Sick Leave','out for Business Travel'];
+  final List<String> status = ['Working From Home','Working in Office','on Planned Leave','on Sick Leave','out for Business Travel'];
 
   String _currentName;
   String _currentLocation;
