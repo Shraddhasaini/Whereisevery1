@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:whereisevery1/models/status.dart';
 import 'package:provider/provider.dart';
 import 'package:whereisevery1/screens/home/status_tile.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FilterStatusList extends StatefulWidget {
   @override
@@ -12,12 +14,12 @@ class _FilterListState extends State<FilterStatusList> {
   @override
   Widget build(BuildContext context) {
 
-    final statuses = Provider.of<List<Status>>(context) ?? [];
+    final filterstatuses = Provider.of<List<Filter>>(context) ?? [];
 
     return ListView.builder(
-      itemCount: statuses.length,
+      itemCount: filterstatuses.length,
       itemBuilder: (context, index){
-        return StatusTile(status: statuses[index]);
+        return FilterStatusTile(status: filterstatuses[index]);
       },
     );
   }

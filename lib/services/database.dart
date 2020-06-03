@@ -17,6 +17,19 @@ class DatabaseService {
     });
   }
 
+  //filter
+
+  List<Filter> _filterListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc){
+      return Filter(
+          name: doc.data['name'] ?? '',
+          status: doc.data['status'] ?? '',
+          location: doc.data['location'] ?? ''
+      );
+    }).toList();
+  }
+
+
   //status list from snapshot
   List<Status> _statusListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc){
@@ -36,6 +49,11 @@ class DatabaseService {
       location: snapshot.data['location'],
       status: snapshot.data['status']
     );
+  }
+  // get filtered statuses stream
+  Stream<List<Filter>> get filtered {
+    return statusCollection.where('name', isEqualTo: 'Oshima').snapshots()
+        .map(_filterListFromSnapshot);
   }
 
   // get statuses stream
