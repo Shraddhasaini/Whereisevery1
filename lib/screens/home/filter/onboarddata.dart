@@ -1,0 +1,55 @@
+import 'dart:ui';
+import 'package:whereisevery1/screens/home/filter/onboardmodel.dart';
+
+List<OnboardPageModel> onboardData  = [
+  OnboardPageModel(
+    Color(0xFF39393A),
+    Color(0xFFE6E6E6),
+    Color(0xFF005699),
+    1,
+    'assets/teal.jpg',
+    'EDUCATIONAL',
+    'PROGRAMMING',
+    'Learn coding with examples, in a fun, somewhat structured, way. Enjoy!',
+  ),
+  OnboardPageModel(
+    Color(0xFFE6E6E6),
+    Color(0xFF005699),
+    Color(0xFFFFE074),
+    2,
+    'assets/blue.jpg',
+    'EXPLORING',
+    'FLUTTER',
+    'On this channel we try and build fun stuff using Flutter and Dart. Subscribe for more content and let me know what you think in the comments!',
+  ),
+  OnboardPageModel(
+    Color(0xFF005699),
+    Color(0xFFFFE074),
+    Color(0xFF39393A),
+    2,
+    'assets/pink.jpg',
+    'ANIMATING',
+    'FLARE',
+    'Making Flare animations and incorporating it into Flutter. Mobile animations have never been so easy!',
+  ),
+  OnboardPageModel(
+    Color(0xFFFFE074),
+    Color(0xFF39393A),
+    Color(0xFFE6E6E6),
+    1,
+    'assets/yellow.jpg',
+    'DESIGN AND',
+    'ANIMATION',
+    'Recreating and imagining our own designs and animations to create custom effects and widgets.',
+  ),
+  OnboardPageModel(
+    Color(0xFF39393A),
+    Color(0xFFE6E6E6),
+    Color(0xFF005699),
+    0,
+    'assets/green.jpg',
+    'EDUCATIONAL',
+    'PROGRAMMING',
+    'Learn coding with examples, in a fun, somewhat structured, way. Enjoy!',
+  ),
+];

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whereisevery1/models/status.dart';
 import 'package:whereisevery1/screens/authenticate/sign_in.dart';
+import 'package:whereisevery1/screens/home/filter/onboarding.dart';
 import 'package:whereisevery1/screens/home/logoutpop.dart';
 import 'package:whereisevery1/screens/home/settings.dart';
 import 'package:whereisevery1/screens/home/sidedrawer.dart';
@@ -200,8 +201,16 @@ class HomePage extends StatelessWidget {
                             bottom: 345,
                             left: 10,
                             right: 100,
-                            child: Container(
-                              color: Colors.yellow,
+                            child: FlatButton(
+                              color: Colors.purple,
+                              onPressed: () async{
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder:(context) => OnboardingHome(),
+                                  ),
+                                );
+                              },
                             ),
                           ),
                           Positioned(
