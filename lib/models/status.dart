@@ -14,3 +14,12 @@ class Filter {
   final String status;
   Filter({ this.name, this.location, this.status});
 }
+
+
+class Onboard {
+  //final String search;
+  final String name;
+  final String location;
+  final String status;
+  Onboard({ this.name, this.location, this.status});
+}

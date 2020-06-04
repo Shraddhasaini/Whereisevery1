@@ -1,89 +1,170 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:whereisevery1/screens/home/filter/colorprovider.dart';
-import 'package:whereisevery1/screens/home/filter/onboarddata.dart';
-import 'package:whereisevery1/screens/home/filter/onboardpage.dart';
-import 'package:whereisevery1/screens/home/filter/pageviewindicator.dart';
-import 'package:whereisevery1/screens/home/home.dart';
 
 class OnboardingHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ChangeNotifierProvider(
-        builder: (context) => ColorProvider(),
-        child: Onboarding(),
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Container(
+          child: Stack(
+            children: <Widget>[
+          Positioned(
+            top: 100,
+            bottom: 450,
+            left: 10,
+            right: 200,
+            child: FlatButton(
+              onPressed: () {},
+              child: Container(
+                color: Colors.lime,
+              ),
+            ),
+          ),
+              Positioned(
+                top: 200,
+                bottom: 450,
+                left: 10,
+                right: 200,
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Container(
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 200,
+                bottom: 350,
+                left: 200,
+                right: 10,
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Container(
+                    color: Colors.purple,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 300,
+                bottom: 350,
+                left: 200,
+                right: 10,
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Container(
+                    color: Colors.pink,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 300,
+                bottom: 250,
+                left: 10,
+                right: 200,
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Container(
+                    color: Colors.orange,
+                  ),
+                ),
+              ),Positioned(
+                top: 400,
+                bottom: 250,
+                left: 10,
+                right: 200,
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Container(
+                    color: Colors.blue,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 400,
+                bottom: 150,
+                left: 200,
+                right: 10,
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Container(
+                    color: Colors.red,
+                  ),
+                ),
+              ),Positioned(
+                top: 500,
+                bottom: 150,
+                left: 200,
+                right: 10,
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Container(
+                    color: Colors.tealAccent,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 500,
+                bottom: 50,
+                left: 10,
+                right: 200,
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Container(
+                    color: Colors.yellow,
+                  ),
+                ),
+              ),Positioned(
+                top: 600,
+                bottom: 50,
+                left: 10,
+                right: 200,
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Container(
+                    color: Colors.amberAccent,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 620,
+                bottom: 10,
+                left: 300,
+                right: 10,
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Container(
+                    color: Colors.blue,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 20,
+                bottom: 500,
+                left: 200,
+                right: 10,
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Container(
+                    color: Colors.pink,
+                  ),
+                ),
+              ),Positioned(
+                top: 20,
+                bottom: 600,
+                left: 10,
+                right: 200,
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Container(
+                    color: Colors.cyanAccent,
+                  ),
+                ),
+              ),
+          ],
+        ),
+        ),
       ),
-    );
-  }
-}
-
-
-class Onboarding extends StatelessWidget{
-  final PageController pageController = PageController();
-
-  @override
-  Widget build(BuildContext context) {
-    ColorProvider colorProvider = Provider.of<ColorProvider>(context);
-    return Stack(
-      children: <Widget>[
-        PageView.builder(
-          controller: pageController,
-          physics: NeverScrollableScrollPhysics(),
-          itemCount: onboardData.length,
-          itemBuilder: (context, index) {
-            return OnboardPage(
-              pageController: pageController,
-              pageModel: onboardData[index],
-            );
-          },
-        ),
-        Container(
-          width: double.infinity,
-          height: 70,
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.baseline,
-              textBaseline: TextBaseline.alphabetic,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(left: 32.0),
-                  child: Text(
-                    'Filters',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 30.0,
-                      color: colorProvider.color,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 32.0),
-                  child: Text(
-                    'Skip',
-                    style: TextStyle(
-                      color: colorProvider.color,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        Align(
-          alignment: Alignment.bottomLeft,
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 80.0, left: 40),
-            child: PageViewIndicator(
-              controller: pageController,
-              itemCount: onboardData.length,
-              color: colorProvider.color,
-            ),
-          ),
-        )
-      ],
     );
   }
 }

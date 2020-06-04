@@ -52,7 +52,7 @@ class DatabaseService {
   }
   // get filtered statuses stream
   Stream<List<Filter>> get filtered {
-    return statusCollection.where('name', isEqualTo: 'Oshima').snapshots()
+    return statusCollection.where('status', isEqualTo: 'Working From Home').snapshots()
         .map(_filterListFromSnapshot);
   }
 
