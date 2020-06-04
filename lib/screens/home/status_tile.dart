@@ -17,8 +17,11 @@ class StatusTile extends StatelessWidget {
         child: ListTile(
           leading: CircleAvatar(
             radius: 25.0,
-            backgroundImage: AssetImage('assets/yellow.jpg'),
-           backgroundColor: Colors.black12,
+            child: Container(
+              child: Image.asset('assets/wfh.png'),
+            ),
+            //backgroundImage: AssetImage('assets/wfh.png'),
+          backgroundColor: Colors.white10,
           ),
           title: Text(status.name,
             style: TextStyle(
@@ -49,8 +52,11 @@ class StatusTile extends StatelessWidget {
             child: ListTile(
               leading: CircleAvatar(
                 radius: 25.0,
-                backgroundImage: AssetImage('assets/teal.jpg'),
-                backgroundColor: Colors.white30,
+                child: Container(
+                  child: Image.asset('assets/wio.png'),
+                ),
+                //backgroundImage: AssetImage('assets/wfh.png'),
+                backgroundColor: Colors.white10,
               ),
               title: Text(status.name,
                 style: TextStyle(
@@ -81,8 +87,11 @@ class StatusTile extends StatelessWidget {
             child: ListTile(
               leading: CircleAvatar(
                 radius: 25.0,
-                backgroundImage: AssetImage('assets/pink.jpg'),
-                backgroundColor: Colors.white30,
+                child: Container(
+                  child: Image.asset('assets/opl.png'),
+                ),
+                //backgroundImage: AssetImage('assets/wfh.png'),
+                backgroundColor: Colors.white10,
               ),
               title: Text(status.name,
                 style: TextStyle(
@@ -114,8 +123,11 @@ class StatusTile extends StatelessWidget {
             child: ListTile(
               leading: CircleAvatar(
                 radius: 25.0,
-                backgroundImage: AssetImage('assets/green.jpg'),
-                backgroundColor: Colors.white30,
+                child: Container(
+                  child: Image.asset('assets/osl.png'),
+                ),
+                //backgroundImage: AssetImage('assets/wfh.png'),
+                backgroundColor: Colors.white10,
               ),
               title: Text(status.name,
                 style: TextStyle(
@@ -147,8 +159,11 @@ class StatusTile extends StatelessWidget {
             child: ListTile(
               leading: CircleAvatar(
                 radius: 25.0,
-                backgroundImage: AssetImage('assets/blue.jpg'),
-                backgroundColor: Colors.white30,
+                child: Container(
+                  child: Image.asset('assets/bt.png'),
+                ),
+                //backgroundImage: AssetImage('assets/wfh.png'),
+                backgroundColor: Colors.white10,
               ),
               title: Text(status.name,
                 style: TextStyle(
@@ -219,13 +234,16 @@ class FilterStatusTile extends StatelessWidget {
         return Padding(
           padding: EdgeInsets.only(top: 8.0),
           child: Card(
-            color: Colors.white10,
+            color: Colors.black,
             margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
             child: ListTile(
               leading: CircleAvatar(
                 radius: 25.0,
-                backgroundImage: AssetImage('assets/yellow.jpg'),
-                backgroundColor: Colors.white30,
+                child: Container(
+                  child: Image.asset('assets/wfh.png'),
+                ),
+                //backgroundImage: AssetImage('assets/wfh.png'),
+                backgroundColor: Colors.white10,
               ),
               title: Text(status.name,
                 style: TextStyle(
@@ -251,13 +269,16 @@ class FilterStatusTile extends StatelessWidget {
         return Padding(
           padding: EdgeInsets.only(top: 8.0),
           child: Card(
-            color: Colors.white10,
+            color: Colors.black,
             margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
             child: ListTile(
               leading: CircleAvatar(
                 radius: 25.0,
-                backgroundImage: AssetImage('assets/teal.jpg'),
-                backgroundColor: Colors.white30,
+                child: Container(
+                  child: Image.asset('assets/wio.png'),
+                ),
+                //backgroundImage: AssetImage('assets/wfh.png'),
+                backgroundColor: Colors.white10,
               ),
               title: Text(status.name,
                 style: TextStyle(
@@ -283,13 +304,16 @@ class FilterStatusTile extends StatelessWidget {
         return Padding(
           padding: EdgeInsets.only(top: 8.0),
           child: Card(
-            color: Colors.white10,
+            color: Colors.black,
             margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
             child: ListTile(
               leading: CircleAvatar(
                 radius: 25.0,
-                backgroundImage: AssetImage('assets/pink.jpg'),
-                backgroundColor: Colors.white30,
+                child: Container(
+                  child: Image.asset('assets/opl.png'),
+                ),
+                //backgroundImage: AssetImage('assets/wfh.png'),
+                backgroundColor: Colors.white10,
               ),
               title: Text(status.name,
                 style: TextStyle(
@@ -316,13 +340,16 @@ class FilterStatusTile extends StatelessWidget {
         return Padding(
           padding: EdgeInsets.only(top: 8.0),
           child: Card(
-            color: Colors.white10,
+            color: Colors.black,
             margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
             child: ListTile(
               leading: CircleAvatar(
                 radius: 25.0,
-                backgroundImage: AssetImage('assets/green.jpg'),
-                backgroundColor: Colors.white30,
+                child: Container(
+                  child: Image.asset('assets/osl.png'),
+                ),
+                //backgroundImage: AssetImage('assets/wfh.png'),
+                backgroundColor: Colors.white10,
               ),
               title: Text(status.name,
                 style: TextStyle(
@@ -349,13 +376,16 @@ class FilterStatusTile extends StatelessWidget {
         return Padding(
           padding: EdgeInsets.only(top: 8.0),
           child: Card(
-            color: Colors.white10,
+            color: Colors.black,
             margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
             child: ListTile(
               leading: CircleAvatar(
                 radius: 25.0,
-                backgroundImage: AssetImage('assets/blue.jpg'),
-                backgroundColor: Colors.white30,
+                child: Container(
+                  child: Image.asset('assets/bt.png'),
+                ),
+                //backgroundImage: AssetImage('assets/wfh.png'),
+                backgroundColor: Colors.white10,
               ),
               title: Text(status.name,
                 style: TextStyle(

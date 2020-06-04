@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:whereisevery1/screens/home/home.dart';
 
 class OnboardingHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: Center(
         child: Container(
           child: Stack(
@@ -16,8 +17,13 @@ class OnboardingHome extends StatelessWidget {
             right: 200,
             child: FlatButton(
               onPressed: () {},
-              child: Container(
-                color: Colors.lime,
+              child: CircleAvatar(
+                backgroundColor: Colors.white12,
+                child: Container(
+                  padding: EdgeInsets.all(28.0),
+                  child: Image.asset('assets/wfh.png') ,
+                ),
+                radius: 80.0,
               ),
             ),
           ),
@@ -28,9 +34,12 @@ class OnboardingHome extends StatelessWidget {
                 right: 200,
                 child: FlatButton(
                   onPressed: () {},
-                  child: Container(
-                    color: Colors.grey,
-                  ),
+                  child: Text('Working from Home',
+                  style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    color: Colors.white,
+                    fontSize: 16.0,
+                  ),),
                 ),
               ),
               Positioned(
@@ -40,8 +49,13 @@ class OnboardingHome extends StatelessWidget {
                 right: 10,
                 child: FlatButton(
                   onPressed: () {},
-                  child: Container(
-                    color: Colors.purple,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white12,
+                    child: Container(
+                      padding: EdgeInsets.all(28.0),
+                      child: Image.asset('assets/wio.png') ,
+                    ),
+                    radius: 80.0,
                   ),
                 ),
               ),
@@ -52,9 +66,12 @@ class OnboardingHome extends StatelessWidget {
                 right: 10,
                 child: FlatButton(
                   onPressed: () {},
-                  child: Container(
-                    color: Colors.pink,
-                  ),
+                  child: Text('Working in Office',
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      color: Colors.white,
+                      fontSize: 16.0,
+                    ),),
                 ),
               ),
               Positioned(
@@ -64,8 +81,13 @@ class OnboardingHome extends StatelessWidget {
                 right: 200,
                 child: FlatButton(
                   onPressed: () {},
-                  child: Container(
-                    color: Colors.orange,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white12,
+                    child: Container(
+                      padding: EdgeInsets.all(28.0),
+                      child: Image.asset('assets/opl.png') ,
+                    ),
+                    radius: 80.0,
                   ),
                 ),
               ),Positioned(
@@ -75,9 +97,12 @@ class OnboardingHome extends StatelessWidget {
                 right: 200,
                 child: FlatButton(
                   onPressed: () {},
-                  child: Container(
-                    color: Colors.blue,
-                  ),
+                  child: Text('on Planned Leave',
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      color: Colors.white,
+                      fontSize: 16.0,
+                    ),),
                 ),
               ),
               Positioned(
@@ -87,8 +112,13 @@ class OnboardingHome extends StatelessWidget {
                 right: 10,
                 child: FlatButton(
                   onPressed: () {},
-                  child: Container(
-                    color: Colors.red,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white12,
+                    child: Container(
+                      padding: EdgeInsets.all(28.0),
+                      child: Image.asset('assets/osl.png') ,
+                    ),
+                    radius: 80.0,
                   ),
                 ),
               ),Positioned(
@@ -98,9 +128,12 @@ class OnboardingHome extends StatelessWidget {
                 right: 10,
                 child: FlatButton(
                   onPressed: () {},
-                  child: Container(
-                    color: Colors.tealAccent,
-                  ),
+                  child: Text('on Sick Leave',
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      color: Colors.white,
+                      fontSize: 16.0,
+                    ),),
                 ),
               ),
               Positioned(
@@ -110,8 +143,13 @@ class OnboardingHome extends StatelessWidget {
                 right: 200,
                 child: FlatButton(
                   onPressed: () {},
-                  child: Container(
-                    color: Colors.yellow,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white12,
+                    child: Container(
+                      padding: EdgeInsets.all(28.0),
+                      child: Image.asset('assets/bt.png') ,
+                    ),
+                    radius: 80.0,
                   ),
                 ),
               ),Positioned(
@@ -121,20 +159,27 @@ class OnboardingHome extends StatelessWidget {
                 right: 200,
                 child: FlatButton(
                   onPressed: () {},
-                  child: Container(
-                    color: Colors.amberAccent,
-                  ),
+                  child: Text('Business Travel',
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      color: Colors.white,
+                      fontSize: 16.0,
+                    ),),
                 ),
               ),
               Positioned(
-                top: 620,
-                bottom: 10,
-                left: 300,
-                right: 10,
+                top: 20,
+                bottom: 600,
+                left: 6,
+                right: 180,
                 child: FlatButton(
                   onPressed: () {},
-                  child: Container(
-                    color: Colors.blue,
+                  child: Text('F I L T E R S',
+                  style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontSize: 30.0,
+                    color: Colors.amberAccent[400],
+                  ),
                   ),
                 ),
               ),
@@ -146,19 +191,31 @@ class OnboardingHome extends StatelessWidget {
                 child: FlatButton(
                   onPressed: () {},
                   child: Container(
-                    color: Colors.pink,
+                    child: Image.asset('assets/onboard.png'),
                   ),
                 ),
               ),Positioned(
-                top: 20,
-                bottom: 600,
-                left: 10,
-                right: 200,
-                child: FlatButton(
-                  onPressed: () {},
-                  child: Container(
-                    color: Colors.cyanAccent,
+                top: 620,
+                bottom: 10,
+                left: 250,
+                right: 10,
+                child: FlatButton.icon(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder:(context) => HomePage(),
+                      ),
+                    );
+                  },
+                  label: Text('Go back',
+                  style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    color: Colors.amberAccent[400],
                   ),
+                  ),
+                  icon: Icon(Icons.arrow_back_ios,
+                  color: Colors.amberAccent[400],),
                 ),
               ),
           ],
