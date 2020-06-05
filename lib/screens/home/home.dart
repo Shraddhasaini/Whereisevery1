@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:whereisevery1/models/status.dart';
 import 'package:whereisevery1/screens/authenticate/sign_in.dart';
 import 'package:whereisevery1/screens/home/filter/onboarding.dart';
@@ -82,6 +83,9 @@ class HomePage extends StatelessWidget {
       });
     }
 
+    DateTime now = DateTime.now();
+    String formattedDate = DateFormat('EEE, d MMM').format(now);
+
     /*void _showLogoutPanel(){
       //showModalBottomSheet(context: context, builder: (context){
        showCupertinoModalPopup(context: context, builder: (context){
@@ -155,7 +159,7 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: 400,
+                            top: 350,
                             bottom: 0,
                             left: 0,
                             right: 0,
@@ -175,16 +179,16 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: 345,
-                            bottom: 300,
+                            top: 295,
+                            bottom: 355,
                             left: 10,
-                            right: 10,
+                            right: 100,
                             child: SearchByName(),
                           ),
                           Positioned(
-                            top: 240,
+                            top: 190,
                             bottom: 380,
-                            left: 20,
+                            left: 10,
                             right: 230,
                             child: Container(
                              child: Text('Status',
@@ -197,21 +201,21 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: 300,
-                            bottom: 345,
+                            top: 250,
+                            bottom: 400,
                             left: 10,
-                            right: 100,
+                            right: 260,
                             child: FlatButton.icon(
-                              label: Text('Browse by Filters',
+                              label: Text('FILTERS',
                               style: TextStyle(
                                 fontFamily: 'Montserrat',
-                                fontSize: 20.0,
+                                fontSize: 18.0,
                                 color: Colors.black,
                               ),),
                               highlightColor: Colors.amberAccent[100],
                               icon: Icon(Icons.bubble_chart,
                               color: Colors.black,),
-                              color: Colors.amberAccent[200],
+                              color: Colors.amberAccent[400],
                               onPressed: () async{
                                 Navigator.push(
                                   context,
@@ -223,12 +227,18 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: 170,
+                            top: 150,
                             bottom: 460,
-                            left: 0,
+                            left: 10,
                             right: 250,
                             child: Container(
-                              color: Colors.green,
+                              child: Text(formattedDate,
+                                  style: TextStyle(color: Colors.amberAccent[400],
+                                    fontSize: 30.0,
+                                    fontFamily: 'Montserrat',
+
+                                  )
+                              ),
                             ),
                           ),
                           Positioned(
