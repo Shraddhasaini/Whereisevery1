@@ -49,7 +49,7 @@ class OnboardingHome extends StatelessWidget {
                   child: Text('Working from Home',
                   style: TextStyle(
                     fontFamily: 'Montserrat',
-                    color: Colors.white,
+                    color: Colors.yellowAccent,
                     fontSize: 16.0,
                   ),),
                 ),
@@ -88,7 +88,7 @@ class OnboardingHome extends StatelessWidget {
                   child: Text('Working in Office',
                     style: TextStyle(
                       fontFamily: 'Montserrat',
-                      color: Colors.white,
+                      color: Colors.tealAccent,
                       fontSize: 16.0,
                     ),),
                 ),
@@ -126,7 +126,7 @@ class OnboardingHome extends StatelessWidget {
                   child: Text('on Planned Leave',
                     style: TextStyle(
                       fontFamily: 'Montserrat',
-                      color: Colors.white,
+                      color: Colors.pinkAccent,
                       fontSize: 16.0,
                     ),),
                 ),
@@ -164,7 +164,7 @@ class OnboardingHome extends StatelessWidget {
                   child: Text('on Sick Leave',
                     style: TextStyle(
                       fontFamily: 'Montserrat',
-                      color: Colors.white,
+                      color: Colors.lightGreenAccent,
                       fontSize: 16.0,
                     ),),
                 ),
@@ -202,7 +202,7 @@ class OnboardingHome extends StatelessWidget {
                   child: Text('Business Travel',
                     style: TextStyle(
                       fontFamily: 'Montserrat',
-                      color: Colors.white,
+                      color: Colors.cyanAccent,
                       fontSize: 16.0,
                     ),),
                 ),
