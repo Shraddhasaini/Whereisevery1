@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:whereisevery1/screens/home/filter/screen/bt.dart';
+import 'package:whereisevery1/screens/home/filter/screen/opl.dart';
+import 'package:whereisevery1/screens/home/filter/screen/osl.dart';
+import 'package:whereisevery1/screens/home/filter/screen/wfh.dart';
+import 'package:whereisevery1/screens/home/filter/screen/wio.dart';
 import 'package:whereisevery1/screens/home/home.dart';
 
 class OnboardingHome extends StatelessWidget {
@@ -16,7 +21,14 @@ class OnboardingHome extends StatelessWidget {
             left: 10,
             right: 200,
             child: FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder:(context) => WorkFromHome(),
+                  ),
+                );
+              },
               child: CircleAvatar(
                 backgroundColor: Colors.white12,
                 child: Container(
@@ -48,7 +60,14 @@ class OnboardingHome extends StatelessWidget {
                 left: 200,
                 right: 10,
                 child: FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder:(context) => WorkingInOffice(),
+                      ),
+                    );
+                  },
                   child: CircleAvatar(
                     backgroundColor: Colors.white12,
                     child: Container(
@@ -80,7 +99,14 @@ class OnboardingHome extends StatelessWidget {
                 left: 10,
                 right: 200,
                 child: FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder:(context) => OnPlannedLeave(),
+                      ),
+                    );
+                  },
                   child: CircleAvatar(
                     backgroundColor: Colors.white12,
                     child: Container(
@@ -111,7 +137,14 @@ class OnboardingHome extends StatelessWidget {
                 left: 200,
                 right: 10,
                 child: FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder:(context) => OnSickLeave(),
+                      ),
+                    );
+                  },
                   child: CircleAvatar(
                     backgroundColor: Colors.white12,
                     child: Container(
@@ -142,7 +175,14 @@ class OnboardingHome extends StatelessWidget {
                 left: 10,
                 right: 200,
                 child: FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder:(context) => BusinessTravel(),
+                      ),
+                    );
+                  },
                   child: CircleAvatar(
                     backgroundColor: Colors.white12,
                     child: Container(

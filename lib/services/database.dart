@@ -19,7 +19,7 @@ class DatabaseService {
 
   //filter
 
-  List<Filter> _filterListFromSnapshot(QuerySnapshot snapshot) {
+  /*List<Filter> _filterListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc){
       return Filter(
           name: doc.data['name'] ?? '',
@@ -27,7 +27,7 @@ class DatabaseService {
           location: doc.data['location'] ?? ''
       );
     }).toList();
-  }
+  }*/
 
 
   //status list from snapshot
@@ -50,10 +50,35 @@ class DatabaseService {
       status: snapshot.data['status']
     );
   }
-  // get filtered statuses stream
-  Stream<List<Filter>> get filtered {
+  // get wfh statuses stream
+  Stream<List<Status>> get wfh {
     return statusCollection.where('status', isEqualTo: 'Working From Home').snapshots()
-        .map(_filterListFromSnapshot);
+        .map(_statusListFromSnapshot);
+  }
+
+  // get wio statuses stream
+  Stream<List<Status>> get wio {
+    return statusCollection.where('status', isEqualTo: 'Working in Office').snapshots()
+        .map(_statusListFromSnapshot);
+  }
+
+  // get wio statuses stream
+  Stream<List<Status>> get opl {
+    return statusCollection.where('status', isEqualTo: 'on Planned Leave').snapshots()
+        .map(_statusListFromSnapshot);
+  }
+
+  // get wio statuses stream
+  Stream<List<Status>> get osl {
+    return statusCollection.where('status', isEqualTo: 'on Sick Leave').snapshots()
+        .map(_statusListFromSnapshot);
+  }
+
+
+  // get wio statuses stream
+  Stream<List<Status>> get bt {
+    return statusCollection.where('status', isEqualTo: 'out for Business Travel').snapshots()
+        .map(_statusListFromSnapshot);
   }
 
   // get statuses stream
