@@ -17,7 +17,8 @@ class _SearchByNameState extends State<SearchByName> {
     if(query.isNotEmpty) {
         showModalBottomSheet(context: context, builder: (context) {
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
+            color: Colors.black87,
+            padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
             child: SearchModal(name: query),
           );
         });

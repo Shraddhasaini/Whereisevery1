@@ -201,8 +201,17 @@ class HomePage extends StatelessWidget {
                             bottom: 345,
                             left: 10,
                             right: 100,
-                            child: FlatButton(
-                              color: Colors.purple,
+                            child: FlatButton.icon(
+                              label: Text('Browse by Filters',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 20.0,
+                                color: Colors.black,
+                              ),),
+                              highlightColor: Colors.amberAccent[100],
+                              icon: Icon(Icons.bubble_chart,
+                              color: Colors.black,),
+                              color: Colors.amberAccent[200],
                               onPressed: () async{
                                 Navigator.push(
                                   context,
