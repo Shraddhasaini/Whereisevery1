@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:whereisevery1/screens/home/filter/screen/bt.dart';
 import 'package:whereisevery1/screens/home/filter/screen/opl.dart';
 import 'package:whereisevery1/screens/home/filter/screen/osl.dart';
+import 'package:whereisevery1/screens/home/filter/screen/pageview.dart';
 import 'package:whereisevery1/screens/home/filter/screen/wfh.dart';
 import 'package:whereisevery1/screens/home/filter/screen/wio.dart';
 import 'package:whereisevery1/screens/home/home.dart';
@@ -229,7 +230,14 @@ class OnboardingHome extends StatelessWidget {
                 left: 200,
                 right: 10,
                 child: FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                        builder:(context) => PageViewFilter(),
+                        ),
+                        );
+                  },
                   child: Container(
                     child: Image.asset('assets/onboard.png'),
                   ),
