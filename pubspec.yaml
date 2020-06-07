@@ -36,6 +36,7 @@ dependencies:
   wave: ^0.0.7
   foldable_sidebar: ^1.0.0
   intl: ^0.15.0
+  table_calendar: ^2.2.3
 
 
 dev_dependencies:

@@ -159,7 +159,7 @@ class _sign_inState extends State<sign_in> {
                                       ),
                                     ),
                                     onPressed: () async {
-                                      dynamic result = await _auth.googleSignIn();
+                                      dynamic result = await _auth.googleSignIn1();
                                       if (result == null){
                                         setState(() { error = 'please supply a valid email';
                                         loading = false;

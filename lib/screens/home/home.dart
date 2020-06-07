@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:whereisevery1/models/status.dart';
 import 'package:whereisevery1/screens/authenticate/sign_in.dart';
+import 'package:whereisevery1/screens/home/calendar/currentcal.dart';
 import 'package:whereisevery1/screens/home/filter/onboarding.dart';
 import 'package:whereisevery1/screens/home/logoutpop.dart';
 import 'package:whereisevery1/screens/home/settings.dart';
@@ -83,6 +84,8 @@ class HomePage extends StatelessWidget {
       });
     }
 
+    double _height = MediaQuery.of(context).size.height;
+
     DateTime now = DateTime.now();
     String formattedDate = DateFormat('EEE, d MMM').format(now);
 
@@ -107,7 +110,7 @@ class HomePage extends StatelessWidget {
             child: Column(
                 children: <Widget>[
                 Container(
-                  height: 683,
+                  height: _height,
                       child: Stack(
                         children: <Widget>[
                           Positioned(
@@ -228,16 +231,27 @@ class HomePage extends StatelessWidget {
                           ),
                           Positioned(
                             top: 150,
-                            bottom: 460,
-                            left: 10,
-                            right: 250,
+                            bottom: 490,
+                            left: 0,
+                            right: 260,
                             child: Container(
+                              child: FlatButton(
+                                onPressed: () async{
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder:(context) => MyCalendar(),
+                                    ),
+                                  );
+                                },
                               child: Text(formattedDate,
+                                  textAlign: TextAlign.center,
                                   style: TextStyle(color: Colors.amberAccent[400],
-                                    fontSize: 30.0,
+                                    fontSize: 23.0,
                                     fontFamily: 'Montserrat',
 
-                                  )
+                                  ),
+                              ),
                               ),
                             ),
                           ),
