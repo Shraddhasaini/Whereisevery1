@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:whereisevery1/models/users.dart';
+import 'package:whereisevery1/screens/home/calendar/db/caldb.dart';
 import 'package:whereisevery1/services/database.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -49,7 +51,9 @@ class AuthService{
 
       //create a document for user with uid
       await DatabaseService(uid: user.uid).updateUserData('rohtak', 'new member', 'Working From Home');
+      await DatabaseServiceCal(uid: user.uid).updateUserCalData(Timestamp.now(), 'Working From Home');
       return _userFromFirebaseUser(user);
+
     }catch(e){
       print(e.toString());
       return null;
@@ -71,6 +75,7 @@ class AuthService{
       //create a document for user with ui
       //create a document for user with uid
       await DatabaseService(uid: user.uid).updateUserData('rohtak', _googleSignIn.currentUser.displayName , 'Working From Home');
+      await DatabaseServiceCal(uid: user.uid).updateUserCalData(Timestamp.now(), 'Working From Home');
       return _userFromFirebaseUser(user);
     } catch(e){
       print(e.toString());

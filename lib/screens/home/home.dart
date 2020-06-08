@@ -245,9 +245,9 @@ class HomePage extends StatelessWidget {
                                   );
                                 },
                               child: Text(formattedDate,
-                                  textAlign: TextAlign.center,
+                                  textAlign: TextAlign.justify,
                                   style: TextStyle(color: Colors.amberAccent[400],
-                                    fontSize: 23.0,
+                                    fontSize: 20.0,
                                     fontFamily: 'Montserrat',
 
                                   ),
