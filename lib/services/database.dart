@@ -8,6 +8,7 @@ class DatabaseService {
   DatabaseService({ this.uid });
   //collection ref
   final CollectionReference statusCollection =  Firestore.instance.collection('statuses');
+  final CollectionReference calCollection = Firestore.instance.collection('statuses').document().collection('caldb');
 
   Future updateUserData(String location, String name, String status) async {
     return await statusCollection.document(uid).setData({
@@ -15,6 +16,13 @@ class DatabaseService {
       'name': name,
       'status': status
     });
+  }
+
+  Future createSubCollection(Timestamp date, String status) async {
+  return await statusCollection.document(uid).collection('caldb').document().setData({
+    'date': date,
+    'status': status,
+  });
   }
 
   //filter
@@ -28,7 +36,14 @@ class DatabaseService {
       );
     }).toList();
   }*/
-
+//data of events from snapshot
+  UserCalData _calDataFromSnapshot(DocumentSnapshot snapshot){
+    return UserCalData(
+        uid: uid,
+        date: snapshot.data['date'],
+        status: snapshot.data['status']
+    );
+  }
 
   //status list from snapshot
   List<Status> _statusListFromSnapshot(QuerySnapshot snapshot) {
@@ -85,6 +100,13 @@ class DatabaseService {
   Stream<List<Status>> get statuses {
     return statusCollection.snapshots()
     .map(_statusListFromSnapshot);
+  }
+
+
+  //get cal doc stream
+  Stream<UserCalData> get calData {
+    return statusCollection.document(uid).collection('caldb').document().snapshots()
+        .map(_calDataFromSnapshot);
   }
 
   //get user doc stream
