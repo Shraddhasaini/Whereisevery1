@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whereisevery1/screens/openuser/shared/OpenCalendar.dart';
 import 'package:whereisevery1/screens/openuser/shared/OpenStatus.dart';
@@ -59,8 +60,27 @@ class OpenLocation extends StatelessWidget {
                   width: 100.0,
                   child: Image.asset('assets/loc.png'),
                 ),
-              )
+              ),
             ],
+          ),
+          SizedBox(height: 18.0),
+          Text('Access Denied',
+          style: TextStyle(
+            fontFamily: 'Montserrat',
+            fontSize: 25.0,
+            color: Colors.red[400],
+          ),
+          ),
+          SizedBox(height: 18.0),
+          Image.asset('assets/accessdenied.png'),
+          SizedBox(height: 18.0),
+          Text('!   Person is on leave',
+            style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontSize: 15.0,
+              fontStyle: FontStyle.italic,
+              color: Colors.red[100],
+            ),
           ),
         ],
       ),
