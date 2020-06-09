@@ -40,7 +40,30 @@ class OpenLocation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('this is NO ACCESS'),
+      child: Column(
+        children: <Widget>[
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(' Geolocation',
+                style: TextStyle(
+                  fontSize: 40.0,
+                  fontFamily: 'Montserrat',
+                  color: Colors.amberAccent[400],
+                ),),
+              Padding(
+                padding: const EdgeInsets.all(0),
+                child: Container(
+                  height: 100.0,
+                  width: 100.0,
+                  child: Image.asset('assets/loc.png'),
+                ),
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

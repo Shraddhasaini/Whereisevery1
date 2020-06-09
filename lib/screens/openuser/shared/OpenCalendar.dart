@@ -22,8 +22,28 @@ class _OpenCalendarState extends State<OpenCalendar> with TickerProviderStateMix
 
     return SingleChildScrollView(
         child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(' Calendar',
+                    style: TextStyle(
+                      fontSize: 40.0,
+                      fontFamily: 'Montserrat',
+                      color: Colors.amberAccent[400],
+                    ),),
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Container(
+                      height: 100.0,
+                      width: 100.0,
+                      child: Image.asset('assets/usercal.png'),
+                    ),
+                  )
+                ],
+              ),
               TableCalendar(
                 daysOfWeekStyle: DaysOfWeekStyle(
                   weekdayStyle: TextStyle(
@@ -72,8 +92,13 @@ class _OpenCalendarState extends State<OpenCalendar> with TickerProviderStateMix
                 startingDayOfWeek: StartingDayOfWeek.sunday,
                 calendarController: _controller,
               ),
-              Image.asset('assets/pot.png',
-                fit: BoxFit.cover,),
+                  Text('Scroll Down to view the location',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontFamily: 'Montserrat',
+                      color: Colors.white38,
+                    ),
+                  ),
             ]
         ),
     );
