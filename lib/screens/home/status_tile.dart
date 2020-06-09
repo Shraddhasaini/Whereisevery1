@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whereisevery1/models/status.dart';
+import 'package:whereisevery1/screens/openuser/openuser.dart';
+import 'package:whereisevery1/screens/openuser/openuser_exactloc.dart';
+import 'package:whereisevery1/screens/openuser/openuser_noloc.dart';
 
 class StatusTile extends StatelessWidget {
 
@@ -30,6 +33,14 @@ class StatusTile extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+          onTap: () async {
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+              builder: (context) => OpenUserRadius(),
+              ),
+              );
+              },
           isThreeLine: true,
           subtitle: Text(
             'is ${status.status} and ${status.name} is currently at ${status
@@ -65,6 +76,14 @@ class StatusTile extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              onTap: () async {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OpenUserExact(),
+                  ),
+                );
+              },
               isThreeLine: true,
               subtitle: Text(
                 'is ${status.status} and ${status.name} is currently at ${status
@@ -100,6 +119,14 @@ class StatusTile extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              onTap: () async {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OpenUserNoLoc(),
+                  ),
+                );
+              },
               isThreeLine: true,
               subtitle: Text(
                 'is ${status.status} and ${status.name} is currently at ${status
@@ -136,6 +163,14 @@ class StatusTile extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              onTap: () async {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OpenUserNoLoc(),
+                  ),
+                );
+              },
               isThreeLine: true,
               subtitle: Text(
                 'is ${status.status} and ${status.name} is currently at ${status
@@ -172,6 +207,14 @@ class StatusTile extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              onTap: () async {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OpenUserExact(),
+                  ),
+                );
+              },
               isThreeLine: true,
               subtitle: Text(
                 'is ${status.status} and ${status.name} is currently at ${status
@@ -252,6 +295,14 @@ class FilterStatusTile extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              onTap: () async {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OpenUserRadius(),
+                  ),
+                );
+              },
               isThreeLine: true,
               subtitle: Text(
                 'is ${status.status} and ${status.name} is currently at ${status
@@ -287,6 +338,14 @@ class FilterStatusTile extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              onTap: () async {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OpenUserExact(),
+                  ),
+                );
+              },
               isThreeLine: true,
               subtitle: Text(
                 'is ${status.status} and ${status.name} is currently at ${status
@@ -322,6 +381,14 @@ class FilterStatusTile extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              onTap: () async {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OpenUserNoLoc(),
+                  ),
+                );
+              },
               isThreeLine: true,
               subtitle: Text(
                 'is ${status.status} and ${status.name} is currently at ${status
@@ -358,6 +425,14 @@ class FilterStatusTile extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              onTap: () async {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OpenUserNoLoc(),
+                  ),
+                );
+              },
               isThreeLine: true,
               subtitle: Text(
                 'is ${status.status} and ${status.name} is currently at ${status
@@ -394,6 +469,14 @@ class FilterStatusTile extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              onTap: () async {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OpenUserExact(),
+                  ),
+                );
+              },
               isThreeLine: true,
               subtitle: Text(
                 'is ${status.status} and ${status.name} is currently at ${status

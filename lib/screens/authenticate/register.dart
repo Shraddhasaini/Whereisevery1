@@ -22,6 +22,8 @@ class _RegisterState extends State<Register> {
   String error = '';
   @override
   Widget build(BuildContext context) {
+    double _height = MediaQuery.of(context).size.height;
+    double _width = MediaQuery.of(context).size.width;
     return loading ? Loading() : Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -32,7 +34,8 @@ class _RegisterState extends State<Register> {
               child: Column(
                 children: <Widget>[
                   Container(
-                    height: 683,
+                    width: _width,
+                    height: _height,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage('assets/splashtext.png'),

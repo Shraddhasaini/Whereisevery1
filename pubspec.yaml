@@ -37,7 +37,7 @@ dependencies:
   foldable_sidebar: ^1.0.0
   intl: ^0.15.0
   table_calendar: ^2.2.3
-
+  shared_preferences: ^0.5.4+5
 
 dev_dependencies:
   flutter_test:

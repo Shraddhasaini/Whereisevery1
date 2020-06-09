@@ -40,9 +40,13 @@ class _HomeState extends State<Home> {
   }
   @override
   Widget build(BuildContext context) {
+    double _width = MediaQuery.of(context).size.width;
+    double _height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
+        height: _height,
+         width: _width,
          child: Column(
              children: <Widget>[
            Center(
@@ -52,7 +56,7 @@ class _HomeState extends State<Home> {
                   builder: (_, double size, __) {
                    return Transform.scale(scale: size,
                     child: Container(
-                      height: 683,
+                      height: _height,
                        decoration: BoxDecoration(
                        image: DecorationImage(
                          image: AssetImage('assets/cats.png'),
@@ -85,6 +89,7 @@ class HomePage extends StatelessWidget {
     }
 
     double _height = MediaQuery.of(context).size.height;
+    double _width = MediaQuery.of(context).size.width;
 
     DateTime now = DateTime.now();
     String formattedDate = DateFormat('EEE, d MMM').format(now);
@@ -110,6 +115,7 @@ class HomePage extends StatelessWidget {
             child: Column(
                 children: <Widget>[
                 Container(
+                  width: _width,
                   height: _height,
                       child: Stack(
                         children: <Widget>[

@@ -34,13 +34,16 @@ class _SplashState extends State<Splash> {
   }
   @override
   Widget build(BuildContext context) {
+    double _width = MediaQuery.of(context).size.width;
+    double _height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.amberAccent[400],
       body: Container(
         child: Column(
           children: <Widget>[
             Container(
-              height: 683,
+              height: _height,
+              width: _width,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/splashtext.png'),

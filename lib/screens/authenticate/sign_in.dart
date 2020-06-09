@@ -24,6 +24,8 @@ class _sign_inState extends State<sign_in> {
   String error = '';
   @override
   Widget build(BuildContext context) {
+    double _width = MediaQuery.of(context).size.width;
+    double _height = MediaQuery.of(context).size.height;
     return loading ? Loading() :  Scaffold(
       backgroundColor: Colors.black,
       body: Center(
@@ -34,7 +36,8 @@ class _sign_inState extends State<sign_in> {
         child: Column(
           children: <Widget>[
             Container(
-              height: 683,
+              width: _width,
+              height: _height,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/textwie.png'),
