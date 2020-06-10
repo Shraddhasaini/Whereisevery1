@@ -4,6 +4,10 @@ import 'package:whereisevery1/screens/openuser/shared/OpenCalendar.dart';
 import 'package:whereisevery1/screens/openuser/shared/OpenStatus.dart';
 
 class OpenUserNoLoc extends StatefulWidget {
+  final String name;
+  final String location;
+  final String status;
+  OpenUserNoLoc({ this.name, this.location, this.status});
   @override
   _OpenUserNoLocState createState() => _OpenUserNoLocState();
 }
@@ -28,9 +32,9 @@ class _OpenUserNoLocState extends State<OpenUserNoLoc> {
         controller: pageController,
         scrollDirection: Axis.vertical,
         children: <Widget>[
-          OpenStatus(),
-          OpenCalendar(),
+          OpenStatus(name: widget.name,status: widget.status,),
           OpenLocation(),
+          OpenCalendar(),
         ],
       ),
     );
@@ -80,6 +84,13 @@ class OpenLocation extends StatelessWidget {
               fontSize: 15.0,
               fontStyle: FontStyle.italic,
               color: Colors.red[100],
+            ),
+          ),
+          Text('Scroll Down to view the calendar',
+            style: TextStyle(
+              fontSize: 16.0,
+              fontFamily: 'Montserrat',
+              color: Colors.white38,
             ),
           ),
         ],

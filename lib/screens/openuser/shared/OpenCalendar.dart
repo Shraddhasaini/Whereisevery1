@@ -92,13 +92,6 @@ class _OpenCalendarState extends State<OpenCalendar> with TickerProviderStateMix
                 startingDayOfWeek: StartingDayOfWeek.sunday,
                 calendarController: _controller,
               ),
-                  Text('Scroll Down to view the location',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontFamily: 'Montserrat',
-                      color: Colors.white38,
-                    ),
-                  ),
             ]
         ),
     );

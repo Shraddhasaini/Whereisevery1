@@ -5,7 +5,6 @@ import 'package:whereisevery1/screens/openuser/openuser_exactloc.dart';
 import 'package:whereisevery1/screens/openuser/openuser_noloc.dart';
 
 class StatusTile extends StatelessWidget {
-
   final Status status;
   StatusTile({this.status});
   @override
@@ -37,7 +36,7 @@ class StatusTile extends StatelessWidget {
               Navigator.push(
               context,
               MaterialPageRoute(
-              builder: (context) => OpenUserRadius(),
+              builder: (context) => OpenUserRadius(status: status.status, name: status.name, location: status.location),
               ),
               );
               },
@@ -80,7 +79,7 @@ class StatusTile extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserExact(),
+                    builder: (context) => OpenUserExact(status: status.status, name: status.name, location: status.location),
                   ),
                 );
               },
@@ -123,7 +122,7 @@ class StatusTile extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserNoLoc(),
+                    builder: (context) => OpenUserNoLoc(status: status.status, name: status.name, location: status.location),
                   ),
                 );
               },
@@ -167,7 +166,7 @@ class StatusTile extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserNoLoc(),
+                    builder: (context) => OpenUserNoLoc(status: status.status, name: status.name, location: status.location),
                   ),
                 );
               },
@@ -211,7 +210,7 @@ class StatusTile extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserExact(),
+                    builder: (context) => OpenUserExact(status: status.status, name: status.name, location: status.location),
                   ),
                 );
               },
@@ -299,7 +298,7 @@ class FilterStatusTile extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserRadius(),
+                    builder: (context) => OpenUserRadius(status: status.status, name: status.name, location: status.location),
                   ),
                 );
               },
@@ -342,7 +341,7 @@ class FilterStatusTile extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserExact(),
+                    builder: (context) => OpenUserExact(status: status.status, name: status.name, location: status.location),
                   ),
                 );
               },
@@ -385,7 +384,7 @@ class FilterStatusTile extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserNoLoc(),
+                    builder: (context) => OpenUserNoLoc(status: status.status, name: status.name, location: status.location),
                   ),
                 );
               },
@@ -429,7 +428,7 @@ class FilterStatusTile extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserNoLoc(),
+                    builder: (context) => OpenUserNoLoc(status: status.status, name: status.name, location: status.location),
                   ),
                 );
               },
@@ -473,7 +472,7 @@ class FilterStatusTile extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserExact(),
+                    builder: (context) => OpenUserExact(status: status.status, name: status.name, location: status.location),
                   ),
                 );
               },
