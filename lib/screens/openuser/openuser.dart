@@ -50,7 +50,6 @@ class OpenLocation extends StatefulWidget {
 }
 
 class _OpenLocationState extends State<OpenLocation> {
-  Set<Marker> _markers = HashSet<Marker>();
   Set<Circle> _circles = HashSet<Circle>();
   GoogleMapController _mapController;
 
@@ -60,10 +59,7 @@ class _OpenLocationState extends State<OpenLocation> {
     _setCircles();
   }
 
-  void _setMapStyle() async{
-    String style = await DefaultAssetBundle.of(context).loadString('assets/map_style.json');
-    _mapController.setMapStyle(style);
-  }
+
 
   void _setCircles(){
     _circles.add(
@@ -75,24 +71,7 @@ class _OpenLocationState extends State<OpenLocation> {
           fillColor: Color.fromRGBO(255,196,0, 0.5),
       ),
     );
-  }
 
-  void _onMapCreated(GoogleMapController controller){
-    _mapController = controller;
-
-    setState((){
-      _markers.add(
-        Marker(
-          markerId: MarkerId("0"),
-          position: LatLng(37.77483, -122.4192),
-          infoWindow: InfoWindow(
-            title: "The person is here",
-            snippet: "An interesting city",
-          ),
-        ),
-      );
-    });
-    _setMapStyle();
   }
 
 
@@ -128,7 +107,7 @@ class _OpenLocationState extends State<OpenLocation> {
         child: Stack(
           children: <Widget>[
             GoogleMap(
-             onMapCreated: _onMapCreated,
+             // onMapCreated: _onMapCreated,
               initialCameraPosition: CameraPosition(
               target: LatLng(37.77483, -122.4192),
               zoom: 12,

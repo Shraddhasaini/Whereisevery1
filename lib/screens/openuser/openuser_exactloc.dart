@@ -62,10 +62,6 @@ class _OpenLocationState extends State<OpenLocation> {
         Marker(
           markerId: MarkerId("0"),
           position: LatLng(37.77483, -122.4192),
-          infoWindow: InfoWindow(
-            title: "The person is here",
-            snippet: "An interesting city",
-          ),
         ),
       );
     });
