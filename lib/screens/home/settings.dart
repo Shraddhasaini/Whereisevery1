@@ -1,4 +1,8 @@
+import 'dart:collection';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:whereisevery1/models/users.dart';
 import 'package:whereisevery1/screens/home/sidedrawer.dart';
@@ -17,8 +21,33 @@ class _SettingsFormState extends State<SettingsForm> {
   final List<String> status = ['Working From Home','Working in Office','on Planned Leave','on Sick Leave','out for Business Travel'];
 
   String _currentName;
-  String _currentLocation;
+  GeoPoint _currentLocation;
+  Position _currentPosition;
+  //GeoPoint geoPoint = userData.location.getGeoPoint("position");
+
   String _currentStatus;
+  Set<Marker> _markers = HashSet<Marker>();
+  GoogleMapController _mapController;
+
+  void _onMapCreated(GoogleMapController controller){
+    _mapController = controller;
+
+    setState((){
+      _markers.add(
+          Marker(
+              onTap: () {
+                print('Tapped');
+              },
+              draggable: true,
+              markerId: MarkerId('Marker'),
+              position: LatLng(_currentPosition.latitude, _currentPosition.longitude),
+              onDragEnd: ((value) {
+                print(value.latitude);
+                print(value.longitude);
+              }))
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,11 +77,33 @@ class _SettingsFormState extends State<SettingsForm> {
                   onChanged: (val) => setState(() => _currentName = val),
                 ),
                 SizedBox(height: 20.0),
-                TextFormField(
-                  initialValue: userData.location,
+                /*TextFormField(
+                  initialValue: userData.location.toString(),
                   decoration: textInputDecoration,
                   validator: (val) => val.isEmpty ? 'Please enter a location' : null,
                   onChanged: (val) => setState(() => _currentLocation = val),
+                ),*/
+                FlatButton(
+                  child: Text("Get location"),
+                  onPressed: () {
+                    _getCurrentLocation();
+                  },
+                ),
+                Container(
+                  height: 300,
+                  width: 300,
+                  child: Stack(
+                    children: <Widget>[
+                      GoogleMap(
+                        onMapCreated: _onMapCreated,
+                        initialCameraPosition: CameraPosition(
+                          target: LatLng(_currentPosition.latitude,_currentPosition.longitude),
+                          zoom: 12,
+                        ),
+                        markers: _markers,
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(height: 20.0),
                 DropdownButtonFormField(
@@ -96,4 +147,18 @@ class _SettingsFormState extends State<SettingsForm> {
       }
     );
   }
+  _getCurrentLocation() {
+    final Geolocator geolocator = Geolocator()..forceAndroidLocationManager;
+
+    geolocator
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
+        .then((Position position) {
+      setState(() {
+        _currentPosition = position;
+      });
+    }).catchError((e) {
+      print(e);
+    });
+  }
 }
+

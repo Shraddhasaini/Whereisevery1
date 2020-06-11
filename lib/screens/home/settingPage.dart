@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:whereisevery1/models/users.dart';
@@ -17,7 +18,7 @@ class _SettingsFormPageState extends State<SettingsFormPage> {
   final List<String> status = ['Working From Home','Working in Office','on Planned Leave','on Sick Leave','out for Business Travel'];
 
   String _currentName;
-  String _currentLocation;
+  GeoPoint _currentLocation;
   String _currentStatus;
 
   @override
@@ -49,12 +50,12 @@ class _SettingsFormPageState extends State<SettingsFormPage> {
                       onChanged: (val) => setState(() => _currentName = val),
                     ),
                     SizedBox(height: 20.0),
-                    TextFormField(
-                      initialValue: userData.location,
+                   /* TextFormField(
+                      initialValue: userData.location.toString(),
                       decoration: textInputDecoration,
                       validator: (val) => val.isEmpty ? 'Please enter a location' : null,
                       onChanged: (val) => setState(() => _currentLocation = val),
-                    ),
+                    ),*/
                     SizedBox(height: 20.0),
                     DropdownButtonFormField(
                       decoration: textInputDecoration,

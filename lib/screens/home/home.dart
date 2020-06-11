@@ -16,6 +16,7 @@ import 'package:whereisevery1/screens/home/statuslist.dart';
 import 'package:whereisevery1/shared/myappbar.dart';
 import 'package:whereisevery1/shared/searchbyname.dart';
 import 'package:whereisevery1/shared/username.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -81,8 +82,8 @@ class HomePage extends StatelessWidget {
 
     void _showSettingsPanel(){
       showModalBottomSheet(context: context, builder: (context){
-        return Container(
-          padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 60.0),
+        return SingleChildScrollView(
+          padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 20.0),
           child: SettingsForm(),
         );
       });

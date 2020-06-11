@@ -10,7 +10,7 @@ class DatabaseService {
   final CollectionReference statusCollection =  Firestore.instance.collection('statuses');
   final CollectionReference calCollection = Firestore.instance.collection('statuses').document().collection('caldb');
 
-  Future updateUserData(String location, String name, String status) async {
+  Future updateUserData(GeoPoint location, String name, String status) async {
     return await statusCollection.document(uid).setData({
       'location': location,
       'name': name,

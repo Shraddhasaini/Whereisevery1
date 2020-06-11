@@ -49,7 +49,7 @@ class AuthService{
       FirebaseUser user = result.user;
 
       //create a document for user with uid
-      await DatabaseService(uid: user.uid).updateUserData('rohtak', 'new member', 'Working From Home');
+      await DatabaseService(uid: user.uid).updateUserData(GeoPoint(37.77483, -122.4192), 'new member', 'Working From Home');
       await DatabaseService(uid: user.uid).createSubCollection(Timestamp.now(), 'Working From Home');
       return _userFromFirebaseUser(user);
 
@@ -73,7 +73,7 @@ class AuthService{
       print("signed in " + user.displayName);
       //create a document for user with ui
       //create a document for user with uid
-      await DatabaseService(uid: user.uid).updateUserData('rohtak', _googleSignIn.currentUser.displayName , 'Working From Home');
+      await DatabaseService(uid: user.uid).updateUserData(GeoPoint(37.77483, -122.4192), _googleSignIn.currentUser.displayName , 'Working From Home');
       await DatabaseService(uid: user.uid).createSubCollection(Timestamp.now(), 'Working From Home');
       return _userFromFirebaseUser(user);
     } catch(e){

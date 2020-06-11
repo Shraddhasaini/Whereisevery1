@@ -38,6 +38,7 @@ dependencies:
   intl: ^0.15.0
   table_calendar: ^2.2.3
   shared_preferences: ^0.5.4+5
+  geolocator: ^5.1.3
   google_maps_flutter: ^0.5.28+1
 
 

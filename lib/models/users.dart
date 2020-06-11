@@ -10,7 +10,7 @@ class User {
 class UserData {
   final String uid;
   final String name;
-  final String location;
+  final GeoPoint location;
   final String status;
 
   UserData({ this.uid,this.name,this.location,this.status});

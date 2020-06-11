@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Status {
   final String name;
-  final String location;
+  final GeoPoint location;
   final String status;
   Status({ this.name, this.location, this.status});
 
@@ -10,7 +12,7 @@ class Status {
 class Filter {
   //final String search;
   final String name;
-  final String location;
+  final GeoPoint location;
   final String status;
   Filter({ this.name, this.location, this.status});
 }
@@ -19,7 +21,7 @@ class Filter {
 class Onboard {
   //final String search;
   final String name;
-  final String location;
+  final GeoPoint location;
   final String status;
   Onboard({ this.name, this.location, this.status});
 }
