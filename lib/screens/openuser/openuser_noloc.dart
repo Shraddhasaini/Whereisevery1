@@ -81,7 +81,7 @@ class OpenLocation extends StatelessWidget {
           Text('!   Person is on leave',
             style: TextStyle(
               fontFamily: 'Montserrat',
-              fontSize: 15.0,
+              fontSize: 16.0,
               fontStyle: FontStyle.italic,
               color: Colors.red[100],
             ),
