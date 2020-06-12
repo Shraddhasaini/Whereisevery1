@@ -29,6 +29,11 @@ class _SettingsFormState extends State<SettingsForm> {
   Set<Marker> _markers = HashSet<Marker>();
   GoogleMapController _mapController;
 
+  void _setMapStyle(GoogleMapController controller) async {
+    String style =  await DefaultAssetBundle.of(context).loadString('assets/map_style.json');
+    _mapController.setMapStyle(style);
+  }
+
   void _onMapCreated(GoogleMapController controller){
     _mapController = controller;
 
@@ -48,6 +53,7 @@ class _SettingsFormState extends State<SettingsForm> {
               }))
       );
     });
+    _setMapStyle(_mapController);
   }
 
   @override

@@ -57,6 +57,11 @@ class _OpenLocationState extends State<OpenLocation> {
 
   GoogleMapController _mapController;
 
+  void _setMapStyle(GoogleMapController controller) async {
+    String style =  await DefaultAssetBundle.of(context).loadString('assets/map_style.json');
+    _mapController.setMapStyle(style);
+  }
+
   void _onMapCreated(GoogleMapController controller){
     _mapController = controller;
 
@@ -68,6 +73,7 @@ class _OpenLocationState extends State<OpenLocation> {
         ),
       );
     });
+    _setMapStyle(_mapController);
   }
 
   @override

@@ -62,6 +62,10 @@ class _OpenLocationState extends State<OpenLocation> {
     _setCircles();
   }
 
+  void _setMapStyle(GoogleMapController controller) async {
+    String style =  await DefaultAssetBundle.of(context).loadString('assets/map_style.json');
+    _mapController.setMapStyle(style);
+  }
 
 
   void _setCircles(){
@@ -75,6 +79,14 @@ class _OpenLocationState extends State<OpenLocation> {
       ),
     );
 
+  }
+
+  void _onMapCreated(GoogleMapController controller){
+    _mapController = controller;
+
+    setState((){
+    });
+    _setMapStyle(_mapController);
   }
 
 
@@ -110,7 +122,7 @@ class _OpenLocationState extends State<OpenLocation> {
         child: Stack(
           children: <Widget>[
             GoogleMap(
-             // onMapCreated: _onMapCreated,
+              onMapCreated: _onMapCreated,
               initialCameraPosition: CameraPosition(
               target: LatLng(widget.location.latitude, widget.location.longitude),
               zoom: 12,
