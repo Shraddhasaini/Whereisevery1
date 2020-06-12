@@ -36,7 +36,7 @@ class _OpenUserExact extends State<OpenUserExact> {
         scrollDirection: Axis.vertical,
         children: <Widget>[
           OpenStatus(name: widget.name,status: widget.status,),
-          OpenLocation(),
+          OpenLocation(location: widget.location),
           OpenCalendar(),
         ],
       ),
@@ -46,6 +46,8 @@ class _OpenUserExact extends State<OpenUserExact> {
 
 
 class OpenLocation extends StatefulWidget {
+  final GeoPoint location;
+  OpenLocation({this.location});
   @override
   _OpenLocationState createState() => _OpenLocationState();
 }
@@ -62,7 +64,7 @@ class _OpenLocationState extends State<OpenLocation> {
       _markers.add(
         Marker(
           markerId: MarkerId("0"),
-          position: LatLng(37.77483, -122.4192),
+          position: LatLng(widget.location.latitude, widget.location.longitude),
         ),
       );
     });
@@ -102,7 +104,7 @@ class _OpenLocationState extends State<OpenLocation> {
                 GoogleMap(
                   onMapCreated: _onMapCreated,
                   initialCameraPosition: CameraPosition(
-                    target: LatLng(37.77483, -122.4192),
+                    target: LatLng(widget.location.latitude, widget.location.longitude),
                     zoom: 12,
                   ),
                   markers: _markers,

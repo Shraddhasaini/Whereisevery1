@@ -37,7 +37,7 @@ class _OpenUserRadius extends State<OpenUserRadius> {
         scrollDirection: Axis.vertical,
         children: <Widget>[
           OpenStatus(name: widget.name,status: widget.status,),
-          OpenLocation(),
+          OpenLocation(location: widget.location,),
           OpenCalendar(),
         ],
       ),
@@ -46,6 +46,8 @@ class _OpenUserRadius extends State<OpenUserRadius> {
 }
 
 class OpenLocation extends StatefulWidget {
+  final GeoPoint location;
+  OpenLocation({this.location});
   @override
   _OpenLocationState createState() => _OpenLocationState();
 }
@@ -66,7 +68,7 @@ class _OpenLocationState extends State<OpenLocation> {
     _circles.add(
       Circle(
           circleId: CircleId("0"),
-          center: LatLng(37.77483, -122.4192),
+          center: LatLng(widget.location.latitude, widget.location.longitude),
           radius: 700,
           //strokeWidth: 2,
           fillColor: Color.fromRGBO(255,196,0, 0.5),
@@ -110,7 +112,7 @@ class _OpenLocationState extends State<OpenLocation> {
             GoogleMap(
              // onMapCreated: _onMapCreated,
               initialCameraPosition: CameraPosition(
-              target: LatLng(37.77483, -122.4192),
+              target: LatLng(widget.location.latitude, widget.location.longitude),
               zoom: 12,
           ),
               circles: _circles,
