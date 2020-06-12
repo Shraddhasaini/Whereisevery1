@@ -82,9 +82,14 @@ class HomePage extends StatelessWidget {
 
     void _showSettingsPanel(){
       showModalBottomSheet(context: context, builder: (context){
-        return SingleChildScrollView(
-          padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 20.0),
-          child: SettingsForm(),
+
+        return Container(
+          height: 600,
+          color: Colors.black,
+          child: SingleChildScrollView(
+            padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 20.0),
+            child: SettingsForm(),
+          ),
         );
       });
     }

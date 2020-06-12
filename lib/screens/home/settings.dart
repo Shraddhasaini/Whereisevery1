@@ -61,17 +61,24 @@ class _SettingsFormState extends State<SettingsForm> {
         if(snapshot.hasData){
 
           UserData userData = snapshot.data;
-
           return Form(
             key: _formKey,
             child: Column(
               children: <Widget>[
                 Text(
                   'Update your information',
-                  style: TextStyle(fontSize: 18.0),
+                  style: TextStyle(fontSize: 18.0,
+                  fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.amberAccent[400]
+                  ),
                 ),
                 SizedBox(height: 20.0),
                 TextFormField(
+                  style: TextStyle(fontSize: 18.0,
+                      fontFamily: 'Montserrat',
+                      color: Colors.amberAccent[400]
+                  ),
                   initialValue: userData.name,
                   decoration: textInputDecoration,
                   validator: (val) => val.isEmpty ? 'Please enter a name' : null,
@@ -79,12 +86,21 @@ class _SettingsFormState extends State<SettingsForm> {
                 ),
                 SizedBox(height: 20.0),
                 DropdownButtonFormField(
+                  style: TextStyle(fontSize: 18.0,
+                      fontFamily: 'Montserrat',
+                      color: Colors.amberAccent[400]
+                  ),
+                  iconEnabledColor: Colors.amberAccent[400],
                   decoration: textInputDecoration,
                   value: _currentStatus ?? userData.status ,
                   items: status.map((status){
                     return DropdownMenuItem(
                       value: status,
-                      child: Text('$status'),
+                      child: Text('$status',
+                        style: TextStyle(fontSize: 18.0,
+                            fontFamily: 'Montserrat',
+                            color: Colors.amberAccent[400]
+                        ),),
                     );
                   }).toList(),
                   onChanged: (val) => setState(() => _currentStatus = val),
@@ -114,7 +130,7 @@ class _SettingsFormState extends State<SettingsForm> {
                 if (_currentPosition != null)
                   Container(
                     height: 300,
-                    width: 300,
+                    width: 360,
                     child: Stack(
                       children: <Widget>[
                         GoogleMap(
@@ -133,7 +149,9 @@ class _SettingsFormState extends State<SettingsForm> {
                   color: Colors.amberAccent[400],
                   child: Text(
                     'Update',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.black,
+                    fontFamily: 'Montserrat'
+                    ),
                   ),
                   onPressed: () async {
                     //if(_formKey.currentState.validate()) {
