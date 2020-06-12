@@ -124,6 +124,10 @@ void initState(){
                 ),
               ),
             )),
+            Container(
+                height: 150,
+                width: 150,
+                child: Image.asset('assets/pot.png'),),
           ]
         ),
       ),
