@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:whereisevery1/models/status.dart';
 import 'package:whereisevery1/screens/openuser/openuser.dart';
 import 'package:whereisevery1/screens/openuser/openuser_exactloc.dart';
 import 'package:whereisevery1/screens/openuser/openuser_noloc.dart';
 
-class StatusTile extends StatelessWidget {
+class StatusTile extends StatefulWidget {
   final Status status;
   StatusTile({this.status});
+
+  @override
+  _StatusTileState createState() => _StatusTileState();
+}
+
+class _StatusTileState extends State<StatusTile> {
+  final Geolocator geolocator = Geolocator()..forceAndroidLocationManager;
+
+  String _currentAddress;
+
   @override
   Widget build(BuildContext context) {
-    switch(status.status) {
+    switch(widget.status.status) {
       case 'Working From Home': {
     return Padding(
       padding: EdgeInsets.only(top: 8.0),
@@ -25,7 +36,7 @@ class StatusTile extends StatelessWidget {
             //backgroundImage: AssetImage('assets/wfh.png'),
           backgroundColor: Colors.white10,
           ),
-          title: Text(status.name,
+          title: Text(widget.status.name,
             style: TextStyle(
               color: Colors.yellowAccent[400],
               fontFamily: 'Montserrat',
@@ -36,14 +47,13 @@ class StatusTile extends StatelessWidget {
               Navigator.push(
               context,
               MaterialPageRoute(
-              builder: (context) => OpenUserRadius(status: status.status, name: status.name, location: status.location),
+              builder: (context) => OpenUserRadius(status: widget.status.status, name: widget.status.name, location: widget.status.location),
               ),
               );
               },
           isThreeLine: true,
           subtitle: Text(
-            'is ${status.status} and ${status.name} is currently at ${status
-                .location}',
+            'is ${widget.status.status} and ${widget.status.name} is currently at ${_currentAddress}',
             style: TextStyle(
               color: Colors.yellowAccent[100],
             ),
@@ -68,7 +78,7 @@ class StatusTile extends StatelessWidget {
                 //backgroundImage: AssetImage('assets/wfh.png'),
                 backgroundColor: Colors.white10,
               ),
-              title: Text(status.name,
+              title: Text(widget.status.name,
                 style: TextStyle(
                   color: Colors.tealAccent[400],
                   fontFamily: 'Montserrat',
@@ -79,13 +89,13 @@ class StatusTile extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserExact(status: status.status, name: status.name, location: status.location),
+                    builder: (context) => OpenUserExact(status: widget.status.status, name: widget.status.name, location: widget.status.location),
                   ),
                 );
               },
               isThreeLine: true,
               subtitle: Text(
-                'is ${status.status} and ${status.name} is currently at ${status
+                'is ${widget.status.status} and ${widget.status.name} is currently at ${widget.status
                     .location}',
                 style: TextStyle(
                   color: Colors.tealAccent[100],
@@ -111,7 +121,7 @@ class StatusTile extends StatelessWidget {
                 //backgroundImage: AssetImage('assets/wfh.png'),
                 backgroundColor: Colors.white10,
               ),
-              title: Text(status.name,
+              title: Text(widget.status.name,
                 style: TextStyle(
                   color: Colors.pinkAccent[400],
                   fontFamily: 'Montserrat',
@@ -122,14 +132,13 @@ class StatusTile extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserNoLoc(status: status.status, name: status.name, location: status.location),
+                    builder: (context) => OpenUserNoLoc(status: widget.status.status, name: widget.status.name, location: widget.status.location),
                   ),
                 );
               },
               isThreeLine: true,
               subtitle: Text(
-                'is ${status.status} and ${status.name} is currently at ${status
-                    .location}',
+                'is ${widget.status.status} and location of ${widget.status.name} cannot be accessed',
                 style: TextStyle(
                   color: Colors.pinkAccent[100],
                 ),
@@ -155,7 +164,7 @@ class StatusTile extends StatelessWidget {
                 //backgroundImage: AssetImage('assets/wfh.png'),
                 backgroundColor: Colors.white10,
               ),
-              title: Text(status.name,
+              title: Text(widget.status.name,
                 style: TextStyle(
                   color: Colors.lightGreenAccent[400],
                   fontFamily: 'Montserrat',
@@ -166,14 +175,13 @@ class StatusTile extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserNoLoc(status: status.status, name: status.name, location: status.location),
+                    builder: (context) => OpenUserNoLoc(status: widget.status.status, name: widget.status.name, location: widget.status.location),
                   ),
                 );
               },
               isThreeLine: true,
               subtitle: Text(
-                'is ${status.status} and ${status.name} is currently at ${status
-                    .location}',
+                'is ${widget.status.status} and location of ${widget.status.name} cannot be accessed',
                 style: TextStyle(
                   color: Colors.lightGreenAccent[100],
                 ),
@@ -199,7 +207,7 @@ class StatusTile extends StatelessWidget {
                 //backgroundImage: AssetImage('assets/wfh.png'),
                 backgroundColor: Colors.white10,
               ),
-              title: Text(status.name,
+              title: Text(widget.status.name,
                 style: TextStyle(
                   color: Colors.cyanAccent[400],
                   fontFamily: 'Montserrat',
@@ -210,13 +218,13 @@ class StatusTile extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserExact(status: status.status, name: status.name, location: status.location),
+                    builder: (context) => OpenUserExact(status: widget.status.status, name: widget.status.name, location: widget.status.location),
                   ),
                 );
               },
               isThreeLine: true,
               subtitle: Text(
-                'is ${status.status} and ${status.name} is currently at ${status
+                'is ${widget.status.status} and ${widget.status.name} is currently at ${widget.status
                     .location}',
                 style: TextStyle(
                   color: Colors.cyanAccent[100],
@@ -228,6 +236,22 @@ class StatusTile extends StatelessWidget {
       break;
 
   }
+  }
+
+  _getAddressFromLatLng() async {
+    try {
+      List<Placemark> p = await geolocator.placemarkFromCoordinates(
+          widget.status.location.latitude, widget.status.location.longitude);
+
+      Placemark place = p[0];
+
+      setState(() {
+        _currentAddress =
+        "${place.locality}, ${place.postalCode}, ${place.country}";
+      });
+    } catch (e) {
+      print(e);
+    }
   }
 }
 
@@ -390,8 +414,7 @@ class FilterStatusTile extends StatelessWidget {
               },
               isThreeLine: true,
               subtitle: Text(
-                'is ${status.status} and ${status.name} is currently at ${status
-                    .location}',
+                'is ${status.status} and location of ${status.name} cannot be accessed',
                 style: TextStyle(
                   color: Colors.pinkAccent[100],
                 ),
@@ -434,8 +457,7 @@ class FilterStatusTile extends StatelessWidget {
               },
               isThreeLine: true,
               subtitle: Text(
-                'is ${status.status} and ${status.name} is currently at ${status
-                    .location}',
+                'is ${status.status} and location of ${status.name} cannot be accessed',
                 style: TextStyle(
                   color: Colors.lightGreenAccent[100],
                 ),
