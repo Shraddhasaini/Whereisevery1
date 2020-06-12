@@ -33,12 +33,13 @@ class _SettingsFormState extends State<SettingsForm> {
     _mapController = controller;
 
     setState((){
+      if (_currentPosition != null)
       _markers.add(
           Marker(
-              onTap: () {
+              /*onTap: () {
                 print('Tapped');
-              },
-              draggable: true,
+              },*/
+              /*draggable: true,*/
               markerId: MarkerId('Marker'),
               position: LatLng(_currentPosition.latitude, _currentPosition.longitude),
               onDragEnd: ((value) {
@@ -77,35 +78,6 @@ class _SettingsFormState extends State<SettingsForm> {
                   onChanged: (val) => setState(() => _currentName = val),
                 ),
                 SizedBox(height: 20.0),
-                /*TextFormField(
-                  initialValue: userData.location.toString(),
-                  decoration: textInputDecoration,
-                  validator: (val) => val.isEmpty ? 'Please enter a location' : null,
-                  onChanged: (val) => setState(() => _currentLocation = val),
-                ),*/
-                FlatButton(
-                  child: Text("Get location"),
-                  onPressed: () {
-                    _getCurrentLocation();
-                  },
-                ),
-                Container(
-                  height: 300,
-                  width: 300,
-                  child: Stack(
-                    children: <Widget>[
-                      GoogleMap(
-                        onMapCreated: _onMapCreated,
-                        initialCameraPosition: CameraPosition(
-                          target: LatLng(_currentPosition.latitude,_currentPosition.longitude),
-                          zoom: 12,
-                        ),
-                        markers: _markers,
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 20.0),
                 DropdownButtonFormField(
                   decoration: textInputDecoration,
                   value: _currentStatus ?? userData.status ,
@@ -118,6 +90,45 @@ class _SettingsFormState extends State<SettingsForm> {
                   onChanged: (val) => setState(() => _currentStatus = val),
                 ),
                 SizedBox(height: 20.0),
+                /*TextFormField(
+                  initialValue: userData.location.toString(),
+                  decoration: textInputDecoration,
+                  validator: (val) => val.isEmpty ? 'Please enter a location' : null,
+                  onChanged: (val) => setState(() => _currentLocation = val),
+                ),*/
+                FlatButton.icon(
+                  icon: Icon(Icons.location_on,
+                    color: Colors.amberAccent[400],),
+                  label: Text("Get location",
+                    style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 20.0,
+                        color: Colors.amberAccent[400]
+                    ),
+                  ),
+              onPressed: () {
+                _getCurrentLocation();
+                _currentLocation = GeoPoint(_currentPosition.latitude,_currentPosition.longitude);
+              },
+                ),
+                if (_currentPosition != null)
+                  Container(
+                    height: 300,
+                    width: 300,
+                    child: Stack(
+                      children: <Widget>[
+                        GoogleMap(
+                          onMapCreated: _onMapCreated,
+                          initialCameraPosition: CameraPosition(
+                            target: LatLng(_currentPosition.latitude,_currentPosition.longitude),
+                            zoom: 12,
+                          ),
+                          markers: _markers,
+                        ),
+                      ],
+                    ),
+                  ),
+                SizedBox(height: 20.0),
                 RaisedButton(
                   color: Colors.amberAccent[400],
                   child: Text(
@@ -125,14 +136,15 @@ class _SettingsFormState extends State<SettingsForm> {
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () async {
-                    if(_formKey.currentState.validate()) {
+                    //if(_formKey.currentState.validate()) {
+                    if (_currentPosition != null)
                       await DatabaseService(uid: user.uid).updateUserData(
-                          _currentLocation ?? userData.location,
+                          GeoPoint(_currentPosition.latitude,_currentPosition.longitude) ?? userData.location,
                           _currentName ?? userData.name,
                           _currentStatus ?? userData.status
                       );
                       Navigator.pop(context);
-                    }
+                   // }
                   },
                 ),
               ],
