@@ -5,6 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:whereisevery1/shared/constants.dart';
 
 class MyCalendar extends StatefulWidget {
   @override
@@ -59,6 +60,13 @@ void initState(){
          crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             TableCalendar(
+              onDaySelected: (date, events) {
+                setState( ()
+                {
+                  _selectedEvents =  events;
+                }
+                );
+              },
               events: _events,
               daysOfWeekStyle: DaysOfWeekStyle(
                   weekdayStyle: TextStyle(
@@ -105,30 +113,17 @@ void initState(){
               formatButtonShowsNext: false,
               ),
               startingDayOfWeek: StartingDayOfWeek.sunday,
-              onDaySelected: (date, events) {
-                setState( ()
-                  {
-                _selectedEvents =  events;
-                }
-                );
-              },
               calendarController: _controller,
                ),
-            Row(
-              children: <Widget>[
-                ..._selectedEvents.map((event) => ListTile(
-                  title: Text(event,
-                  style: TextStyle(
-                      color: Colors.amberAccent[400],
-                      fontFamily: 'Montserrat',
-                      fontSize: 20.0
-                  ),
-                  ),
-                )),
-            Image.asset('assets/pot.png',
-            fit: BoxFit.cover,),
-           ],
-            ),
+            ..._selectedEvents.map((event) => ListTile(
+              title: Text(event,
+                style: TextStyle(
+                    color: Colors.amberAccent[400],
+                    fontFamily: 'Montserrat',
+                    fontSize: 20.0
+                ),
+              ),
+            )),
           ]
         ),
       ),
@@ -145,18 +140,36 @@ _showAddDialog(){
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
+        backgroundColor: Colors.amberAccent[400],
+        //backgroundColor: Color.fromRGBO(255, 202, 40, 0.8),
         content: TextField(
+          style: TextStyle(
+              color: Colors.black,
+              fontFamily: 'Montserrat',
+              fontSize: 20.0
+          ),
+          cursorColor: Colors.black,
+          decoration: InputDecoration(
+              focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black,width: 2.0)
+              )
+          ),
           controller: _eventController,
         ),
         actions: <Widget>[
           FlatButton(
-          child: Text('save'),
+          child: Text('Save',
+            style: TextStyle(
+                color: Colors.black,
+                fontFamily: 'Montserrat',
+                fontSize: 20.0
+            ),
+          ),
           onPressed: (){
-            if(_eventController.text.isEmpty) return;
+           if(_eventController.text.isEmpty) return;
             setState(() {
-              if(_events[_controller.selectedDay] != null){
-                _events[_controller.selectedDay].add
-                  (_eventController.text);
+              if(_events[_controller.selectedDay] !=  null){
+                _events[_controller.selectedDay].add(_eventController.text);
               } else {
                 _events[_controller.selectedDay] =
                 [_eventController.text];

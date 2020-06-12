@@ -25,6 +25,7 @@ class _UserNameState extends State<UserName> {
 
             return Text(
                     userData.name,
+                    textAlign: TextAlign.left,
                     style: TextStyle(fontSize: 20.0,
                       fontFamily: 'Montserrat',
                       color: Colors.amberAccent[700],
