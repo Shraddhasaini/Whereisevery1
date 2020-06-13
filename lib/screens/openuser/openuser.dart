@@ -11,7 +11,9 @@ class OpenUserRadius extends StatefulWidget {
   final String name;
   final GeoPoint location;
   final String status;
-  OpenUserRadius({ this.name, this.location, this.status});
+  final String documentID;
+  OpenUserRadius({ this.name, this.location, this.status,this.documentID});
+
   @override
   _OpenUserRadius createState() => _OpenUserRadius();
 }
@@ -38,7 +40,7 @@ class _OpenUserRadius extends State<OpenUserRadius> {
         children: <Widget>[
           OpenStatus(name: widget.name,status: widget.status,),
           OpenLocation(location: widget.location,),
-          OpenCalendar(),
+          OpenCalendar(documentID: widget.documentID),
         ],
       ),
     );

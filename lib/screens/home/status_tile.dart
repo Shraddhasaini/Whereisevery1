@@ -49,7 +49,7 @@ class _StatusTileState extends State<StatusTile> {
               Navigator.push(
               context,
               MaterialPageRoute(
-              builder: (context) => OpenUserRadius(status: widget.status.status, name: widget.status.name, location: widget.status.location),
+              builder: (context) => OpenUserRadius(status: widget.status.status, name: widget.status.name, location: widget.status.location, documentID: widget.status.documentID),
               ),
               );
               },
@@ -91,7 +91,7 @@ class _StatusTileState extends State<StatusTile> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserExact(status: widget.status.status, name: widget.status.name, location: widget.status.location),
+                    builder: (context) => OpenUserExact(status: widget.status.status, name: widget.status.name, location: widget.status.location, documentID: widget.status.documentID),
                   ),
                 );
               },
@@ -133,7 +133,7 @@ class _StatusTileState extends State<StatusTile> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserNoLoc(status: widget.status.status, name: widget.status.name, location: widget.status.location),
+                    builder: (context) => OpenUserNoLoc(status: widget.status.status, name: widget.status.name, location: widget.status.location, documentID: widget.status.documentID),
                   ),
                 );
               },
@@ -176,7 +176,7 @@ class _StatusTileState extends State<StatusTile> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserNoLoc(status: widget.status.status, name: widget.status.name, location: widget.status.location),
+                    builder: (context) => OpenUserNoLoc(status: widget.status.status, name: widget.status.name, location: widget.status.location, documentID: widget.status.documentID),
                   ),
                 );
               },
@@ -219,7 +219,7 @@ class _StatusTileState extends State<StatusTile> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserExact(status: widget.status.status, name: widget.status.name, location: widget.status.location),
+                    builder: (context) => OpenUserExact(status: widget.status.status, name: widget.status.name, location: widget.status.location, documentID: widget.status.documentID),
                   ),
                 );
               },
@@ -331,7 +331,7 @@ class _FilterStatusTileState extends State<FilterStatusTile> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserRadius(status: widget.status.status, name: widget.status.name, location: widget.status.location),
+                    builder: (context) => OpenUserRadius(status: widget.status.status, name: widget.status.name, location: widget.status.location, documentID: widget.status.documentID),
                   ),
                 );
               },
@@ -373,7 +373,7 @@ class _FilterStatusTileState extends State<FilterStatusTile> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserExact(status: widget.status.status, name: widget.status.name, location: widget.status.location),
+                    builder: (context) => OpenUserExact(status: widget.status.status, name: widget.status.name, location: widget.status.location, documentID: widget.status.documentID),
                   ),
                 );
               },
@@ -415,7 +415,7 @@ class _FilterStatusTileState extends State<FilterStatusTile> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserNoLoc(status: widget.status.status, name: widget.status.name, location: widget.status.location),
+                    builder: (context) => OpenUserNoLoc(status: widget.status.status, name: widget.status.name, location: widget.status.location, documentID: widget.status.documentID),
                   ),
                 );
               },
@@ -458,7 +458,7 @@ class _FilterStatusTileState extends State<FilterStatusTile> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserNoLoc(status: widget.status.status, name: widget.status.name, location: widget.status.location),
+                    builder: (context) => OpenUserNoLoc(status: widget.status.status, name: widget.status.name, location: widget.status.location, documentID: widget.status.documentID),
                   ),
                 );
               },
@@ -501,7 +501,7 @@ class _FilterStatusTileState extends State<FilterStatusTile> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OpenUserExact(status: widget.status.status, name: widget.status.name, location: widget.status.location),
+                    builder: (context) => OpenUserExact(status: widget.status.status, name: widget.status.name, location: widget.status.location, documentID: widget.status.documentID),
                   ),
                 );
               },

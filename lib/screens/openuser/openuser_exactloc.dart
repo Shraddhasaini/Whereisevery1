@@ -10,7 +10,8 @@ class OpenUserExact extends StatefulWidget {
   final String name;
   final GeoPoint location;
   final String status;
-  OpenUserExact({ this.name, this.location, this.status});
+  final String documentID;
+  OpenUserExact({ this.name, this.location, this.status,this.documentID});
   @override
   _OpenUserExact createState() => _OpenUserExact();
 }
@@ -37,7 +38,7 @@ class _OpenUserExact extends State<OpenUserExact> {
         children: <Widget>[
           OpenStatus(name: widget.name,status: widget.status,),
           OpenLocation(location: widget.location),
-          OpenCalendar(),
+          OpenCalendar(documentID: widget.documentID),
         ],
       ),
     );

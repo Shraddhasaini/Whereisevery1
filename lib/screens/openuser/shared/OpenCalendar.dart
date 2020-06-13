@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'package:intl/date_symbol_data_local.dart';
 
 class OpenCalendar extends StatefulWidget {
+  final String documentID;
+  OpenCalendar({this.documentID});
   @override
   _OpenCalendarState createState() => _OpenCalendarState();
 }
@@ -19,7 +20,6 @@ class _OpenCalendarState extends State<OpenCalendar> with TickerProviderStateMix
   }
 
   Widget build(BuildContext context) {
-
     return SingleChildScrollView(
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

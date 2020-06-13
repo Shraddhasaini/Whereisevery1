@@ -51,10 +51,24 @@ class DatabaseService {
       return Status(
         name: doc.data['name'] ?? '',
         status: doc.data['status'] ?? '',
-        location: doc.data['location'] ?? ''
+        location: doc.data['location'] ?? '',
+        documentID: doc.documentID
       );
     }).toList();
   }
+
+
+
+  //cal list from snapshot
+  List<MyEvent> _eventListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc){
+      return MyEvent(
+          date: doc.data['name'] ?? '',
+          status: doc.data['status'] ?? '',
+      );
+    }).toList();
+  }
+
 
   //userData from snapshot
   UserData _userDataFromSnapshot(DocumentSnapshot snapshot){
@@ -100,6 +114,12 @@ class DatabaseService {
   Stream<List<Status>> get statuses {
     return statusCollection.snapshots()
     .map(_statusListFromSnapshot);
+  }
+
+  // get statuses stream
+  Stream<List<MyEvent>> get events {
+    return calCollection.snapshots()
+        .map(_eventListFromSnapshot);
   }
 
 

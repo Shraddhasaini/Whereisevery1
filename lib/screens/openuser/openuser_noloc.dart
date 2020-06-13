@@ -8,7 +8,8 @@ class OpenUserNoLoc extends StatefulWidget {
   final String name;
   final GeoPoint location;
   final String status;
-  OpenUserNoLoc({ this.name, this.location, this.status});
+  final String documentID;
+  OpenUserNoLoc({ this.name, this.location, this.status,this.documentID});
   @override
   _OpenUserNoLocState createState() => _OpenUserNoLocState();
 }
@@ -35,7 +36,7 @@ class _OpenUserNoLocState extends State<OpenUserNoLoc> {
         children: <Widget>[
           OpenStatus(name: widget.name,status: widget.status,),
           OpenLocation(),
-          OpenCalendar(),
+          OpenCalendar(documentID: widget.documentID),
         ],
       ),
     );

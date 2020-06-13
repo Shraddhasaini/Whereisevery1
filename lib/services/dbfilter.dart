@@ -15,7 +15,8 @@ class DatabaseServiceForFilter {
       return Filter(
           name: doc.data['name'] ?? '',
           status: doc.data['status'] ?? '',
-          location: doc.data['location'] ?? ''
+          location: doc.data['location'] ?? '',
+          documentID: doc.documentID
       );
     }).toList();
   }
