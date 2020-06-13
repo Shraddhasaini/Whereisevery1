@@ -11,8 +11,9 @@ class DatabaseCalService {
   //cal list from snapshot
   List<MyEvent> _eventListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc){
+      print(doc.data.toString());
       return MyEvent(
-        date: doc.data['name'] ?? '',
+        date: doc.data['date'] ?? '',
         status: doc.data['status'] ?? '',
       );
     }).toList();
