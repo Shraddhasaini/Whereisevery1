@@ -7,11 +7,14 @@ import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:whereisevery1/models/status.dart';
 import 'package:whereisevery1/models/users.dart';
+import 'package:whereisevery1/screens/home/calendar/caldb.dart';
 import 'package:whereisevery1/services/database.dart';
 import 'package:whereisevery1/shared/constants.dart';
 
 class MyCalendar extends StatefulWidget {
+
   @override
   _MyCalendarState createState() => _MyCalendarState();
 }
@@ -46,106 +49,146 @@ void initState(){
    return newMap;
  }
 
+
+ Map<DateTime, List<dynamic>> _groupEvents(List<MyEvent> allEvents) {
+   Map<DateTime, List<dynamic>> data = {};
+   allEvents.forEach((event) {
+     DateTime date = DateTime(
+         event.date.toDate().year, event.date.toDate().month, event.date.toDate().day, 12);
+     if (data[date] == null) data[date] = [];
+     data[date].add(event.status);
+     if(event.status != null) data[date] = [event.status];
+     if(_events[_controller.selectedDay] !=  null){
+       _events[_controller.selectedDay].add(event.status);
+     } else {
+       _events[_controller.selectedDay] =
+       [event.status];
+     }
+   }
+   );
+   return data;
+ }
+
   Widget build(BuildContext context) {
 
+    final user = Provider.of<User>(context);
+
+    return    StreamBuilder<List<MyEvent>>(
+        stream: DatabaseCalService(documentID: user.uid).events,
+        builder: (context, snapshot) {
+    print(_events);
+    if (snapshot.hasData) {
+    List<MyEvent> allEvents = snapshot.data;
+    print(allEvents);
+    if (allEvents.isNotEmpty) {
+    _events = _groupEvents(allEvents);
+    } else {
+    _events = {};
+    _selectedEvents = [];
+    }
+    }
+
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text('Calendar',
-        textAlign: TextAlign.left,
-        style: TextStyle(
-          fontFamily: 'Montserrat'
-        ),
-        ),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-         crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            TableCalendar(
-              onDaySelected: (date, events) {
-                setState( ()
-                {
-                  _selectedEvents =  events;
-                }
-                );
-              },
-              events: _events,
-              daysOfWeekStyle: DaysOfWeekStyle(
-                  weekdayStyle: TextStyle(
-                    color: Colors.amberAccent[100],
-                    fontFamily: 'Montserrat',
-                  ),
-                weekendStyle: TextStyle(
-                  color: Colors.amberAccent[400],
-                  fontFamily: 'Montserrat',
-                ),
-              ),
-              calendarStyle: CalendarStyle(
-                markersColor: Colors.white,
-                weekdayStyle: TextStyle(
-                  fontFamily: 'Montserrat',
-                  color: Colors.white,
-                ),
-                todayColor: Colors.amberAccent[400],
-                selectedColor: Colors.white30,
-                todayStyle: TextStyle(
-                  fontFamily: 'Montserrat',
-                  color: Colors.black,
-                ),
-              ),
-              headerStyle: HeaderStyle(
-                //centerHeaderTitle: true,
-                titleTextStyle: TextStyle(
-                  color: Colors.amberAccent[400],
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0
-                ),
-                formatButtonDecoration: BoxDecoration(
-                  color: Colors.white10,
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                  leftChevronIcon: Icon(Icons.chevron_left,
-                  color: Colors.amberAccent[400],
-                  ),
-                rightChevronIcon: Icon(Icons.chevron_right,
-                  color: Colors.amberAccent[400],
-                ),
-                  formatButtonTextStyle: TextStyle(color: Colors.amberAccent[400],
-                  fontFamily: 'Montserrat',),
-              formatButtonShowsNext: false,
-              ),
-              startingDayOfWeek: StartingDayOfWeek.sunday,
-              calendarController: _controller,
-               ),
-            ..._selectedEvents.map((event) => ListTile(
-              title: Text(event,
-                style: TextStyle(
-                    color: Colors.amberAccent[400],
-                    fontFamily: 'Montserrat',
-                    fontSize: 20.0
-                ),
-              ),
-            )),
-            Container(
-                height: 150,
-                width: 150,
-                child: Image.asset('assets/pot.png'),),
-          ]
-        ),
-      ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.amberAccent[400],
-        child: Icon(Icons.add,
-        color: Colors.black),
-        onPressed: _showAddDialog,
-        ),
+    backgroundColor: Colors.black,
+    appBar: AppBar(
+    backgroundColor: Colors.black,
+    title: Text('Calendar',
+    textAlign: TextAlign.left,
+    style: TextStyle(
+    fontFamily: 'Montserrat'
+    ),
+    ),
+    ),
+    body: SingleChildScrollView(
+    child: Column(
+    crossAxisAlignment: CrossAxisAlignment.end,
+    children: <Widget>[
+    TableCalendar(
+    onDaySelected: (date, events) {
+    setState( ()
+    {
+    _selectedEvents = events;
+    }
     );
+    },
+    events: _events,
+    daysOfWeekStyle: DaysOfWeekStyle(
+    weekdayStyle: TextStyle(
+    color: Colors.amberAccent[100],
+    fontFamily: 'Montserrat',
+    ),
+    weekendStyle: TextStyle(
+    color: Colors.amberAccent[400],
+    fontFamily: 'Montserrat',
+    ),
+    ),
+    calendarStyle: CalendarStyle(
+    markersColor: Colors.white,
+    weekdayStyle: TextStyle(
+    fontFamily: 'Montserrat',
+    color: Colors.white,
+    ),
+    todayColor: Colors.amberAccent[400],
+    selectedColor: Colors.white30,
+    todayStyle: TextStyle(
+    fontFamily: 'Montserrat',
+    color: Colors.black,
+    ),
+    ),
+    headerStyle: HeaderStyle(
+    //centerHeaderTitle: true,
+    titleTextStyle: TextStyle(
+    color: Colors.amberAccent[400],
+    fontFamily: 'Montserrat',
+    fontSize: 20.0
+    ),
+    formatButtonDecoration: BoxDecoration(
+    color: Colors.white10,
+    borderRadius: BorderRadius.circular(10.0),
+    ),
+    leftChevronIcon: Icon(Icons.chevron_left,
+    color: Colors.amberAccent[400],
+    ),
+    rightChevronIcon: Icon(Icons.chevron_right,
+    color: Colors.amberAccent[400],
+    ),
+    formatButtonTextStyle: TextStyle(color: Colors.amberAccent[400],
+    fontFamily: 'Montserrat',),
+    formatButtonShowsNext: false,
+    ),
+    startingDayOfWeek: StartingDayOfWeek.sunday,
+    calendarController: _controller,
+    ),
+    ..._selectedEvents.map((event) => ListTile(
+    title: Text(event,
+    style: TextStyle(
+    color: Colors.amberAccent[400],
+    fontFamily: 'Montserrat',
+    fontSize: 20.0
+    ),
+    ),
+    )),
+    Container(
+    height: 150,
+    width: 150,
+    child: Image.asset('assets/pot.png'),),
+    ]
+    ),
+    ),
+    floatingActionButton: FloatingActionButton(
+    backgroundColor: Colors.amberAccent[400],
+    child: Icon(Icons.add,
+    color: Colors.black),
+    onPressed: _showAddDialog,
+    ),
+    );
+    });
   }
 
 _showAddDialog(){
+
   final user = Provider.of<User>(context);
+
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -178,11 +221,16 @@ _showAddDialog(){
            if(_eventController.text.isEmpty) return;
             setState(() async {
               if(_events[_controller.selectedDay] !=  null){
-                await DatabaseService(uid: user.uid).newSubCollection(Timestamp.fromDate(_controller.selectedDay), _eventController.text);
+                /*Firestore.instance.collection('statuses').document(user.uid).collection('caldb').document().setData({
+                  'date': Timestamp.fromDate(_controller.selectedDay),
+                  'status': _eventController.text,
+                });*/
+               // await DatabaseService(uid: user.uid).newSubCollection(Timestamp.fromDate(_controller.selectedDay), _eventController.text);
                 _events[_controller.selectedDay].add(_eventController.text);
               } else {
                 _events[_controller.selectedDay] =
                 [_eventController.text];
+                await DatabaseService(uid: user.uid).newSubCollection(Timestamp.fromDate(_controller.selectedDay), _eventController.text);
               }
               _eventController.clear();
               Navigator.pop(context);
@@ -193,6 +241,7 @@ _showAddDialog(){
       )
 
     );
+
 }
 
 }
