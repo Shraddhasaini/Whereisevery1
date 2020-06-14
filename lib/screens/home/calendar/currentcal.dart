@@ -178,8 +178,8 @@ _showAddDialog(){
            if(_eventController.text.isEmpty) return;
             setState(() async {
               if(_events[_controller.selectedDay] !=  null){
+                await DatabaseService(uid: user.uid).newSubCollection(Timestamp.fromDate(_controller.selectedDay), _eventController.text);
                 _events[_controller.selectedDay].add(_eventController.text);
-                await DatabaseService(uid: user.uid).createSubCollection(Timestamp.fromDate(_controller.selectedDay), _eventController.text);
               } else {
                 _events[_controller.selectedDay] =
                 [_eventController.text];

@@ -80,9 +80,27 @@ class _OpenCalendarState extends State<OpenCalendar> with TickerProviderStateMix
 
     _selectedEvents = _events[_selectedDay] ?? [];*/
     _events = {};
+   // _selectedEvents ?? [];
     _selectedEvents ?? [];
     _controller = CalendarController();
   }
+
+  Map<String, dynamic> encodeMap(Map<DateTime, dynamic> map) {
+    Map<String, dynamic> newMap = {};
+    map.forEach((key, value) {
+      newMap[key.toString()] = map[key];
+    });
+    return newMap;
+  }
+
+  Map<DateTime, dynamic> decodeMap(Map<String, dynamic> map) {
+    Map<DateTime, dynamic> newMap = {};
+    map.forEach((key, value) {
+      newMap[DateTime.parse(key)] = map[key];
+    });
+    return newMap;
+  }
+
 
   Map<DateTime, List<dynamic>> _groupEvents(List<MyEvent> allEvents) {
     Map<DateTime, List<dynamic>> data = {};
@@ -90,8 +108,16 @@ class _OpenCalendarState extends State<OpenCalendar> with TickerProviderStateMix
       DateTime date = DateTime(
           event.date.toDate().year, event.date.toDate().month, event.date.toDate().day, 12);
       if (data[date] == null) data[date] = [];
-      data[date].add(event);
-    });
+      data[date].add(event.status);
+      if(event.status != null) data[date] = [event.status];
+        if(_events[_controller.selectedDay] !=  null){
+          _events[_controller.selectedDay].add(event.status);
+        } else {
+          _events[_controller.selectedDay] =
+          [event.status];
+        }
+    }
+    );
     return data;
   }
 
@@ -100,7 +126,7 @@ class _OpenCalendarState extends State<OpenCalendar> with TickerProviderStateMix
       return    StreamBuilder<List<MyEvent>>(
               stream: DatabaseCalService(documentID: widget.documentID).events,
               builder: (context, snapshot) {
-                print(snapshot);
+                print(_events);
                 if (snapshot.hasData) {
                 List<MyEvent> allEvents = snapshot.data;
                 print(allEvents);
@@ -136,7 +162,15 @@ class _OpenCalendarState extends State<OpenCalendar> with TickerProviderStateMix
                           ],
                           ),
                       TableCalendar(
-                      events: _events, daysOfWeekStyle: DaysOfWeekStyle(
+                        events: _events,
+                        onDaySelected: (date, events) {
+                          setState( ()
+                          {
+                            _selectedEvents =  events;
+                          }
+                          );
+                        },
+                        daysOfWeekStyle: DaysOfWeekStyle(
                       weekdayStyle: TextStyle(
                       color: Colors.amberAccent[100],
                       fontFamily: 'Montserrat',
@@ -187,15 +221,17 @@ class _OpenCalendarState extends State<OpenCalendar> with TickerProviderStateMix
                       startingDayOfWeek: StartingDayOfWeek.sunday,
                       calendarController: _controller,
                       ),
-                      ..._selectedEvents.map((event) => ListTile(
-                      title: Text(event,
-                      style: TextStyle(
-                      color: Colors.amberAccent[400],
-                      fontFamily: 'Montserrat',
-                      fontSize: 20.0
-                      ),
-                      ),
-                      )),
+                       if(_selectedEvents != null)
+                       ..._selectedEvents.map((events) =>
+                            ListTile(
+                              title: Text(events,
+                                style: TextStyle(
+                                    color: Colors.amberAccent[400],
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 20.0
+                                ),
+                              ),
+                            )),
                       ]
                       ),
                 );

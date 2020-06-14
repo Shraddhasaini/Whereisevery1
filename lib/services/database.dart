@@ -25,6 +25,12 @@ class DatabaseService {
   });
   }
 
+  Future newSubCollection(Timestamp date, String status) async {
+    return await statusCollection.document(uid).collection('caldb').add({
+      'date': date,
+      'status': status,
+    });
+  }
   //filter
 
   /*List<Filter> _filterListFromSnapshot(QuerySnapshot snapshot) {
