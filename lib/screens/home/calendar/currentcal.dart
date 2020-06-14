@@ -130,9 +130,17 @@ void initState(){
     ),
     todayColor: Colors.amberAccent[400],
     selectedColor: Colors.white30,
+      selectedStyle:TextStyle(
+        fontFamily: 'Montserrat',
+        color: Colors.white,
+        fontSize: 16.0,
+        fontWeight: FontWeight.bold,
+      ),
     todayStyle: TextStyle(
     fontFamily: 'Montserrat',
     color: Colors.black,
+      fontSize: 16.0,
+      fontWeight: FontWeight.bold,
     ),
     ),
     headerStyle: HeaderStyle(

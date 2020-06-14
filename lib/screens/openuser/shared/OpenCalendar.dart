@@ -181,19 +181,24 @@ class _OpenCalendarState extends State<OpenCalendar> with TickerProviderStateMix
                       ),
                       ),
                       calendarStyle: CalendarStyle(
-                      markersColor: Colors.amberAccent[400],
+                      markersColor: Colors.white,
                       weekdayStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       color: Colors.white,
                       ),
-                      todayColor: Color.fromRGBO(255, 202,2,0.6),
+                      //todayColor: Color.fromRGBO(255, 202,2,0.9),
+                        todayColor: Colors.amberAccent[400],
                       selectedColor: Colors.white30,
                       selectedStyle:TextStyle(
                       fontFamily: 'Montserrat',
-                      color: Colors.white
+                      color: Colors.white,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
                       ), todayStyle: TextStyle(
                       fontFamily: 'Montserrat',
-                      color: Colors.white
+                      color: Colors.black,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
                       ),
                       ),
                       headerStyle: HeaderStyle(
