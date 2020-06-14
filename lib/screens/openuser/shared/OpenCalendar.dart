@@ -80,7 +80,7 @@ class _OpenCalendarState extends State<OpenCalendar> with TickerProviderStateMix
 
     _selectedEvents = _events[_selectedDay] ?? [];*/
     _events = {};
-    _selectedEvents = [];
+    _selectedEvents ?? [];
     _controller = CalendarController();
   }
 

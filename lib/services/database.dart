@@ -63,7 +63,7 @@ class DatabaseService {
   List<MyEvent> _eventListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc){
       return MyEvent(
-          date: doc.data['name'] ?? '',
+          date: doc.data['date'] ?? '',
           status: doc.data['status'] ?? '',
       );
     }).toList();

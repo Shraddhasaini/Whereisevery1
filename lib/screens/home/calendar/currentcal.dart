@@ -1,10 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:whereisevery1/models/users.dart';
+import 'package:whereisevery1/services/database.dart';
 import 'package:whereisevery1/shared/constants.dart';
 
 class MyCalendar extends StatefulWidget {
@@ -141,6 +145,7 @@ void initState(){
   }
 
 _showAddDialog(){
+  final user = Provider.of<User>(context);
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -171,9 +176,10 @@ _showAddDialog(){
           ),
           onPressed: (){
            if(_eventController.text.isEmpty) return;
-            setState(() {
+            setState(() async {
               if(_events[_controller.selectedDay] !=  null){
                 _events[_controller.selectedDay].add(_eventController.text);
+                await DatabaseService(uid: user.uid).createSubCollection(Timestamp.fromDate(_controller.selectedDay), _eventController.text);
               } else {
                 _events[_controller.selectedDay] =
                 [_eventController.text];
