@@ -27,12 +27,14 @@ class MyClipPath extends AnimatedWidget {
 
   @override
   Widget build(BuildContext context) {
+    double _width = MediaQuery.of(context).size.width;
+    double _height = MediaQuery.of(context).size.height;
     return Column(
       children: [
         Expanded(
           child: Stack(children: [
             Positioned(
-              top: 130,
+              top: _height*0.1,
               right: animation.value,
               child: ClipPath(
                 clipper: BottomWaveClipper(),
@@ -47,7 +49,7 @@ class MyClipPath extends AnimatedWidget {
               ),
             ),
             Positioned(
-              top: 120,
+              top: _height*0.09,
               left: animation.value,
               child: ClipPath(
                 clipper: BottomWaveClipper(),
