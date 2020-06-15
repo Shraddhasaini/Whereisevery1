@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(home: Scaffold(body: MyAnimation()));
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
 
 // class MyClipPath extends StatelessWidget{
 class MyClipPath extends AnimatedWidget {
+
   final Animation<double> animation;
 
   MyClipPath(this.animation)
@@ -30,7 +32,7 @@ class MyClipPath extends AnimatedWidget {
         Expanded(
           child: Stack(children: [
             Positioned(
-              bottom: 400,
+              top: 130,
               right: animation.value,
               child: ClipPath(
                 clipper: BottomWaveClipper(),
@@ -45,7 +47,7 @@ class MyClipPath extends AnimatedWidget {
               ),
             ),
             Positioned(
-              bottom: 400,
+              top: 120,
               left: animation.value,
               child: ClipPath(
                 clipper: BottomWaveClipper(),

@@ -9,6 +9,8 @@ import 'package:whereisevery1/shared/filterstatustile.dart';
 class OnPlannedLeave extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double _width = MediaQuery.of(context).size.width;
+    double _height = MediaQuery.of(context).size.height;
     return StreamProvider<List<Status>>.value(
       value: DatabaseService().opl,
       child: Scaffold(
@@ -20,8 +22,8 @@ class OnPlannedLeave extends StatelessWidget {
                 Positioned(
                   left: 80,
                   right: 80,
-                  top: 50,
-                  bottom: 400,
+                  top: 0.073*_height,
+                  bottom: 0.6*_height,
                   child: Container(
                     child: Image.asset('assets/opl.png',fit: BoxFit.fitWidth),
                   ),
@@ -29,11 +31,11 @@ class OnPlannedLeave extends StatelessWidget {
                 Positioned(
                   left: 30,
                   right: 30,
-                  top: 250,
-                  bottom: 350,
+                  top: 0.39*_height,
+                  bottom: 0.51*_height,
                   child: Container(
                     child: Text(
-                      'Planned Leave',
+                      'on Planned Leave',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.pinkAccent,
@@ -46,16 +48,16 @@ class OnPlannedLeave extends StatelessWidget {
                 Positioned(
                   left: 10,
                   right: 10,
-                  top: 300,
-                  bottom: 80,
+                  top: 0.439*_height,
+                  bottom: 0.117*_height,
                   child: Container(
                     //color: Colors.black,
                     child: StatusListOPL(),
                   ),
                 ),
                 Positioned(
-                  top: 620,
-                  bottom: 10,
+                  top: 0.907*_height,
+                  bottom: 0.014*_height,
                   left: 250,
                   right: 10,
                   child: FlatButton.icon(
@@ -78,8 +80,8 @@ class OnPlannedLeave extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: 620,
-                  bottom: 10,
+                  top: 0.907*_height,
+                  bottom: 0.014*_height,
                   left: 10,
                   right: 250,
                   child: FlatButton.icon(

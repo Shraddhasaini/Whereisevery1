@@ -126,21 +126,23 @@ class HomePage extends StatelessWidget {
                       child: Stack(
                         children: <Widget>[
                           Positioned(
-                            top: -10,
-                            bottom: 500,
+                            top: 0,
+                            bottom: 0.8*(_height),
                             left: 0,
                             right: 0,
                             child: Container(
                                 color: Colors.amberAccent[100],),
                           ),
                           Positioned(
-                            child: Container(child: MyAnimation()),
+                            child: Container(
+                                child: MyAnimation()
+                              ),
                           ),
                           Positioned(
                             top: 0,
-                            bottom: 600,
+                            bottom: _height*0.9,
                             left: 0,
-                            right: 70,
+                            right: _width*0.2,
                             child: Container(
                               decoration: BoxDecoration(
                                 image: DecorationImage(
@@ -150,19 +152,19 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: 60,
-                            bottom: 580,
+                            top: _height*0.07 ,
+                            bottom: _height*0.9,
                             left: 0,
-                            right: 200,
+                            right: _width*0.2,
                             child: FlatButton(
                                 onPressed: () => _showSettingsPanel(),
                               child: UserName()
                             ),
                           ),
                           Positioned(
-                            top: 350,
-                            bottom: -50,
-                            left: 160,
+                            top: _height*0.5,
+                            bottom: -_height*0.06,
+                            left: _width*0.5,
                             right: 0,
                             child: Container(
                               decoration: BoxDecoration(
@@ -174,16 +176,16 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: 350,
+                            top: _height*0.4,
                             bottom: 0,
                             left: 0,
                             right: 0,
                             child: StatusList(),
                           ),
                           Positioned(
-                            top: 130,
-                            bottom: 350,
-                            left: 140,
+                            top: -_height*0.05,
+                            bottom: _height*0.35,
+                            left: _width*0.6,
                             right: 0,
                             child: Container(
                               decoration: BoxDecoration(
@@ -194,20 +196,21 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: 295,
-                            bottom: 355,
+                            top: _height*0.347,
+                            bottom: _height*0.61,
                             left: 10,
-                            right: 100,
+                            right: _width*0.14,
                             child: SearchByName(),
                           ),
                           Positioned(
-                            top: 190,
-                            bottom: 380,
+                            top: _height*0.24,
+                            bottom: _height*0.5,
                             left: 10,
-                            right: 230,
+                            right: _width*0.5,
                             child: Container(
                              child: Text('Status',
-                                style: TextStyle(fontSize: 40.0,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(fontSize: 50.0,
                                   fontFamily: 'Montserrat',
                                   color: Colors.amberAccent[400],
                                   fontWeight: FontWeight.bold,
@@ -216,10 +219,10 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: 250,
-                            bottom: 400,
+                            top: _height*0.3,
+                            bottom: _height*0.66,
                             left: 10,
-                            right: 260,
+                            right: _width*0.42,
                             child: FlatButton.icon(
                               label: Text('FILTERS',
                               style: TextStyle(
@@ -242,10 +245,10 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: 150,
-                            bottom: 490,
-                            left: 0,
-                            right: 260,
+                            top: _height*0.2,
+                            bottom: _height*0.75,
+                            left: 10,
+                            right:_width*0.5,
                             child: Container(
                               child: FlatButton(
                                 onPressed: () async{
@@ -259,7 +262,7 @@ class HomePage extends StatelessWidget {
                               child: Text(formattedDate,
                                   textAlign: TextAlign.justify,
                                   style: TextStyle(color: Colors.amberAccent[400],
-                                    fontSize: 20.0,
+                                    fontSize: 24.0,
                                     fontFamily: 'Montserrat',
 
                                   ),
@@ -268,10 +271,11 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: 10,
-                            bottom: 600,
-                            left: 330,
-                            right: 10,
+                            top: _height*0.01,
+                           // bottom: 600,
+                            //left: 330,
+                            height: _height*0.08,
+                            right: _width*0.01,
                             child: FlatButton(
                               onPressed: () async{
                                 Navigator.push(
@@ -286,10 +290,9 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: 66,
-                            bottom: 600,
-                            left: 345,
-                            right: 0,
+                            top: _height*0.1,
+                            //left: 345,
+                            right: _width*0.1,
                             child: Text('logout',
                               style: TextStyle(fontSize: 13.0,
                                 fontFamily: 'Montserrat'

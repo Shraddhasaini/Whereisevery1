@@ -45,10 +45,12 @@ class OpenStatus extends StatelessWidget
                     color: Colors.yellowAccent[400],
                   ),
                 ),
-                Container(
-                    height: 300,
-                    width: 300,
-                    child: Image.asset('assets/wfh.png')),
+                Expanded(
+                  child: Container(
+                      height: 300,
+                      width: 300,
+                      child: Image.asset('assets/wfh.png')),
+                ),
                 Text(status,
                   style: TextStyle(
                     fontSize: 30.0,

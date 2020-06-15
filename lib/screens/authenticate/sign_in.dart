@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whereisevery1/services/auth.dart';
 import 'package:whereisevery1/shared/constants.dart';
@@ -46,26 +47,27 @@ class _sign_inState extends State<sign_in> {
               child: Stack(
                 children: <Widget>[
                   Positioned(
-                    right: -30,
-                    bottom: -50,
-                    width: 200,
-                    height: 400,
+                    right: 0,
+                    bottom: 0,
+                    width: 0.3*_width,
+                    height: 0.3*_height,
                     child: Container(
                       decoration: BoxDecoration(
                         image: DecorationImage(
+                          fit: BoxFit.fill,
                           image: AssetImage('assets/plantlogin.png'),
                         ),
                       ),
                     ),
                   ),
                   Positioned(
-                    left: 120,
-                    bottom: -170,
-                    width: 200,
-                    height: 400,
+                    bottom: -0.1*_height,
+                    width: _width,
+                    height: 0.26*_height,
                     child: Container(
                       decoration: BoxDecoration(
                         image: DecorationImage(
+                          fit: BoxFit.scaleDown,
                           image: AssetImage('assets/logowhite.png'),
                         ),
                       ),
@@ -73,47 +75,53 @@ class _sign_inState extends State<sign_in> {
                   ),
                   Positioned(
                     left: 0,
-                    top: -100,
-                    width: 400,
-                    height: 600,
+                    top: -(_height-1.0*(_height)),
+                    width: _width,
+                    height: 0.5*_height,
                     child: Container(
                       decoration: BoxDecoration(
                         image: DecorationImage(
+                          fit: BoxFit.fitWidth,
                           image: AssetImage('assets/logingirl.png'),
                         ),
                       ),
                     ),
                   ),
                   Positioned(
-                    left: 0,
-                    bottom: 0,
+                    bottom: 0.01*_height,
                     child: Container(
-                      width: 400,
+                      width: _width,
                       padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 40.0),
                       child: Form(
                         key: _formKey,
                         child: Column(
                           children: <Widget>[
-                            SizedBox(height:10.0),
-                            TextFormField(
-                              style: TextStyle(color: Colors.white),
-                                decoration: textInputDecoration.copyWith(hintText: 'Email', hintStyle: TextStyle(color: Colors.white)),
-                                validator: (val) => val.isEmpty ? 'Enter an email' : null,
-                              onChanged: (val){
-                                setState(() => email = val);
-                              }
+                            SizedBox(height:0.01*_height),
+                            SizedBox(
+                              height: 0.08*_height,
+                              child: TextFormField(
+                                style: TextStyle(color: Colors.white),
+                                  decoration: textInputDecoration.copyWith(hintText: 'Email', hintStyle: TextStyle(color: Colors.white)),
+                                  validator: (val) => val.isEmpty ? 'Enter an email' : null,
+                                onChanged: (val){
+                                  setState(() => email = val);
+                                }
+                              ),
                             ),
-                            SizedBox(height:10.0),
-                            TextFormField(
-                              style: TextStyle(color: Colors.white),
-                              decoration: textInputDecoration.copyWith(hintText: 'Password',hintStyle: TextStyle(color: Colors.white)),
-                              obscureText: true,
-                              validator: (val) => val.length < 6 ? 'Enter a password 6+ chars long' : null,
-                              onChanged: (val){
-                                setState(() => password = val);
-                              },
+                            SizedBox(height:0.03*_height),
+                            SizedBox(
+                              height: 0.08*_height,
+                              child: TextFormField(
+                                style: TextStyle(color: Colors.white),
+                                decoration: textInputDecoration.copyWith(hintText: 'Password',hintStyle: TextStyle(color: Colors.white)),
+                                obscureText: true,
+                                validator: (val) => val.length < 6 ? 'Enter a password 6+ chars long' : null,
+                                onChanged: (val){
+                                  setState(() => password = val);
+                                },
+                              ),
                             ),
-                            SizedBox(height:10.0),
+                            SizedBox(height:0.05*_height),
                             Container(
                               child: Row(
                               children: <Widget>[

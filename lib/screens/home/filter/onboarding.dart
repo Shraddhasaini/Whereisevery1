@@ -8,8 +8,13 @@ import 'package:whereisevery1/screens/home/filter/screen/wio.dart';
 import 'package:whereisevery1/screens/home/home.dart';
 
 class OnboardingHome extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+
+    double _height = MediaQuery.of(context).size.height;
+    double _width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
@@ -17,8 +22,8 @@ class OnboardingHome extends StatelessWidget {
           child: Stack(
             children: <Widget>[
           Positioned(
-            top: 100,
-            bottom: 450,
+            top: _height*0.14,
+            bottom: _height*0.65,
             left: 10,
             right: 200,
             child: FlatButton(
@@ -41,8 +46,8 @@ class OnboardingHome extends StatelessWidget {
             ),
           ),
               Positioned(
-                top: 200,
-                bottom: 450,
+                top: 0.29*_height,
+                bottom: _height*0.65,
                 left: 10,
                 right: 200,
                 child: FlatButton(
@@ -56,8 +61,8 @@ class OnboardingHome extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 200,
-                bottom: 350,
+                top: 0.29*_height,
+                bottom: 0.51*_height,
                 left: 200,
                 right: 10,
                 child: FlatButton(
@@ -80,8 +85,8 @@ class OnboardingHome extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 300,
-                bottom: 350,
+                top: 0.43*_height,
+                bottom: 0.51*_height,
                 left: 200,
                 right: 10,
                 child: FlatButton(
@@ -95,8 +100,8 @@ class OnboardingHome extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 300,
-                bottom: 250,
+                top: 0.43*_height,
+                bottom: 0.36*_height,
                 left: 10,
                 right: 200,
                 child: FlatButton(
@@ -118,8 +123,8 @@ class OnboardingHome extends StatelessWidget {
                   ),
                 ),
               ),Positioned(
-                top: 400,
-                bottom: 250,
+                top: 0.58*_height,
+                bottom: 0.36*_height,
                 left: 10,
                 right: 200,
                 child: FlatButton(
@@ -133,8 +138,8 @@ class OnboardingHome extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 400,
-                bottom: 150,
+                top: 0.58*_height,
+                bottom: 0.21*_height,
                 left: 200,
                 right: 10,
                 child: FlatButton(
@@ -156,8 +161,8 @@ class OnboardingHome extends StatelessWidget {
                   ),
                 ),
               ),Positioned(
-                top: 500,
-                bottom: 150,
+                top: 0.73*_height,
+                bottom: 0.21*_height,
                 left: 200,
                 right: 10,
                 child: FlatButton(
@@ -171,8 +176,8 @@ class OnboardingHome extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 500,
-                bottom: 50,
+                top: _height*0.73,
+                bottom: _height*0.07,
                 left: 10,
                 right: 200,
                 child: FlatButton(
@@ -194,8 +199,8 @@ class OnboardingHome extends StatelessWidget {
                   ),
                 ),
               ),Positioned(
-                top: 600,
-                bottom: 50,
+                top: 0.87*_height,
+                bottom: _height*0.07,
                 left: 10,
                 right: 200,
                 child: FlatButton(
@@ -209,8 +214,8 @@ class OnboardingHome extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 20,
-                bottom: 600,
+                top: 0.02*_height,
+                bottom: 0.87*_height,
                 left: 6,
                 right: 180,
                 child: FlatButton(
@@ -225,8 +230,8 @@ class OnboardingHome extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 20,
-                bottom: 500,
+                top: 0.02*_height,
+                bottom: 0.73*_height,
                 left: 200,
                 right: 10,
                 child: FlatButton(
@@ -243,8 +248,8 @@ class OnboardingHome extends StatelessWidget {
                   ),
                 ),
               ),Positioned(
-                top: 620,
-                bottom: 10,
+                top: _height*0.9,
+                bottom: 30,
                 left: 250,
                 right: 10,
                 child: FlatButton.icon(
