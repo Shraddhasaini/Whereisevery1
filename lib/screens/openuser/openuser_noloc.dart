@@ -78,7 +78,7 @@ class OpenLocation extends StatelessWidget {
           ),
           ),
           SizedBox(height: 18.0),
-          Image.asset('assets/accessdenied.png'),
+          Expanded(child: Image.asset('assets/accessdenied.png')),
           SizedBox(height: 18.0),
           Text('!   Person is on leave',
             style: TextStyle(

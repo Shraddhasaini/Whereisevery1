@@ -38,24 +38,31 @@ class OpenStatus extends StatelessWidget
                     )
                   ],
                 ),
-                Text(name,
-                  style: TextStyle(
-                    fontSize: 40.0,
-                    fontFamily: 'Montserrat',
-                    color: Colors.yellowAccent[400],
+                Expanded(
+                  child: Text(name,
+                    style: TextStyle(
+                      fontSize: 40.0,
+                      fontFamily: 'Montserrat',
+                      color: Colors.yellowAccent[400],
+                    ),
                   ),
                 ),
                 Expanded(
+                  flex: 4,
                   child: Container(
-                      height: 300,
-                      width: 300,
-                      child: Image.asset('assets/wfh.png')),
+                     /* height: 300,
+                      width: 300,*/
+                      child: Image.asset('assets/wfh.png',
+                      fit: BoxFit.scaleDown,
+                      )),
                 ),
-                Text(status,
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    fontFamily: 'Montserrat',
-                    color: Colors.yellowAccent[400],
+                Expanded(
+                  child: Text(status,
+                    style: TextStyle(
+                      fontSize: 30.0,
+                      fontFamily: 'Montserrat',
+                      color: Colors.yellowAccent[400],
+                    ),
                   ),
                 ),
                 SizedBox(height: 3),
@@ -99,22 +106,31 @@ class OpenStatus extends StatelessWidget
                     )
                   ],
                 ),
-                Text(name,
-                  style: TextStyle(
-                    fontSize: 40.0,
-                    fontFamily: 'Montserrat',
-                    color: Colors.tealAccent[400],
+                Expanded(
+                  child: Text(name,
+                    style: TextStyle(
+                      fontSize: 40.0,
+                      fontFamily: 'Montserrat',
+                      color: Colors.tealAccent[400],
+                    ),
                   ),
                 ),
-                Container(
-                    height: 300,
-                    width: 300,
-                    child: Image.asset('assets/wio.png')),
-                Text(status,
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    fontFamily: 'Montserrat',
-                    color: Colors.tealAccent[400],
+                Expanded(
+                  flex: 4,
+                  child: Container(
+                      /*eight: 300,
+                      width: 300,*/
+                      child: Image.asset('assets/wio.png',
+                      fit: BoxFit.scaleDown,
+                      )),
+                ),
+                Expanded(
+                  child: Text(status,
+                    style: TextStyle(
+                      fontSize: 30.0,
+                      fontFamily: 'Montserrat',
+                      color: Colors.tealAccent[400],
+                    ),
                   ),
                 ),
                 SizedBox(height: 3),
@@ -159,22 +175,29 @@ class OpenStatus extends StatelessWidget
                     )
                   ],
                 ),
-                Text(name,
-                  style: TextStyle(
-                    fontSize: 40.0,
-                    fontFamily: 'Montserrat',
-                    color: Colors.pinkAccent[400],
+                Expanded(
+                  child: Text(name,
+                    style: TextStyle(
+                      fontSize: 40.0,
+                      fontFamily: 'Montserrat',
+                      color: Colors.pinkAccent[400],
+                    ),
                   ),
                 ),
-                Container(
-                    height: 300,
-                    width: 300,
-                    child: Image.asset('assets/opl.png')),
-                Text(status,
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    fontFamily: 'Montserrat',
-                    color: Colors.pinkAccent[400],
+                Expanded(
+                  flex: 4,
+                  child: Container(
+                      /*height: 300,
+                      width: 300,*/
+                      child: Image.asset('assets/opl.png')),
+                ),
+                Expanded(
+                  child: Text(status,
+                    style: TextStyle(
+                      fontSize: 30.0,
+                      fontFamily: 'Montserrat',
+                      color: Colors.pinkAccent[400],
+                    ),
                   ),
                 ),
                 SizedBox(height: 3),
@@ -217,22 +240,29 @@ class OpenStatus extends StatelessWidget
                   )
                 ],
               ),
-              Text(name,
-                style: TextStyle(
-                  fontSize: 40.0,
-                  fontFamily: 'Montserrat',
-                  color: Colors.lightGreenAccent[400],
+              Expanded(
+                child: Text(name,
+                  style: TextStyle(
+                    fontSize: 40.0,
+                    fontFamily: 'Montserrat',
+                    color: Colors.lightGreenAccent[400],
+                  ),
                 ),
               ),
-              Container(
-                  height: 300,
-                  width: 300,
-                  child: Image.asset('assets/osl.png')),
-              Text(status,
-                style: TextStyle(
-                  fontSize: 30.0,
-                  fontFamily: 'Montserrat',
-                  color: Colors.lightGreenAccent[400],
+              Expanded(
+                flex: 4,
+                child: Container(
+                   /* height: 300,
+                    width: 300,*/
+                    child: Image.asset('assets/osl.png')),
+              ),
+              Expanded(
+                child: Text(status,
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'Montserrat',
+                    color: Colors.lightGreenAccent[400],
+                  ),
                 ),
               ),
               SizedBox(height: 3),
@@ -277,22 +307,29 @@ class OpenStatus extends StatelessWidget
                     )
                   ],
                 ),
-                Text(name,
-                  style: TextStyle(
-                    fontSize: 40.0,
-                    fontFamily: 'Montserrat',
-                    color: Colors.cyanAccent[400],
+                Expanded(
+                  child: Text(name,
+                    style: TextStyle(
+                      fontSize: 40.0,
+                      fontFamily: 'Montserrat',
+                      color: Colors.cyanAccent[400],
+                    ),
                   ),
                 ), 
-                Container(
-                  height: 300,
-                    width: 300,
-                    child: Image.asset('assets/bt.png')),
-                Text(status,
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    fontFamily: 'Montserrat',
-                    color: Colors.cyanAccent[400],
+                Expanded(
+                  flex: 4,
+                  child: Container(
+                    /*height: 300,
+                      width: 300,*/
+                      child: Image.asset('assets/bt.png')),
+                ),
+                Expanded(
+                  child: Text(status,
+                    style: TextStyle(
+                      fontSize: 30.0,
+                      fontFamily: 'Montserrat',
+                      color: Colors.cyanAccent[400],
+                    ),
                   ),
                 ),
                 SizedBox(height: 3),

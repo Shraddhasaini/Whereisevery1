@@ -94,6 +94,8 @@ class _OpenLocationState extends State<OpenLocation> {
 
   @override
   Widget build(BuildContext context) {
+    double _width = MediaQuery.of(context).size.width;
+    double _height = MediaQuery.of(context).size.height;
     return Container(
       child: Column(
       children: <Widget>[
@@ -118,20 +120,22 @@ class _OpenLocationState extends State<OpenLocation> {
           ],
         ),
         SizedBox(height: 20),
-      Container(
-        height: 420,
-        width: 350,
-        child: Stack(
-          children: <Widget>[
-            GoogleMap(
-              onMapCreated: _onMapCreated,
-              initialCameraPosition: CameraPosition(
-              target: LatLng(widget.location.latitude, widget.location.longitude),
-              zoom: 12,
+      Expanded(
+        child: Container(
+          //height: _height*0.5,
+          width: _width,
+          child: Stack(
+            children: <Widget>[
+              GoogleMap(
+                onMapCreated: _onMapCreated,
+                initialCameraPosition: CameraPosition(
+                target: LatLng(widget.location.latitude, widget.location.longitude),
+                zoom: 12,
+            ),
+                circles: _circles,
+            ),
+          ],
           ),
-              circles: _circles,
-          ),
-        ],
         ),
       ),
         SizedBox(height: 20),
