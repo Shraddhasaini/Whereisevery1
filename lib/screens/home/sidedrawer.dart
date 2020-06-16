@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:whereisevery1/models/status.dart';
-import 'package:whereisevery1/screens/home/settingPage.dart';
-import 'package:whereisevery1/screens/home/settings.dart';
-import 'package:whereisevery1/screens/home/sidedrawer.dart';
-//import 'package:whereisevery1/screens/wrapper.dart';
-import 'package:whereisevery1/services/auth.dart';
+import 'package:WhereIsEveryone/models/status.dart';
+import 'package:WhereIsEveryone/screens/home/settingPage.dart';
+import 'package:WhereIsEveryone/screens/home/settings.dart';
+import 'package:WhereIsEveryone/screens/home/sidedrawer.dart';
+//import 'package:WhereIsEveryone/screens/wrapper.dart';
+import 'package:WhereIsEveryone/services/auth.dart';
 import 'package:provider/provider.dart';
-import 'package:whereisevery1/services/database.dart';
-import 'package:whereisevery1/screens/home/statuslist.dart';
-import 'package:whereisevery1/shared/myappbar.dart';
-import 'package:whereisevery1/shared/username.dart';
+import 'package:WhereIsEveryone/services/database.dart';
+import 'package:WhereIsEveryone/screens/home/statuslist.dart';
+import 'package:WhereIsEveryone/shared/myappbar.dart';
+import 'package:WhereIsEveryone/shared/username.dart';
 
 class CustomDrawer extends StatelessWidget {
   List<Color> _colors = [Colors.white , Colors.amberAccent[100]];

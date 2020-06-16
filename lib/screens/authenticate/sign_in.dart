@@ -1,9 +1,11 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:whereisevery1/services/auth.dart';
-import 'package:whereisevery1/shared/constants.dart';
-import 'package:whereisevery1/shared/loading.dart';
+import 'package:WhereIsEveryone/services/auth.dart';
+import 'package:WhereIsEveryone/shared/constants.dart';
+import 'package:WhereIsEveryone/shared/constants.dart';
+import 'package:WhereIsEveryone/shared/constants.dart';
+import 'package:WhereIsEveryone/shared/loading.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class sign_in extends StatefulWidget {
@@ -88,15 +90,15 @@ class _sign_inState extends State<sign_in> {
                     ),
                   ),
                   Positioned(
-                    bottom: 0.01*_height,
+                    bottom: 0.03*_height,
                     child: Container(
                       width: _width,
-                      padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 40.0),
+                      padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 40.0),
                       child: Form(
                         key: _formKey,
                         child: Column(
                           children: <Widget>[
-                            SizedBox(height:0.01*_height),
+                            SizedBox(height:0.09*_height),
                             SizedBox(
                               height: 0.08*_height,
                               child: TextFormField(
@@ -121,7 +123,7 @@ class _sign_inState extends State<sign_in> {
                                 },
                               ),
                             ),
-                            SizedBox(height:0.05*_height),
+                            SizedBox(height:0.01*_height),
                             Container(
                               child: Row(
                               children: <Widget>[
@@ -148,27 +150,31 @@ class _sign_inState extends State<sign_in> {
                                       }
                                   },
                                 ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(60, 0, 0, 0),
-                                child: Text('-OR-',style: TextStyle(
+                              Expanded(
+                                child: Text('or',style: TextStyle(
                                   fontFamily: 'Montserrat',
                                   color: Colors.white30,
                                   fontStyle: FontStyle.italic,
-                                ),),
+                                ),
+                                textAlign: TextAlign.center,
+                                ),
                               ),
-                              Positioned(
-                                child: Padding(
-                                  padding: const EdgeInsets.fromLTRB(50, 0, 0, 0),
-                                  child: RaisedButton(
-                                    color: Colors.white12,
-                                    child: Text(
-                                      'Google',
+                              Expanded(
+                                  flex: 6,
+                                  child: RaisedButton.icon(
+                                    icon: Image.asset('assets/Google-Button.png',
+                                    fit: BoxFit.cover,
+                                      scale: 9.0,
+                                    ),
+                                    label: Text(
+                                      'Sign-in with Google',
+                                      textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontFamily: 'Montserrat',
-                                        color: Colors.white,
-                                        fontStyle: FontStyle.italic,
+                                        fontFamily: 'Roboto',
+                                        color: Colors.black,
                                       ),
                                     ),
+                                    color: Colors.white,
                                     onPressed: () async {
                                       dynamic result = await _auth.googleSignIn1();
                                       if (result == null){
@@ -178,7 +184,6 @@ class _sign_inState extends State<sign_in> {
                                       }
                                     },
                                   ),
-                                ),
                               ),
                               ],
                               ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:whereisevery1/models/users.dart';
-import 'package:whereisevery1/services/database.dart';
+import 'package:WhereIsEveryone/models/users.dart';
+import 'package:WhereIsEveryone/services/database.dart';
 
 class UserName extends StatefulWidget {
   @override

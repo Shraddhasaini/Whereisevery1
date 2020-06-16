@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:whereisevery1/services/auth.dart';
-import 'package:whereisevery1/shared/constants.dart';
-import 'package:whereisevery1/shared/loading.dart';
+import 'package:WhereIsEveryone/services/auth.dart';
+import 'package:WhereIsEveryone/shared/constants.dart';
+import 'package:WhereIsEveryone/shared/loading.dart';
 
 class Register extends StatefulWidget {
 
@@ -63,7 +63,7 @@ class _RegisterState extends State<Register> {
                           left: 0,
                           top: -(_height-1.0*(_height)),
                           width: _width,
-                          height: 0.5*_height,
+                          height: 0.45*_height,
                           child: Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
@@ -73,10 +73,10 @@ class _RegisterState extends State<Register> {
                           ),
                         ),
                         Positioned(
-                          bottom: 0.01*_height,
+                          bottom: 0.02*_height,
                           child: Container(
                             width: _width,
-                            padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 50.0),
+                            padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 50.0),
                             child: Form(
                               key: _formKey,
                               child: Column(
@@ -104,7 +104,7 @@ class _RegisterState extends State<Register> {
                                       },
                                     ),
                                   ),
-                                  SizedBox(height:0.05*_height),
+                                  SizedBox(height:0.01*_height),
                                   Container(
                                     child: Row(
                                         children: <Widget>[
@@ -132,28 +132,31 @@ class _RegisterState extends State<Register> {
                                               },
                                             ),
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsets.fromLTRB(40, 0, 0, 0),
-                                            child: Text('-OR-',style: TextStyle(
+                                          Expanded(
+                                            child: Text('or',style: TextStyle(
                                               fontFamily: 'Montserrat',
                                               color: Colors.black26,
                                               fontStyle: FontStyle.italic,
-                                            ),),
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            ),
                                           ),
-                                          Positioned(
-                                            right: 10,
-                                            child: Padding(
-                                              padding: const EdgeInsets.fromLTRB(40, 0, 0, 0),
-                                              child: RaisedButton(
-                                                color: Colors.white30,
-                                                child: Text(
-                                                  'Google',
+                                          Expanded(
+                                              flex: 7,
+                                              child: RaisedButton.icon(
+                                                icon: Image.asset('assets/Google-Button.png',
+                                                  fit: BoxFit.cover,
+                                                  scale: 8.0,
+                                                ),
+                                                label: Text(
+                                                  'Sign-up with Google',
+                                                  textAlign: TextAlign.left,
                                                   style: TextStyle(
-                                                    fontFamily: 'Montserrat',
+                                                    fontFamily: 'Roboto',
                                                     color: Colors.black,
-                                                    fontStyle: FontStyle.italic,
                                                   ),
                                                 ),
+                                                color: Colors.white,
                                                 onPressed: () async {
                                                   dynamic result = await _auth.googleSignIn();
                                                   if (result == null){
@@ -164,7 +167,6 @@ class _RegisterState extends State<Register> {
                                                 },
                                               ),
                                             ),
-                                          ),
                                         ]
                                     ),
                                   ),

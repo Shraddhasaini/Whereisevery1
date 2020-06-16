@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:whereisevery1/models/status.dart';
+import 'package:WhereIsEveryone/models/status.dart';
 
 class DatabaseCalService {
   final String documentID;

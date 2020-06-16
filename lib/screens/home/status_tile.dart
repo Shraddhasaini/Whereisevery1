@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:whereisevery1/models/status.dart';
-import 'package:whereisevery1/screens/openuser/openuser.dart';
-import 'package:whereisevery1/screens/openuser/openuser_exactloc.dart';
-import 'package:whereisevery1/screens/openuser/openuser_noloc.dart';
+import 'package:WhereIsEveryone/models/status.dart';
+import 'package:WhereIsEveryone/screens/openuser/openuser.dart';
+import 'package:WhereIsEveryone/screens/openuser/openuser_exactloc.dart';
+import 'package:WhereIsEveryone/screens/openuser/openuser_noloc.dart';
 
 class StatusTile extends StatefulWidget {
   final Status status;

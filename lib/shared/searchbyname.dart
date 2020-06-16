@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:whereisevery1/screens/authenticate/register.dart';
-import 'package:whereisevery1/screens/home/searchModal.dart';
-import 'package:whereisevery1/screens/home/status_tile.dart';
-import 'package:whereisevery1/screens/home/statuslist.dart';
-import 'package:whereisevery1/shared/constants.dart';
+import 'package:WhereIsEveryone/screens/authenticate/register.dart';
+import 'package:WhereIsEveryone/screens/home/searchModal.dart';
+import 'package:WhereIsEveryone/screens/home/status_tile.dart';
+import 'package:WhereIsEveryone/screens/home/statuslist.dart';
+import 'package:WhereIsEveryone/shared/constants.dart';
 
 class SearchByName extends StatefulWidget {
   @override

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:whereisevery1/models/status.dart';
-import 'package:whereisevery1/models/users.dart';
-import 'package:whereisevery1/screens/home/filter/fliterstatuslist.dart';
-import 'package:whereisevery1/screens/home/sidedrawer.dart';
-import 'package:whereisevery1/screens/home/status_tile.dart';
-import 'package:whereisevery1/screens/home/statuslist.dart';
-import 'package:whereisevery1/services/database.dart';
-import 'package:whereisevery1/services/dbfilter.dart';
-import 'package:whereisevery1/shared/constants.dart';
-import 'package:whereisevery1/shared/loading.dart';
+import 'package:WhereIsEveryone/models/status.dart';
+import 'package:WhereIsEveryone/models/users.dart';
+import 'package:WhereIsEveryone/screens/home/filter/fliterstatuslist.dart';
+import 'package:WhereIsEveryone/screens/home/sidedrawer.dart';
+import 'package:WhereIsEveryone/screens/home/status_tile.dart';
+import 'package:WhereIsEveryone/screens/home/statuslist.dart';
+import 'package:WhereIsEveryone/services/database.dart';
+import 'package:WhereIsEveryone/services/dbfilter.dart';
+import 'package:WhereIsEveryone/shared/constants.dart';
+import 'package:WhereIsEveryone/shared/loading.dart';
 
 class SearchModal extends StatelessWidget {
   final String name;

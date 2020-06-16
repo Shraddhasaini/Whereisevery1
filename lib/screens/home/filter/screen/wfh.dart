@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:whereisevery1/models/status.dart';
-import 'package:whereisevery1/screens/home/filter/onboarding.dart';
-import 'package:whereisevery1/screens/home/home.dart';
-import 'package:whereisevery1/services/database.dart';
-import 'package:whereisevery1/shared/filterstatustile.dart';
+import 'package:WhereIsEveryone/models/status.dart';
+import 'package:WhereIsEveryone/screens/home/filter/onboarding.dart';
+import 'package:WhereIsEveryone/screens/home/home.dart';
+import 'package:WhereIsEveryone/services/database.dart';
+import 'package:WhereIsEveryone/shared/filterstatustile.dart';
 
 class WorkFromHome extends StatelessWidget {
   @override

@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:whereisevery1/models/users.dart';
-import 'package:whereisevery1/screens/wrapper.dart';
-import 'package:whereisevery1/services/auth.dart';
+import 'package:WhereIsEveryone/models/users.dart';
+import 'package:WhereIsEveryone/screens/wrapper.dart';
+import 'package:WhereIsEveryone/services/auth.dart';
 
 class Provide extends StatelessWidget {
   @override

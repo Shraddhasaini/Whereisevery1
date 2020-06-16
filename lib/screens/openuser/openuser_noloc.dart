@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:whereisevery1/screens/openuser/shared/OpenCalendar.dart';
-import 'package:whereisevery1/screens/openuser/shared/OpenStatus.dart';
+import 'package:WhereIsEveryone/screens/openuser/shared/OpenCalendar.dart';
+import 'package:WhereIsEveryone/screens/openuser/shared/OpenStatus.dart';
 
 class OpenUserNoLoc extends StatefulWidget {
   final String name;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:whereisevery1/services/auth.dart';
-import 'package:whereisevery1/shared/constants.dart';
-import 'package:whereisevery1/shared/loading.dart';
+import 'package:WhereIsEveryone/services/auth.dart';
+import 'package:WhereIsEveryone/shared/constants.dart';
+import 'package:WhereIsEveryone/shared/loading.dart';
 
 class Register extends StatefulWidget {
 

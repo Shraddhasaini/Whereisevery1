@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:whereisevery1/screens/authenticate/sign_in.dart';
-import 'package:whereisevery1/screens/home/home.dart';
-import 'package:whereisevery1/services/auth.dart';
+import 'package:WhereIsEveryone/screens/authenticate/sign_in.dart';
+import 'package:WhereIsEveryone/screens/home/home.dart';
+import 'package:WhereIsEveryone/services/auth.dart';
 
 class LogOut extends StatelessWidget {
   final AuthService _auth = AuthService();

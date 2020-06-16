@@ -7,11 +7,11 @@ import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:whereisevery1/models/status.dart';
-import 'package:whereisevery1/models/users.dart';
-import 'package:whereisevery1/screens/home/calendar/caldb.dart';
-import 'package:whereisevery1/services/database.dart';
-import 'package:whereisevery1/shared/constants.dart';
+import 'package:WhereIsEveryone/models/status.dart';
+import 'package:WhereIsEveryone/models/users.dart';
+import 'package:WhereIsEveryone/screens/home/calendar/caldb.dart';
+import 'package:WhereIsEveryone/services/database.dart';
+import 'package:WhereIsEveryone/shared/constants.dart';
 
 class MyCalendar extends StatefulWidget {
 

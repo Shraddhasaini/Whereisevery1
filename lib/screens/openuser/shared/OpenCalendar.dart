@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'package:whereisevery1/models/status.dart';
-import 'package:whereisevery1/screens/home/calendar/caldb.dart';
+import 'package:WhereIsEveryone/models/status.dart';
+import 'package:WhereIsEveryone/screens/home/calendar/caldb.dart';
 
 class OpenCalendar extends StatefulWidget {
   final String documentID;

@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:whereisevery1/models/users.dart';
-import 'package:whereisevery1/screens/home/sidedrawer.dart';
-import 'package:whereisevery1/services/database.dart';
-import 'package:whereisevery1/shared/constants.dart';
-import 'package:whereisevery1/shared/loading.dart';
+import 'package:WhereIsEveryone/models/users.dart';
+import 'package:WhereIsEveryone/screens/home/sidedrawer.dart';
+import 'package:WhereIsEveryone/services/database.dart';
+import 'package:WhereIsEveryone/shared/constants.dart';
+import 'package:WhereIsEveryone/shared/loading.dart';
 
 class SettingsForm extends StatefulWidget {
   @override

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:whereisevery1/models/status.dart';
-import 'package:whereisevery1/models/users.dart';
+import 'package:WhereIsEveryone/models/status.dart';
+import 'package:WhereIsEveryone/models/users.dart';
 
 class DatabaseServiceForFilter {
   final String name;

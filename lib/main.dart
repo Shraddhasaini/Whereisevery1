@@ -1,10 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:whereisevery1/provide.dart';
-//import 'package:whereisevery1/login.dart';
+import 'package:WhereIsEveryone/provide.dart';
+//import 'package:WhereIsEveryone/login.dart';
 import 'dart:async';
-//import 'package:whereisevery1/screens/wrapper.dart';
+//import 'package:WhereIsEveryone/screens/wrapper.dart';
 
 void main() => runApp(MaterialApp(
   home: Splash()

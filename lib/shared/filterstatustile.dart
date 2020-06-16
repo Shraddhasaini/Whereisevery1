@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:whereisevery1/models/status.dart';
+import 'package:WhereIsEveryone/models/status.dart';
 import 'package:provider/provider.dart';
-import 'package:whereisevery1/screens/home/status_tile.dart';
+import 'package:WhereIsEveryone/screens/home/status_tile.dart';
 
 class StatusListWFH extends StatefulWidget {
   @override

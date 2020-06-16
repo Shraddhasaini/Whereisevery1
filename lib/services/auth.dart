@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:whereisevery1/models/users.dart';
-import 'package:whereisevery1/services/database.dart';
+import 'package:WhereIsEveryone/models/users.dart';
+import 'package:WhereIsEveryone/services/database.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService{
