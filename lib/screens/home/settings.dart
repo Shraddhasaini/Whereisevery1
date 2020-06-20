@@ -177,7 +177,10 @@ class _SettingsFormState extends State<SettingsForm> {
         } else{
                 return Text(
                   'You are in View-mode. To update your information you need to register your account',
-                  style: TextStyle(fontSize: 18.0),
+                  style: TextStyle(fontSize: 18.0,
+                  fontFamily: 'Montserrat',
+                    color: Colors.amber,
+                  ),
                 );
         }
       }

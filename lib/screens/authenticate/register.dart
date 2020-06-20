@@ -108,8 +108,9 @@ class _RegisterState extends State<Register> {
                                   Container(
                                     child: Row(
                                         children: <Widget>[
-                                          Positioned(
-                                            child: RaisedButton(
+                                         // Positioned(
+                                            //child:
+                                            RaisedButton(
                                               color: Colors.amberAccent[400],
                                               child: Text(
                                                 'Register',
@@ -131,7 +132,7 @@ class _RegisterState extends State<Register> {
                                                 }
                                               },
                                             ),
-                                          ),
+                                         // ),
                                           Expanded(
                                             child: Text('or',style: TextStyle(
                                               fontFamily: 'Montserrat',

@@ -197,8 +197,9 @@ class _sign_inState extends State<sign_in> {
                             FlatButton(
                               //color: Colors.black,
                               child: Text(
-                                '       Register your account',
+                                'New member? Register Here',
                                 style: TextStyle(
+                                  fontSize: 18.0,
                                   fontFamily: 'Montserrat',
                                   color: Colors.amberAccent[400],
                                   fontStyle: FontStyle.italic,

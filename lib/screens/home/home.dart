@@ -156,9 +156,11 @@ class HomePage extends StatelessWidget {
                             bottom: _height*0.9,
                             left: 0,
                             right: _width*0.2,
-                            child: FlatButton(
+                            child: FlatButton.icon(
+                              icon: Icon(Icons.perm_identity,
+                              color: Colors.amberAccent[700],),
                                 onPressed: () => _showSettingsPanel(),
-                              child: UserName()
+                              label: UserName()
                             ),
                           ),
                           Positioned(
@@ -210,7 +212,7 @@ class HomePage extends StatelessWidget {
                             child: Container(
                              child: Text('Status',
                                 textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 50.0,
+                                style: TextStyle(fontSize: 40.0,
                                   fontFamily: 'Montserrat',
                                   color: Colors.amberAccent[400],
                                   fontWeight: FontWeight.bold,
@@ -250,7 +252,16 @@ class HomePage extends StatelessWidget {
                             left: 10,
                             right:_width*0.5,
                             child: Container(
-                              child: FlatButton(
+                              child: FlatButton.icon(
+                                icon: Icon(Icons.calendar_today,
+                                color: Colors.amberAccent[400],),
+                                label: Text(formattedDate,
+                                  textAlign: TextAlign.justify,
+                                  style: TextStyle(color: Colors.amberAccent[400],
+                                    fontSize: 24.0,
+                                    fontFamily: 'Montserrat',
+                                  ),
+                                ),
                                 onPressed: () async{
                                   Navigator.push(
                                     context,
@@ -259,14 +270,6 @@ class HomePage extends StatelessWidget {
                                     ),
                                   );
                                 },
-                              child: Text(formattedDate,
-                                  textAlign: TextAlign.justify,
-                                  style: TextStyle(color: Colors.amberAccent[400],
-                                    fontSize: 24.0,
-                                    fontFamily: 'Montserrat',
-
-                                  ),
-                              ),
                               ),
                             ),
                           ),
@@ -290,14 +293,20 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: _height*0.1,
-                            //left: 345,
-                            right: _width*0.1,
-                            child: Text('logout',
+                            /*top: _height*0.1,
+                            //left: 345,*/
+                              top: _height*0.01,
+                              // bottom: 600,
+                              //left: 330,
+                              height: _height*0.08,
+                              right: _width*0.103,
+                            child: Icon(Icons.power_settings_new)
+
+                            /*Text('logout',
                               style: TextStyle(fontSize: 13.0,
                                 fontFamily: 'Montserrat'
                               ),
-                            ),
+                            ),*/
                           ),
                        ],
                         ),
