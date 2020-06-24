@@ -119,4 +119,5 @@ Here's an overview of the development process
 ---------------------------
 # StatusNeo <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/iconlogo.png" height="69" align="left">
 > Visit https://statusneo.com/
-> [Check the promo video for the app here](https://www.linkedin.com/posts/shraddha-saini-605355166_where-is-everyone-enterprise-app-for-consulting-activity-6681111522149769216-G5Md/)
+>
+> :film_strip: [Check the promo video for the app here](https://www.linkedin.com/posts/shraddha-saini-605355166_where-is-everyone-enterprise-app-for-consulting-activity-6681111522149769216-G5Md/)
