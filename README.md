@@ -52,3 +52,5 @@ Let Everyone know you are on Leave.
 > You can plan ahead and add events on calendar for when you get back.
 >
 
+--------------------
+# Updating Your Information <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/onboard.png" height="100" align="left">
