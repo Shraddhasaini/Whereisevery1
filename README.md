@@ -9,4 +9,9 @@
 
  ----------------
 # Check The Status <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/statuslist.png" height="100" align="left">
-
+>With Easy Search Filters Find out Which Employee is:
+>> On Sick Leave <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/osl.png" height="50" align="right">
+>>> On Planned Leave <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/opl.png" height="50" align="right">
+>>>> Working In Office <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/wio.png" height="50" align="right">
+>>>>> Working From Home <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/wfh.png" height="50" align="right">
+>>>>>> Out For Business Travel <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/bt.png" height="50" align="right">
