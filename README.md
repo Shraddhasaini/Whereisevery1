@@ -118,3 +118,5 @@ Here's an overview of the development process
 
 ---------------------------
 # StatusNeo <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/iconlogo.png" height="100" align="left">
+@Statusneo 
+> Visit https://statusneo.com/
