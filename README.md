@@ -17,3 +17,9 @@
 >>>>>> Out For Business Travel <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/bt.png" height="50" align="right">
 ------------
 ## Out For Business Travel <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/bt.png" height="200" align="right">
+Let Everyone know which global business you are consulting.
+> Your Exact Location Will Be Visible to the employees
+>
+> Your Status will be set to **OUT FOR BUSINESS TRAVEL**
+>
+> You can plan ahead and add events on calendar during your offsite project
