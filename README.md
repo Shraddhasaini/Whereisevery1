@@ -94,4 +94,4 @@ Toggle between sign in and register easily
 >> Visit https://firebase.google.com/docs/auth
 
 ---------------------------
-# StatusNeo <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/registerboy.png" height="100" align="left">
+# StatusNeo <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/iconlogo.png" height="100" align="left">
