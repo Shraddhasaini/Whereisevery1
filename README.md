@@ -82,3 +82,13 @@ Add Events with calendar within the app
 
 -------------------
 # Sign-in and Register <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/registerboy.png" height="100" align="left">
+Toggle between sign in and register easily
+> Register if you are new memeber
+>
+> If you already have an account continue by signing in
+>
+> By O-Auth and SSO easily register and signin with your company's account
+>> NO password Required
+>
+> Security Ensured by FireBase
+>> Visit https://firebase.google.com/docs/auth
