@@ -40,3 +40,15 @@ Let Everyone know which city you are in.
 > Your Status will be set to **WORKING FROM HOME**
 >
 > You can plan ahead and add events on calendar.
+>
+## On Leave <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/opl.png" height="200" align="right">
+Let Everyone know you are on Leave.
+> Employees won't be able to see your location. We respect your privacy
+>> Never the _Exact Location_ 
+>>> Not even the radius
+>
+> Your Status will be set to **ON SICK LEAVE** _or_ **ON PLANNED LEAVE**
+>
+> You can plan ahead and add events on calendar for when you get back.
+>
+
