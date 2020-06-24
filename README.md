@@ -5,7 +5,7 @@
 #### Collaboration is not Easy :busts_in_silhouette:
 ##### specially with employees Working from Home/ Travelling(consulting) all across the globe :earth_asia:
 ###### Just A click And find Out 
-<img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/splashtext.png" height="30" align="center">
+<img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/Ologowie.png" height="30" align="center">
 
  ----------------
 # Check The Status <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/statuslist.png" height="100" align="left">
@@ -92,3 +92,6 @@ Toggle between sign in and register easily
 >
 > Security Ensured by FireBase
 >> Visit https://firebase.google.com/docs/auth
+
+---------------------------
+# StatusNeo <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/registerboy.png" height="100" align="left">
