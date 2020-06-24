@@ -80,3 +80,5 @@ Add Events with calendar within the app
 > This feature was added with Flutter Table Calendar API
 >> Visit https://pub.dev/packages/table_calendar
 
+-------------------
+# Sign-in and Register <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/registerboy.png" height="100" align="left">
