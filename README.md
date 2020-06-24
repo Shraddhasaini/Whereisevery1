@@ -16,7 +16,7 @@
 >>>>> Working From Home <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/wfh.png" height="50" align="right">
 >>>>>> Out For Business Travel <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/bt.png" height="50" align="right">
 ------------
-## Out For Business Travel <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/bt.png" height="200" align="left">
+## Out For Business Travel <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/bt.png" height="200" align="right">
 Let Everyone know which global business you are consulting.
 > Your Exact Location Will Be Visible to the employees
 >
@@ -24,7 +24,7 @@ Let Everyone know which global business you are consulting.
 >
 > You can plan ahead and add events on calendar during your offsite project
 >
-## Working in Office <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/wio.png" height="200" align="left">
+## Working in Office <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/wio.png" height="200" align="right">
 Let Everyone know which global office you are working from.
 > Your Exact Location Will Be Visible to the employees
 >
@@ -32,7 +32,7 @@ Let Everyone know which global office you are working from.
 >
 > You can plan ahead and add events on calendar and schedule meetings or plan ahead and let everyone know you'd be going for a leave/ will be consulting for intl client in upcoming days.
 >
-## Working From Home <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/wfh.png" height="200" align="left">
+## Working From Home <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/wfh.png" height="200" align="right">
 Let Everyone know which city you are in.
 > Only a large Radius of your Location Will Be Visible to the employees
 >> Never the _Exact Location_
