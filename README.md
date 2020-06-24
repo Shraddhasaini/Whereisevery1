@@ -61,4 +61,5 @@ Easily update your Status and we map your location
 > This feature uses Google Maps API for flutter
 >> Visit <https://pub.dev/packages/google_maps_flutter>
 > You are able to change your username 
+>
 >> Might want to add the project you are working on along the title
