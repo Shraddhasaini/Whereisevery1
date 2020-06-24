@@ -67,6 +67,7 @@ Easily update your Status and we map your location
 
 #### :bust_in_silhouette: USAGE:
 Click on your Name on the App Bar and update your information easily
+
 ---------------------
 # Calendar <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/usercal.png" height="100" align="left">
 Add Events with calendar within the app
