@@ -64,3 +64,6 @@ Easily update your Status and we map your location
 > You are able to change your username 
 >
 >> Might want to add the project you are working on along the title
+
+#### :bust_in_silhouette: USAGE:
+Click on your Name on the App Bar and update your information easily
