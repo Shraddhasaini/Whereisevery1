@@ -97,14 +97,18 @@ Toggle between sign in and register easily
 # Development  <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/loc.png" height="100" align="left">
 Here's an overview of the development process
 > The Applicagtion is developed on Flutter
->> Visit: https://flutter.dev/docs
+>> https://flutter.dev/docs
 >
 > It's Written in Dart
 >> https://dart.dev/
 >
 > The Designing was done on Adobe XD
 >> https://www.adobe.com/in/products/xd.html
-
+>
+> Used Material UI for Frontend Dev
+>> https://material-ui.com/
+>
+>
 
 ---------------------------
 # StatusNeo <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/iconlogo.png" height="100" align="left">
