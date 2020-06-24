@@ -2,5 +2,6 @@
 > The Employee App
 > :mag::office::calendar::earth_africa:
 
-#### Collaboration is not Easy
-##### specially with employees Working from Home/ Travelling(consulting) all across the globe
+#### Collaboration is not Easy :busts_in_silhouette:
+##### specially with employees Working from Home/ Travelling(consulting) all across the globe :earth_asia:
+###### 
