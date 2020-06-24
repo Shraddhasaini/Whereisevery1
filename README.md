@@ -67,3 +67,4 @@ Easily update your Status and we map your location
 
 #### :bust_in_silhouette: USAGE:
 Click on your Name on the App Bar and update your information easily
+---------------------
