@@ -93,5 +93,18 @@ Toggle between sign in and register easily
 > Security Ensured by FireBase
 >> Visit https://firebase.google.com/docs/auth
 
+----------------
+# Development  <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/loc.png" height="100" align="left">
+Here's an overview of the development process
+> The Applicagtion is developed on Flutter
+>> Visit: https://flutter.dev/docs
+>
+> It's Written in Dart
+>> https://dart.dev/
+>
+> The Designing was done on Adobe XD
+>> https://www.adobe.com/in/products/xd.html
+
+
 ---------------------------
 # StatusNeo <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/iconlogo.png" height="100" align="left">
