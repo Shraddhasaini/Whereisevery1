@@ -125,4 +125,7 @@ Here's an overview of the development process
 ## Developer's Contact:
 :e-mail: Shraddhasaini99@gmail.com
 :email: 500062194@stu.upes.ac.in
-:incoming_envelope: shraddha.saini@statusneo.com
+:incoming_envelope: shraddha.saini@statusneo.com:
+
+
+<img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/iconlogo.png" height="69" align="right">
