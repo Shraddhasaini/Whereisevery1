@@ -41,7 +41,7 @@ Let Everyone know which city you are in.
 >
 > You can plan ahead and add events on calendar.
 >
-## On Leave <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/opl.png" height="100" align="right"> <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/osl.png" height="100" align="right">
+## On Leave <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/opl.png" height="100" align="right">
 Let Everyone know you are on Leave.
 > Employees won't be able to see your location. We respect your privacy
 >> Never the _Exact Location_ 
