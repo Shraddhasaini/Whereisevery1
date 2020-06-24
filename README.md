@@ -54,3 +54,9 @@ Let Everyone know you are on Leave.
 
 --------------------
 # Updating Your Information <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/onboard.png" height="100" align="left">
+Easily update your Status and we map your location
+> Location is Mapped by Your device's location.
+>> Allow the location for this app
+>
+> This feature uses Google Maps API for flutter
+>> Visit <https://pub.dev/packages/google_maps_flutter>
