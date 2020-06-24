@@ -47,7 +47,7 @@ Let Everyone know you are on Leave.
 >> Never the _Exact Location_ 
 >>> Not even the radius
 >
-> Your Status will be set to **ON SICK LEAVE** _or_ **ON PLANNED LEAVE**
+> Your Status will be set to **ON SICK LEAVE** _or_ **ON PLANNED LEAVE** accordingly
 >
 > You can plan ahead and add events on calendar for when you get back.
 >
