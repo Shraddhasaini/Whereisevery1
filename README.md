@@ -96,7 +96,6 @@ Toggle between sign in and register easily
 ----------------
 # Development  <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/loc.png" height="100" align="left">
 Here's an overview of the development process
-[![Flutter logo][]][flutter.dev]
 > The Applicagtion is developed on Flutter
 >> https://flutter.dev/docs
 >
