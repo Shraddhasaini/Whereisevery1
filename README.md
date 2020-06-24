@@ -121,3 +121,8 @@ Here's an overview of the development process
 > Visit https://statusneo.com/
 >
 > :film_strip: [Check the promo video for the app here](https://www.linkedin.com/posts/shraddha-saini-605355166_where-is-everyone-enterprise-app-for-consulting-activity-6681111522149769216-G5Md/)
+
+## Developer's Contact:
+:e-mail: Shraddhasaini99@gmail.com
+:email: 500062194@stu.upes.ac.in
+:incoming_envelope: shraddha.saini@statusneo.com
