@@ -1,4 +1,4 @@
-# Where Is Everyone :mag: :calendar: 
+# Where Is Everyone :mag::calendar::earth_africa:
 > The Employee App
 
 ## Getting Started
