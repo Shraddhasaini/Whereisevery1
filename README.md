@@ -15,3 +15,5 @@
 >>>> Working In Office <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/wio.png" height="50" align="right">
 >>>>> Working From Home <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/wfh.png" height="50" align="right">
 >>>>>> Out For Business Travel <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/bt.png" height="50" align="right">
+------------
+## Out For Business Travel <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/bt.png" height="200" align="right">
