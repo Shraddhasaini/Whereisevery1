@@ -108,7 +108,13 @@ Here's an overview of the development process
 > Used Material UI for Frontend Dev
 >> https://material-ui.com/
 >
+> Used Firebase for backend, crashlytics, testing and App distribution
+>>https://firebase.google.com/
 >
+>For database Firestore is used
+>>https://firebase.google.com/docs/firestore
+>
+:iphone: BUILD FOR **Android** _and_ **iOS**
 
 ---------------------------
 # StatusNeo <img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/iconlogo.png" height="100" align="left">
