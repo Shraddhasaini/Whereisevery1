@@ -43,6 +43,7 @@ dependencies:
   flutter_screenutil: ^1.1.0
   image_picker: ^0.6.7+2
   firebase_storage: ^3.1.6
+  video_player: ^0.10.2+1
 
 
 
