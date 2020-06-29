@@ -1,3 +1,4 @@
+import 'package:WhereIsEveryone/screens/storage/video.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -204,7 +205,7 @@ class HomePage extends StatelessWidget {
                             right: _width*0.14,
                             child: SearchByName(),
                           ),
-                          Positioned(
+                          /*Positioned(
                             top: _height*0.24,
                             bottom: _height*0.5,
                             left: 10,
@@ -212,14 +213,14 @@ class HomePage extends StatelessWidget {
                             child: Container(
                              child: Text('Status',
                                 textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 40.0,
+                                style: TextStyle(fontSize: _width*0.08,
                                   fontFamily: 'Montserrat',
                                   color: Colors.amberAccent[400],
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),
-                          ),
+                          ),*/
                           Positioned(
                             top: _height*0.3,
                             bottom: _height*0.66,
@@ -250,7 +251,7 @@ class HomePage extends StatelessWidget {
                             top: _height*0.2,
                             bottom: _height*0.75,
                             left: 10,
-                            right:_width*0.5,
+                            right:_width*0.4,
                             child: Container(
                               child: FlatButton.icon(
                                 icon: Icon(Icons.calendar_today,
@@ -290,6 +291,35 @@ class HomePage extends StatelessWidget {
                                 await _auth.signOut();
                               },
                                 child: Image.asset('assets/iconlogo.png'),
+                            ),
+                          ),
+                          Positioned(
+                            top: _height*0.25,
+                            bottom: _height*0.7,
+                            left: 10,
+                            right:  _width*0.42,
+                            child: Container(
+                              child: FlatButton.icon(
+                                color: Colors.white10,
+                                onPressed: (){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder:(context) => Video(),
+                                    ),
+                                  );
+                                },
+                                icon: Icon(Icons.camera_alt,
+                                color: Colors.amberAccent[400],
+                                ),
+                                label: Text('Highlights',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(fontSize: _width*0.05,
+                                  fontFamily: 'Montserrat',
+                                  color: Colors.amberAccent[400],
+                                ),
+                              ),
+                              ),
                             ),
                           ),
                           Positioned(
