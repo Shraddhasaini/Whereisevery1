@@ -14,7 +14,10 @@ class Video extends StatefulWidget {
 class _VideoState extends State<Video> {
   VideoPlayerController _videoPlayerController;
   File _videoFile;
+  bool _uploaded = false;
+  String _downloadURL;
   final _picker = ImagePicker();
+  StorageReference reference = FirebaseStorage.instance.ref().child('myvideo.mp4');
 
   Future getVideo (bool isCamera) async {
     PickedFile video;
@@ -29,6 +32,22 @@ class _VideoState extends State<Video> {
       setState(() {
       });
       _videoPlayerController.play();
+    });
+  }
+
+
+  Future uploadImage () async{
+    StorageUploadTask uploadTask = reference.putFile(_videoFile);
+    StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
+    setState(() {
+      _uploaded = true;
+    });
+  }
+
+  Future downloadImage() async {
+    String downloadAddress = await _reference.getDownloadURL();
+    setState(() {
+      _downloadURL = downloadAddress;
     });
   }
 
@@ -83,16 +102,7 @@ class _VideoState extends State<Video> {
               ),
             FlatButton.icon(
                 onPressed: (){
-                 final snackBar = SnackBar(
-                    backgroundColor: Colors.amberAccent[400],
-                    content: Text('Added to highlights',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                        fontFamily: 'Montserrat'
-                    ),),
-                  );
-                 Scaffold.of(context).showSnackBar(snackBar);
+                 uploadImage();
                 },
                 color: Colors.black26,
                 icon: Icon(Icons.cloud_upload,
@@ -105,6 +115,14 @@ class _VideoState extends State<Video> {
                   ),
                 ),
             ),
+                      _uploaded == false ? Container() : RaisedButton(
+                        child: Text('Download'),
+                        onPressed: (){
+                          downloadImage();
+                        },
+                      ),
+                      _downloadURL == null ? Container() : Image.network(_downloadURL),
+
            ],
              )
                   : Container(),
