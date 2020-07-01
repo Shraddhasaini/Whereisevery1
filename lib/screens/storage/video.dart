@@ -1,8 +1,10 @@
+import 'package:WhereIsEveryone/models/users.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:provider/provider.dart';
 import 'package:video_player/video_player.dart';
 
 
@@ -16,16 +18,8 @@ class _VideoState extends State<Video> {
   File _videoFile;
   bool _uploaded = false;
   String _downloadURL;
-
-  final _picker = ImagePicker();
-
- int _counter = 0;
-
- void _incrementCounter() {
-   setState(() {
-     _counter++;
-   });
- }
+ final _picker = ImagePicker();
+  int _counter = 0;
 
 
   StorageReference reference = FirebaseStorage.instance.ref();
@@ -48,7 +42,9 @@ class _VideoState extends State<Video> {
 
 
   Future uploadImage () async{
-    StorageUploadTask uploadTask = reference.child('video$_counter.mp4').putFile(_videoFile);
+   final user = Provider.of<User>(context);
+   String _userID = user.uid.toString();
+    StorageUploadTask uploadTask = reference.child(_userID+'video$_counter.mp4').putFile(_videoFile);
     StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
     setState(() {
       _uploaded = true;
@@ -150,6 +146,8 @@ class _VideoState extends State<Video> {
            ],
              )
                   : Container(),
+
+
           ],
         ),
       ),
