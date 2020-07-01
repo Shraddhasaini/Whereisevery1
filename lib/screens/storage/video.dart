@@ -16,8 +16,19 @@ class _VideoState extends State<Video> {
   File _videoFile;
   bool _uploaded = false;
   String _downloadURL;
+
   final _picker = ImagePicker();
-  StorageReference reference = FirebaseStorage.instance.ref().child('myvideo.mp4');
+
+ int _counter = 0;
+
+ void _incrementCounter() {
+   setState(() {
+     _counter++;
+   });
+ }
+
+
+  StorageReference reference = FirebaseStorage.instance.ref();
 
   Future getVideo (bool isCamera) async {
     PickedFile video;
@@ -37,7 +48,7 @@ class _VideoState extends State<Video> {
 
 
   Future uploadImage () async{
-    StorageUploadTask uploadTask = reference.putFile(_videoFile);
+    StorageUploadTask uploadTask = reference.child('video$_counter.mp4').putFile(_videoFile);
     StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
     setState(() {
       _uploaded = true;
@@ -103,6 +114,7 @@ class _VideoState extends State<Video> {
                       _uploaded == false ?
                       FlatButton.icon(
                       onPressed: (){
+                        _counter++;
                       uploadImage();
                       showAlertDialog(context);
                       },
