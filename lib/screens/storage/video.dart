@@ -45,7 +45,7 @@ class _VideoState extends State<Video> {
   }
 
   Future downloadImage() async {
-    String downloadAddress = await _reference.getDownloadURL();
+    String downloadAddress = await reference.getDownloadURL();
     setState(() {
       _downloadURL = downloadAddress;
     });
@@ -100,46 +100,133 @@ class _VideoState extends State<Video> {
                 aspectRatio: _videoPlayerController.value.aspectRatio*5.2,
                 child: VideoPlayer(_videoPlayerController),
               ),
-            FlatButton.icon(
-                onPressed: (){
-                 uploadImage();
-                },
-                color: Colors.black26,
-                icon: Icon(Icons.cloud_upload,
-                color: Colors.white),
-                label: Text('Add to highlights',
-                  style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
-                  fontFamily: 'Montserrat'
-                  ),
-                ),
-            ),
-                      _uploaded == false ? Container() : RaisedButton(
-                        child: Text('Download'),
+                      _uploaded == false ?
+                      FlatButton.icon(
+                      onPressed: (){
+                      uploadImage();
+                      showAlertDialog(context);
+                      },
+                      color: Colors.black26,
+                      icon: Icon(Icons.cloud_upload,
+                      color: Colors.white),
+                      label: Text('Add to highlights',
+                      style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                      fontFamily: 'Montserrat'
+                      ),
+                      ),
+                      )
+                          : RaisedButton.icon(
+                        icon: Icon(Icons.file_download,
+                          color: Colors.white,
+                        ),
+                        color: Colors.black26,
+                        label: Text('Download',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20.0,
+                              fontFamily: 'Montserrat'
+                          ),
+                        ),
                         onPressed: (){
                           downloadImage();
+                          showAlertDialog1(context);
                         },
                       ),
                       _downloadURL == null ? Container() : Image.network(_downloadURL),
-
            ],
              )
                   : Container(),
-            /*_videoFile == null ? Container() : Image.file(_videoFile),*/
-            Divider(height: 10,),
-           // _videoFile == null ? Container() : Video.file(_videoFile),
-            Divider(height: 10,),
-            Container(color: Colors.red, child: Text('qwertyui'),),
-            Divider(height: 10,),
-            Container(color: Colors.blue, child: Text('qwertyui'),),
-            Divider(height: 10,),
-            Container(color: Colors.red, child: Text('qwertyui'),),
-            Divider(height: 10,),
-            Container(color: Colors.blue, child: Text('qwertyui'),),
           ],
         ),
       ),
     );
   }
+}
+
+showAlertDialog(BuildContext context) {
+  // Create button
+  /*Widget okButton = FlatButton(
+    color: Colors.white10,
+    child: Text("OK",
+    style: TextStyle(
+      fontFamily: 'Montserrat',
+      color: Colors.white
+    ),
+    ),
+    onPressed: () {
+
+    },*/
+  //);
+
+
+  AlertDialog alert = AlertDialog(
+    elevation: 24.0,
+    backgroundColor: Colors.black54,
+    title: Text('Posted!',
+      style: TextStyle(
+          fontFamily: 'Montserrat',
+          color: Colors.amberAccent[400]
+      ),
+    ),
+    content: Text('Your video is now posted to highlights',
+      style: TextStyle(
+          fontFamily: 'Montserrat',
+          color: Colors.white
+      ),
+    ),
+    actions: [
+      // okButton,
+    ],
+  );
+
+
+  // show the dialog
+  showDialog(
+    context: context,
+    barrierDismissible: true,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+
+showAlertDialog1(BuildContext context) {
+  // Create button
+  /*Widget okButton = FlatButton(
+    color: Colors.white10,
+    child: Text("OK",
+    style: TextStyle(
+      fontFamily: 'Montserrat',
+      color: Colors.white
+    ),
+    ),
+    onPressed: () {
+
+    },*/
+  //);
+
+
+  AlertDialog alert = AlertDialog(
+      elevation: 24.0,
+      backgroundColor: Colors.black54,
+      title: Text('Downloaded!',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+            fontFamily: 'Montserrat',
+            color: Colors.amberAccent[400]
+        ),
+      ),
+);
+
+
+  // show the dialog
+  showDialog(
+    context: context,
+    barrierDismissible: true,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }
