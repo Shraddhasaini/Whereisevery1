@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:WhereIsEveryone/models/users.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class Video extends StatefulWidget {
 
 class _VideoState extends State<Video> {
   VideoPlayerController _videoPlayerController;
+  VideoPlayerController _controller;
   File _videoFile;
   bool _uploaded = false;
   String _downloadURL;
@@ -57,6 +59,17 @@ class _VideoState extends State<Video> {
       _downloadURL = downloadAddress;
     });
   }
+
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.network(
+        'https://firebasestorage.googleapis.com/v0/b/where-is-everyone-statusneo.appspot.com/o/cLD0k3RgAYVNOgPUy6k4pV7zg2i11.mp4?alt=media&token=d1dd1036-11e4-4bbd-b957-49a8c1134ad9')
+      ..initialize().then((_) {
+        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+        setState(() {});
+      });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -147,7 +160,30 @@ class _VideoState extends State<Video> {
              )
                   : Container(),
 
-
+             Stack(
+               alignment: Alignment.bottomCenter,
+               children: <Widget>[
+             _controller.value.initialized
+                ? AspectRatio(
+                aspectRatio: _controller.value.aspectRatio*5.2,
+                child: VideoPlayer(_controller),
+                )
+                    : Container(),
+                FloatingActionButton(
+                  backgroundColor: Colors.amberAccent[400],
+                onPressed: () {
+                setState(() {
+                _controller.value.isPlaying
+                ? _controller.pause()
+                    : _controller.play();
+                });
+                },
+                child: Icon(
+                _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+                ),
+                ),
+            ],
+             ),
           ],
         ),
       ),
