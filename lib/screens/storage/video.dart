@@ -17,6 +17,10 @@ class Video extends StatefulWidget {
 class _VideoState extends State<Video> {
   VideoPlayerController _videoPlayerController;
   VideoPlayerController _controller;
+  VideoPlayerController _controller1;
+  VideoPlayerController _controller2;
+  VideoPlayerController _controller3;
+
   File _videoFile;
   bool _uploaded = false;
   String _downloadURL;
@@ -63,7 +67,25 @@ class _VideoState extends State<Video> {
   void initState() {
     super.initState();
     _controller = VideoPlayerController.network(
-        'https://firebasestorage.googleapis.com/v0/b/where-is-everyone-statusneo.appspot.com/o/cLD0k3RgAYVNOgPUy6k4pV7zg2i11.mp4?alt=media&token=d1dd1036-11e4-4bbd-b957-49a8c1134ad9')
+        'https://firebasestorage.googleapis.com/v0/b/where-is-everyone-statusneo.appspot.com/o/BirdNoSound.mp4?alt=media&token=3ceafbce-df2c-4907-a6cf-5f3ed582fa12')
+      ..initialize().then((_) {
+        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+        setState(() {});
+      });
+    _controller1 = VideoPlayerController.network(
+        'https://firebasestorage.googleapis.com/v0/b/where-is-everyone-statusneo.appspot.com/o/171124_B2_UHD_001.mp4?alt=media&token=074191f0-5711-4538-b656-663f95e5bbc1')
+      ..initialize().then((_) {
+        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+        setState(() {});
+      });
+    _controller2 = VideoPlayerController.network(
+        'https://firebasestorage.googleapis.com/v0/b/where-is-everyone-statusneo.appspot.com/o/BirdNoSound.mp4?alt=media&token=3ceafbce-df2c-4907-a6cf-5f3ed582fa12')
+      ..initialize().then((_) {
+        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+        setState(() {});
+      });
+    _controller3 = VideoPlayerController.network(
+        'https://firebasestorage.googleapis.com/v0/b/where-is-everyone-statusneo.appspot.com/o/BirdNoSound.mp4?alt=media&token=3ceafbce-df2c-4907-a6cf-5f3ed582fa12')
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {});
@@ -165,7 +187,7 @@ class _VideoState extends State<Video> {
                children: <Widget>[
              _controller.value.initialized
                 ? AspectRatio(
-                aspectRatio: _controller.value.aspectRatio*5.2,
+                aspectRatio: _controller.value.aspectRatio,
                 child: VideoPlayer(_controller),
                 )
                     : Container(),
@@ -184,6 +206,31 @@ class _VideoState extends State<Video> {
                 ),
             ],
              ),
+            Stack(
+               alignment: Alignment.bottomCenter,
+               children: <Widget>[
+             _controller1.value.initialized
+                ? AspectRatio(
+                aspectRatio: _controller1.value.aspectRatio,
+                child: VideoPlayer(_controller1),
+                )
+                    : Container(),
+                FloatingActionButton(
+                  backgroundColor: Colors.amberAccent[400],
+                onPressed: () {
+                setState(() {
+                _controller1.value.isPlaying
+                ? _controller1.pause()
+                    : _controller1.play();
+                });
+                },
+                child: Icon(
+                _controller1.value.isPlaying ? Icons.pause : Icons.play_arrow,
+                ),
+                ),
+            ],
+             ),
+
           ],
         ),
       ),
