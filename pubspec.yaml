@@ -97,6 +97,10 @@ flutter:
     - family: 'Roboto'
       fonts:
         - asset: fonts/Roboto-Regular.ttf
+
+    - family: 'Sacramento'
+      fonts:
+        - asset: fonts/Sacramento-Regular.ttf
     #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
