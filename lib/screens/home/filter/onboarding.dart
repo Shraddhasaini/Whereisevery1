@@ -27,6 +27,7 @@ class OnboardingHome extends StatelessWidget {
             left: 10,
             right: 200,
             child: FlatButton(
+              splashColor: Colors.yellowAccent,
               onPressed: () {
                 Navigator.push(
                   context,
@@ -66,6 +67,7 @@ class OnboardingHome extends StatelessWidget {
                 left: 200,
                 right: 10,
                 child: FlatButton(
+                  splashColor: Colors.tealAccent,
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -105,6 +107,7 @@ class OnboardingHome extends StatelessWidget {
                 left: 10,
                 right: 200,
                 child: FlatButton(
+                  splashColor: Colors.pinkAccent,
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -143,6 +146,7 @@ class OnboardingHome extends StatelessWidget {
                 left: 200,
                 right: 10,
                 child: FlatButton(
+                  splashColor: Colors.lightGreenAccent,
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -181,6 +185,7 @@ class OnboardingHome extends StatelessWidget {
                 left: 10,
                 right: 200,
                 child: FlatButton(
+                  splashColor: Colors.cyanAccent,
                   onPressed: () {
                     Navigator.push(
                       context,
