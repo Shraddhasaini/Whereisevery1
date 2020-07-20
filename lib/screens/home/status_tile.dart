@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:WhereIsEveryone/models/status.dart';
 import 'package:WhereIsEveryone/screens/openuser/openuser.dart';
@@ -30,13 +31,9 @@ class _StatusTileState extends State<StatusTile> {
         color: Colors.white10,
         margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
         child: ListTile(
-          leading: CircleAvatar(
-            radius: 25.0,
-            child: Container(
-              child: Image.asset('assets/wfh.png'),
-            ),
-            //backgroundImage: AssetImage('assets/wfh.png'),
-          backgroundColor: Colors.white10,
+          trailing: Container(
+            width: 3,
+            color: Colors.yellowAccent,
           ),
           title: Text(widget.status.name,
             style: TextStyle(
@@ -72,13 +69,9 @@ class _StatusTileState extends State<StatusTile> {
             color: Colors.white10,
             margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
             child: ListTile(
-              leading: CircleAvatar(
-                radius: 25.0,
-                child: Container(
-                  child: Image.asset('assets/wio.png'),
-                ),
-                //backgroundImage: AssetImage('assets/wfh.png'),
-                backgroundColor: Colors.white10,
+              trailing: Container(
+                width: 3,
+                color: Colors.tealAccent,
               ),
               title: Text(widget.status.name,
                 style: TextStyle(
@@ -114,13 +107,9 @@ class _StatusTileState extends State<StatusTile> {
             color: Colors.white10,
             margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
             child: ListTile(
-              leading: CircleAvatar(
-                radius: 25.0,
-                child: Container(
-                  child: Image.asset('assets/opl.png'),
-                ),
-                //backgroundImage: AssetImage('assets/wfh.png'),
-                backgroundColor: Colors.white10,
+              trailing: Container(
+                width: 3,
+                color: Colors.pinkAccent,
               ),
               title: Text(widget.status.name,
                 style: TextStyle(
@@ -157,13 +146,9 @@ class _StatusTileState extends State<StatusTile> {
             color: Colors.white10,
             margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
             child: ListTile(
-              leading: CircleAvatar(
-                radius: 25.0,
-                child: Container(
-                  child: Image.asset('assets/osl.png'),
-                ),
-                //backgroundImage: AssetImage('assets/wfh.png'),
-                backgroundColor: Colors.white10,
+              trailing: Container(
+                width: 3,
+                color: Colors.lightGreenAccent,
               ),
               title: Text(widget.status.name,
                 style: TextStyle(
@@ -200,13 +185,9 @@ class _StatusTileState extends State<StatusTile> {
             color: Colors.white10,
             margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
             child: ListTile(
-              leading: CircleAvatar(
-                radius: 25.0,
-                child: Container(
-                  child: Image.asset('assets/bt.png'),
-                ),
-                //backgroundImage: AssetImage('assets/wfh.png'),
-                backgroundColor: Colors.white10,
+              trailing: Container(
+                width: 3,
+                color: Colors.cyanAccent,
               ),
               title: Text(widget.status.name,
                 style: TextStyle(
@@ -312,13 +293,9 @@ class _FilterStatusTileState extends State<FilterStatusTile> {
             color: Colors.black,
             margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
             child: ListTile(
-              leading: CircleAvatar(
-                radius: 25.0,
-                child: Container(
-                  child: Image.asset('assets/wfh.png'),
-                ),
-                //backgroundImage: AssetImage('assets/wfh.png'),
-                backgroundColor: Colors.white10,
+              trailing: Container(
+                width: 3,
+                color: Colors.yellowAccent,
               ),
               title: Text(widget.status.name,
                 style: TextStyle(
@@ -354,13 +331,9 @@ class _FilterStatusTileState extends State<FilterStatusTile> {
             color: Colors.black,
             margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
             child: ListTile(
-              leading: CircleAvatar(
-                radius: 25.0,
-                child: Container(
-                  child: Image.asset('assets/wio.png'),
-                ),
-                //backgroundImage: AssetImage('assets/wfh.png'),
-                backgroundColor: Colors.white10,
+              trailing: Container(
+                width: 3,
+                color: Colors.tealAccent,
               ),
               title: Text(widget.status.name,
                 style: TextStyle(
@@ -396,13 +369,9 @@ class _FilterStatusTileState extends State<FilterStatusTile> {
             color: Colors.black,
             margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
             child: ListTile(
-              leading: CircleAvatar(
-                radius: 25.0,
-                child: Container(
-                  child: Image.asset('assets/opl.png'),
-                ),
-                //backgroundImage: AssetImage('assets/wfh.png'),
-                backgroundColor: Colors.white10,
+              trailing: Container(
+                width: 3,
+                color: Colors.pinkAccent,
               ),
               title: Text(widget.status.name,
                 style: TextStyle(
@@ -439,13 +408,9 @@ class _FilterStatusTileState extends State<FilterStatusTile> {
             color: Colors.black,
             margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
             child: ListTile(
-              leading: CircleAvatar(
-                radius: 25.0,
-                child: Container(
-                  child: Image.asset('assets/osl.png'),
-                ),
-                //backgroundImage: AssetImage('assets/wfh.png'),
-                backgroundColor: Colors.white10,
+              trailing: Container(
+                width: 3,
+                color: Colors.lightGreenAccent,
               ),
               title: Text(widget.status.name,
                 style: TextStyle(
@@ -482,13 +447,9 @@ class _FilterStatusTileState extends State<FilterStatusTile> {
             color: Colors.black,
             margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
             child: ListTile(
-              leading: CircleAvatar(
-                radius: 25.0,
-                child: Container(
-                  child: Image.asset('assets/bt.png'),
-                ),
-                //backgroundImage: AssetImage('assets/wfh.png'),
-                backgroundColor: Colors.white10,
+              trailing: Container(
+                width: 3,
+                color: Colors.cyanAccent,
               ),
               title: Text(widget.status.name,
                 style: TextStyle(
