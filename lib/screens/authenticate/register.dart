@@ -155,6 +155,7 @@ class _RegisterState extends State<Register> {
                                                   style: TextStyle(
                                                     fontFamily: 'Roboto',
                                                     color: Colors.black,
+                                                    fontSize: _height*0.02
                                                   ),
                                                 ),
                                                 color: Colors.white,

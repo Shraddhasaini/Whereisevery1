@@ -63,9 +63,10 @@ class _sign_inState extends State<sign_in> {
                     ),
                   ),
                   Positioned(
-                    bottom: -0.1*_height,
+                   // right: _width*0.3,
+                    top: -(_height-1.0*(_height)),
                     width: _width,
-                    height: 0.26*_height,
+                    height: 0.04*_height,
                     child: Container(
                       decoration: BoxDecoration(
                         image: DecorationImage(
@@ -172,13 +173,14 @@ class _sign_inState extends State<sign_in> {
                                       style: TextStyle(
                                         fontFamily: 'Roboto',
                                         color: Colors.black,
+                                        fontSize: _height*0.02
                                       ),
                                     ),
                                     color: Colors.white,
                                     onPressed: () async {
                                       dynamic result = await _auth.googleSignIn1();
                                       if (result == null){
-                                        setState(() { error = 'please supply a valid email';
+                                        setState(() { error = 'please register first';
                                         loading = false;
                                         });
                                       }
@@ -188,18 +190,18 @@ class _sign_inState extends State<sign_in> {
                               ],
                               ),
                             ),
-                            SizedBox(height: 2.0),
+                            SizedBox(height: 1.0),
                             Text(
                               error,
-                              style: TextStyle(color: Colors.red, fontSize: 14.0),
+                              style: TextStyle(color: Colors.red, fontSize: _height*0.02),
                             ),
-                            SizedBox(height:2.0),
+                            //SizedBox(height:0.0),
                             FlatButton(
-                              //color: Colors.black,
+                              //color: Colors.blue,
                               child: Text(
                                 'New member? Register Here',
                                 style: TextStyle(
-                                  fontSize: 18.0,
+                                  fontSize: _height*0.025,
                                   fontFamily: 'Montserrat',
                                   color: Colors.amberAccent[400],
                                   fontStyle: FontStyle.italic,
