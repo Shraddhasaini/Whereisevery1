@@ -215,17 +215,18 @@ class HomePage extends StatelessWidget {
                               child: SearchByName(),
                             ),
                             Positioned(
-                              top: _height * 0.24,
-                              bottom: _height * 0.5,
+                             top: _height * 0.16,
+                              bottom: _height * 0.765,
                               left: 10,
-                              right: _width * 0.5,
+                              right: _width * 0.42,
                               child: Container(
+                                //color: Colors.pink,
                                 child: Text('Status',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: _width * 0.08,
-                                    fontFamily: 'Montserrat',
+                                  style: TextStyle(fontSize: _width * 0.12,
+                                    fontFamily: 'Sacramento',
                                     color: Colors.amberAccent[400],
-                                    fontWeight: FontWeight.bold,
+                                    //fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ),
@@ -257,11 +258,12 @@ class HomePage extends StatelessWidget {
                               ),
                             ),
                             Positioned(
-                              top: _height * 0.2,
-                              bottom: _height * 0.75,
+                              top: _height * 0.24,
+                              bottom: _height * 0.71,
                               left: 10,
-                              right: _width * 0.4,
+                              right: _width * 0.42,
                               child: Container(
+                                //color: Colors.blue,
                                 child: FlatButton.icon(
                                   icon: Icon(Icons.calendar_today,
                                     color: Colors.amberAccent[400],),
@@ -300,7 +302,15 @@ class HomePage extends StatelessWidget {
                                     ),
                                   );
                                 },
-                                child: Image.asset('assets/iconlogo.png'),
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                    children: <Widget>[
+                                      Image.asset('assets/iconlogo.png'),
+                                      Icon(Icons.power_settings_new,
+                                      size: _width*0.04,
+                                      )
+                                ]
+                                ),
                               ),
                             ),
                             /* Positioned(
@@ -332,22 +342,6 @@ class HomePage extends StatelessWidget {
                               ),
                             ),
                           ),*/
-                            Positioned(
-                              /*top: _height*0.1,
-                            //left: 345,*/
-                                top: _height * 0.01,
-                                // bottom: 600,
-                                //left: 330,
-                                height: _height * 0.08,
-                                right: _width * 0.103,
-                                child: Icon(Icons.power_settings_new)
-
-                              /*Text('logout',
-                              style: TextStyle(fontSize: 13.0,
-                                fontFamily: 'Montserrat'
-                              ),
-                            ),*/
-                            ),
                           ],
                         ),
                       ),
