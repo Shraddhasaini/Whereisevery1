@@ -40,7 +40,7 @@ class WorkingInOffice extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.tealAccent,
                         fontFamily: 'Montserrat',
-                        fontSize: 33.0,
+                        fontSize: _width*0.06,
                       ),
                     ),
                   ),

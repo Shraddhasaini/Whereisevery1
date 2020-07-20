@@ -40,7 +40,7 @@ class OnPlannedLeave extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.pinkAccent,
                         fontFamily: 'Montserrat',
-                        fontSize: 33.0,
+                        fontSize: _width*0.06,
                       ),
                     ),
                   ),

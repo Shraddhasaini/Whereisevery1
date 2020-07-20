@@ -56,7 +56,7 @@ class OnboardingHome extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Montserrat',
                     color: Colors.yellowAccent,
-                    fontSize: 16.0,
+                    fontSize: _width*0.036,
                   ),),
                 ),
               ),
@@ -95,7 +95,7 @@ class OnboardingHome extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       color: Colors.tealAccent,
-                      fontSize: 16.0,
+                      fontSize: _width*0.036,
                     ),),
                 ),
               ),
@@ -133,7 +133,7 @@ class OnboardingHome extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       color: Colors.pinkAccent,
-                      fontSize: 16.0,
+                      fontSize: _width*0.036,
                     ),),
                 ),
               ),
@@ -171,7 +171,7 @@ class OnboardingHome extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       color: Colors.lightGreenAccent,
-                      fontSize: 16.0,
+                      fontSize: _width*0.036,
                     ),),
                 ),
               ),
@@ -209,7 +209,7 @@ class OnboardingHome extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       color: Colors.cyanAccent,
-                      fontSize: 16.0,
+                      fontSize: _width*0.036,
                     ),),
                 ),
               ),

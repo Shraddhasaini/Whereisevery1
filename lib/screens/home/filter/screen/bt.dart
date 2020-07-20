@@ -40,7 +40,7 @@ class BusinessTravel extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.cyanAccent,
                         fontFamily: 'Montserrat',
-                        fontSize: 33.0,
+                        fontSize: _width*0.06,
                       ),
                     ),
                   ),

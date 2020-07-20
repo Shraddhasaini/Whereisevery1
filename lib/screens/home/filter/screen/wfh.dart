@@ -40,7 +40,7 @@ class WorkFromHome extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.yellowAccent,
                         fontFamily: 'Montserrat',
-                        fontSize: 33.0,
+                        fontSize: _width*0.06,
                       ),
                     ),
                   ),
