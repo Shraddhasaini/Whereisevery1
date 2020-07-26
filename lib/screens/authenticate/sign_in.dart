@@ -173,7 +173,7 @@ class _sign_inState extends State<sign_in> {
                                       style: TextStyle(
                                         fontFamily: 'Roboto',
                                         color: Colors.black,
-                                        fontSize: _height*0.02
+                                        fontSize: _width*0.03
                                       ),
                                     ),
                                     color: Colors.white,

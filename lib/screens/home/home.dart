@@ -80,6 +80,7 @@ class _HomeState extends State<Home> {
 
 class HomePage extends StatelessWidget {
   final AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
 
@@ -448,34 +449,55 @@ class HomePage extends StatelessWidget {
         );
     }
         else{
-        return Center(
+        return Scaffold(
+          backgroundColor: Colors.white,
+          body: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              FlatButton(
-                //color: Colors.black,
+              Container(
                 child: Text(
-                  'New member? Register Here',
+                    'Signing-in for the first time?',
+                    style: TextStyle(
+                      fontSize: _width*0.09,
+                      fontFamily: 'Sacramento',
+                      color: Colors.amberAccent[700],
+                      //fontStyle: FontStyle.italic,
+                    ),
+                  ),
+              ),
+              Divider(height: _height*0.05),
+              Container(
+                child: Image.asset('assets/registerboy.png'),
+              ),
+              Divider(height: _height*0.05),
+              RaisedButton.icon(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                  side: BorderSide(color: Colors.black)
+                 ),
+                icon: Image.asset('assets/Google-Button.png',
+                  fit: BoxFit.cover,
+                  scale: 6.0,
+                ),
+                label: Text(
+                  'Sign-up with Google',
+                  textAlign: TextAlign.left,
                   style: TextStyle(
-                    fontSize: 18.0,
-                    fontFamily: 'Montserrat',
-                    color: Colors.amberAccent[400],
-                    fontStyle: FontStyle.italic,
+                      fontFamily: 'Roboto',
+                      color: Colors.black,
+                      fontSize: _width*0.04
                   ),
                 ),
+                color: Colors.white,
                 onPressed: () async {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-
-                      builder: (context) => Register(),
-                    ),
-                  );
-                  await _auth.signOut();
+                  await _auth.googleSignIn();
+                 // await _auth.signOut();
                 },
               ),
           ]
+          ),
           ),
         );
         }
