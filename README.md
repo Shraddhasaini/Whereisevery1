@@ -128,4 +128,4 @@ Here's an overview of the development process
 :incoming_envelope: shraddha.saini@statusneo.com:
 
 
-<img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/Ologowie.png" height="39" align="right">
+<img src="https://github.com/Shraddhasaini/Whereisevery1/blob/master/assets/Ologowie.png" height="40" align="right">
